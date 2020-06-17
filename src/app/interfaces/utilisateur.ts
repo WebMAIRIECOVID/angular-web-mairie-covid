@@ -1,7 +1,7 @@
 export interface Utilisateur {
   id: number;
   pseudo: string;
-  mail: number;
+  mail: string;
   categorie: string;
   created_at: Date;
 }

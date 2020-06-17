@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { Utilisateur } from './interfaces/utilisateur';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class ApiUtilisateursService {
 
   public connection() {
     return this.http.get<Utilisateur>(this.proxyurl + `${this.apiUrl_Login}`);
+  }
+
+  public inscription() {
+    return this.http.get<Utilisateur>(this.proxyurl + `${this.apiUrl_Register}`);
   }
 }
