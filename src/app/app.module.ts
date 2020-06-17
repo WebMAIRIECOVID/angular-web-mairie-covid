@@ -31,8 +31,8 @@ import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ApiUtilisateursService } from './api-utilisateurs.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, ChiffresTop5Component, ScrollTopComponent, FormGroup, FormControl ],
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, FormGroup, FormControl ],
+  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, ChiffresTop5Component, ScrollTopComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService]
 })
