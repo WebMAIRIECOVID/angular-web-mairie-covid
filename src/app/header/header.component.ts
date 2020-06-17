@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   openFormSignIn() {
     this.co = true;
     console.log("true - co");
-    console.log(this.ins);
+    console.log(this.co);
   }
 
   openFormSignUp() {
