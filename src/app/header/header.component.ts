@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiUtilisateursService } from '../api-utilisateurs.service';
 
 @Component({
   selector: 'app-header',
