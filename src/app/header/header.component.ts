@@ -13,16 +13,22 @@ export class HeaderComponent implements OnInit {
 
   co: boolean;
   ins: boolean;
-  
+
   ngOnInit() {
+    this.co = false;
+    this.ins = false;
   }
 
   openFormSignIn() {
     this.co = true;
+    console.log("true - co");
+    console.log(this.ins);
   }
 
   openFormSignUp() {
     this.ins = true;
+    console.log("true - ins");
+    console.log(this.ins);
   }
 
   closeForm() {

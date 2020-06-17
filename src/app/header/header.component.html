@@ -8,7 +8,7 @@
       <li class="nav-item">  
         <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()">Se connecter</button>
 
-        <div class="form-popup" id="myFormSignIn">
+        <div *ngIf="co" class="form-popup" id="myFormSignIn">
           <form action="/action_page.php" class="form-container">
             <h1>Connexion</h1>
 
@@ -27,7 +27,7 @@
       <li class="nav-item">
         <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()">S'enregistrer</button>
 
-        <div class="form-popup" id="myFormSignUp">
+        <div *ngIf="ins" class="form-popup" id="myFormSignUp">
           <form action="/action_page.php" class="form-container">
             <h1>S'enregistrer</h1>
 
