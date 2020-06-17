@@ -1,0 +1,23 @@
+.card-header
+{
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.card
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.card-img
+{
+  width:50%;
+  height: 100%;
+}

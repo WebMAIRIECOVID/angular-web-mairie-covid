@@ -1,0 +1,30 @@
+*
+{
+  width: 100%;
+}
+
+router-outlet
+{
+  width: 0;
+}
+
+app-contenu-principal-gauche, app-contenu-principal-droite
+{
+  width: 18%;
+}
+
+app-contenu-principal-droite
+{
+  float: right;
+  right:0;
+  margin: 0;
+  position: absolute;
+}
+
+app-contenu-principal-gauche
+{
+  float: left;
+  left:0;
+  margin: 0;
+  position: absolute;
+}

@@ -1,0 +1,14 @@
+.btn-group
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.btn-group button
+{
+  width: auto;
+  margin: 1%;
+  text-align: center;
+}

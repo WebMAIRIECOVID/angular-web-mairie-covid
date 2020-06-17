@@ -1,0 +1,15 @@
+<div class="card">
+  <img src="https://france3-regions.francetvinfo.fr/paris-ile-de-france/sites/regions_france3/files/styles/top_big/public/assets/images/2013/06/25/corbeil_essonnescree_le_20130625_19h11m6s_00303.jpg?itok=IiZtAFan" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Informations pratiques</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let info of infos" class="list-group-item">{{info}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">https://www.corbeil-essonnes.fr/</a>
+  </div>
+  <button type="button" (click)="question()" class="popup">Poser une question
+      <span class="popuptext" id="myPopup">Veuillez vous connecter</span>
+  </button>
+</div>

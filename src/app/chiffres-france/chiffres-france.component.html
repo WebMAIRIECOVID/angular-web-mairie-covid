@@ -1,0 +1,24 @@
+<div class="card text-center boiteStat" (window:resize)="onResize($event)"  #myIdentifier>
+  <div class="card-body"> 
+
+    <p class="text-left">{{ last_update | date:"dd/MM/yyyy 'à' HH:mm:ss" }}</p>
+    <p> Les chiffres en France </p>
+    
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="tabFrance"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+
+  </div>
+
+</div>

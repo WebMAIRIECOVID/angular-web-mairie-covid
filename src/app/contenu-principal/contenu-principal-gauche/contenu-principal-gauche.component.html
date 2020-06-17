@@ -1,0 +1,8 @@
+<div *ngFor="let info of infos" class="card">
+  <img src="{{info.src}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{info.title}}</h5>
+    <p class="card-text">{{info.description}}</p>
+    <a href="{{info.destination}}" class="btn btn-primary">Plus d'informations</a>
+  </div>
+</div>

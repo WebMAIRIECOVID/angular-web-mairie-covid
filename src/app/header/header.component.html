@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/accueil">
+    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e0/Logo_commune_de_Corbeil-Essonnes.svg/1200px-Logo_commune_de_Corbeil-Essonnes.svg.png" width="250" height="100" class="d-inline-block align-top" alt="" loading="lazy">
+  </a>
+  <div>
+    <ul class="nav nav-pills">
+
+      <li class="nav-item">  
+        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()">Se connecter</button>
+
+        <div class="form-popup" id="myFormSignIn">
+          <form action="/action_page.php" class="form-container">
+            <h1>Connexion</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Entrer email" name="email" required>
+
+            <label for="psw"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer mot de passe" name="psw" required>
+
+            <button type="submit" class="btn">Connexion</button>
+            <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+          </form>
+        </div> 
+      </li>
+
+      <li class="nav-item">
+        <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()">S'enregistrer</button>
+
+        <div class="form-popup" id="myFormSignUp">
+          <form action="/action_page.php" class="form-container">
+            <h1>S'enregistrer</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Entrer email" name="email" required>
+
+            <label for="psw"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer mot de passe" name="psw" required>
+
+            <label for="psw-repeat"><b>Répéter mot de passe</b></label>
+            <input type="password" placeholder="Répéter mot de passe" name="psw-repeat" required>
+
+            <button type="submit" class="btn">S'enregistrer</button>
+            <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+          </form>
+        </div> 
+      </li>
+    </ul>
+    
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

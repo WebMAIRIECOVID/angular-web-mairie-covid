@@ -1,0 +1,17 @@
+
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  
+  <div *ngFor="let item of items | paginate: config" class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{item.img}}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <p class="card-text"><small class="text-muted">{{item.date}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

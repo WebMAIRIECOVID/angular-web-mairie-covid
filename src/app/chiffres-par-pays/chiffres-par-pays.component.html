@@ -1,0 +1,10 @@
+<div class="card text-center boiteStat">  
+  <div class="card-body">
+    <p id="titleChiffres">Les chiffres dans le monde</p>
+      <select (change)="selectionnerPays($event)">
+        <option>Selectionner un pays</option>
+        <option *ngFor="let pays of listePays" value="{{ pays.alpha2 }}">{{ pays.name }}</option>
+      </select>
+    <app-resultat-recherche-pays *ngIf="paysChoisi" [pays]="paysChoisi"></app-resultat-recherche-pays>
+  </div>
+</div>

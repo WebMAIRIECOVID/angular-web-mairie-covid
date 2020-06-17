@@ -1,0 +1,5 @@
+<nav class="nav nav-pills flex-column flex-sm-row" id="navbar" #stickyMenu [class.sticky] = "sticky">
+  <a *ngFor="let item of items" class="flex-sm-fill text-sm-center nav-link border rounded-bottom" routerLink="/{{item.route}}" routerLinkActive="active">{{item.title}}</a>
+</nav>
+ <!-- routerLink="[{{item.route}}]" -->
+<!--<router-outlet></router-outlet>-->
