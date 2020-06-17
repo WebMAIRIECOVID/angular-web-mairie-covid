@@ -31,11 +31,17 @@
           <form (ngSubmit)="register()" class="form-container">
             <h1>S'enregistrer</h1>
 
+            <label for="pseudo"><b>Pseudo</b></label>
+            <input type="text" placeholder="Entrer pseudo" name="pseudo" required>
+
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Entrer email" name="email" required>
 
             <label for="psw"><b>Mot de passe</b></label>
             <input type="password" placeholder="Entrer mot de passe" name="psw" required>
+            
+            <label for="categorie"><b>Categorie</b></label>
+            <input type="categorie" placeholder="Entrer categorie" name="categorie" required>
 
             <label for="psw-repeat"><b>Répéter mot de passe</b></label>
             <input type="password" placeholder="Répéter mot de passe" name="psw-repeat" required>
