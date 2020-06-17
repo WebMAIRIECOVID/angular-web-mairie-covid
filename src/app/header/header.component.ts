@@ -8,11 +8,12 @@ import { ApiUtilisateursService } from '../api-utilisateurs.service';
 })
 export class HeaderComponent implements OnInit {
 
-  co: boolean;
-  ins: boolean;
 
   constructor(private apiStatistiquesService: ApiUtilisateursService) { }
 
+  co: boolean;
+  ins: boolean;
+  
   ngOnInit() {
   }
 
