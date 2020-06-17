@@ -36,10 +36,4 @@ export class HeaderComponent implements OnInit {
     this.ins = false;
   }
 
-  connection() {
-    this.apiStatistiquesService.connection().subscribe((response) => {
-      console.log(response);
-    });
-  }
-
 }
