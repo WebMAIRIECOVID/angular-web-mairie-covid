@@ -26,6 +26,7 @@ export class ApiUtilisateursService {
   private apiUrl_Login = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/login.php';
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
 
+  /*
   public connection() {
     return this.http.post<Utilisateur>(this.proxyurl + `${this.apiUrl_Login}`);
   }
@@ -33,6 +34,7 @@ export class ApiUtilisateursService {
   public inscription() {
     return this.http.post<Utilisateur>(this.proxyurl + `${this.apiUrl_Register}`);
   }
+  */
   
   login() {
     
@@ -41,5 +43,13 @@ export class ApiUtilisateursService {
     
     // On envoie les données via une requête HTTP POST.
     this.http.post(this.proxyurl + `${this.apiUrl_Login}`, formData);
+  }
+  register() {
+    
+    // On récupère les données du formulaire.
+    const formData = this.loginForm.value;
+    
+    // On envoie les données via une requête HTTP POST.
+    this.http.post(this.proxyurl + `${this.apiUrl_Register}`, formData);
   }
 }

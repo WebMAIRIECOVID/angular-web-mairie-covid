@@ -28,7 +28,7 @@
         <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()">S'enregistrer</button>
 
         <div *ngIf="ins" class="form-popup" id="myFormSignUp">
-          <form action="https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php" class="form-container">
+          <form (ngSubmit)="register()" class="form-container">
             <h1>S'enregistrer</h1>
 
             <label for="email"><b>Email</b></label>
