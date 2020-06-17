@@ -7,22 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  connection: boolean;
+  inscription: boolean;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   openFormSignIn() {
-    document.getElementById("myFormSignIn").style.display = "block";
+    this.connection = true;
   }
 
   openFormSignUp() {
-    document.getElementById("myFormSignUp").style.display = "block";
+    this.inscription = true;
   }
 
   closeForm() {
-    document.getElementById("myFormSignIn").style.display = "none";
-    document.getElementById("myFormSignUp").style.display = "none";
+    this.connection = false;
+    this.inscription = false;
   }
 
 }
