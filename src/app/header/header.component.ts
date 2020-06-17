@@ -8,25 +8,31 @@ import { ApiUtilisateursService } from '../api-utilisateurs.service';
 })
 export class HeaderComponent implements OnInit {
 
-  connection: boolean;
-  inscription: boolean;
+  co: boolean;
+  ins: boolean;
 
-  constructor() { }
+  constructor(private apiStatistiquesService: ApiUtilisateursService) { }
 
   ngOnInit() {
   }
 
   openFormSignIn() {
-    this.connection = true;
+    this.co = true;
   }
 
   openFormSignUp() {
-    this.inscription = true;
+    this.ins = true;
   }
 
   closeForm() {
-    this.connection = false;
-    this.inscription = false;
+    this.co = false;
+    this.ins = false;
+  }
+
+  connection() {
+    this.apiStatistiquesService.connection().subscribe((response) => {
+      console.log(response);
+    });
   }
 
 }
