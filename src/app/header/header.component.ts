@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUtilisateursService } from '../api-utilisateurs.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -21,14 +22,10 @@ export class HeaderComponent implements OnInit {
 
   openFormSignIn() {
     this.co = true;
-    console.log("true - co");
-    console.log(this.co);
   }
 
   openFormSignUp() {
     this.ins = true;
-    console.log("true - ins");
-    console.log(this.ins);
   }
 
   closeForm() {

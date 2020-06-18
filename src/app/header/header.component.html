@@ -7,9 +7,9 @@
 
       <li class="nav-item">  
         <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()">Se connecter</button>
-
+        <!--
         <div *ngIf="co" class="form-popup" id="myFormSignIn">
-          <form (ngSubmit)="login()" class="form-container">
+          <form #f="ngForm" (ngSubmit)="login()" class="form-container">
             <h1>Connexion</h1>
 
             <label for="email"><b>Email</b></label>
@@ -22,13 +22,14 @@
             <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
           </form>
         </div> 
+        -->
       </li>
 
       <li class="nav-item">
         <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()">S'enregistrer</button>
-
+        <!--
         <div *ngIf="ins" class="form-popup" id="myFormSignUp">
-          <form (ngSubmit)="register()" class="form-container">
+          <form #f="ngForm" (ngSubmit)="register()" class="form-container">
             <h1>S'enregistrer</h1>
 
             <label for="pseudo"><b>Pseudo</b></label>
@@ -49,7 +50,7 @@
             <button type="submit" class="btn">S'enregistrer</button>
             <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
           </form>
-        </div> 
+        </div> -->
       </li>
     </ul>
     

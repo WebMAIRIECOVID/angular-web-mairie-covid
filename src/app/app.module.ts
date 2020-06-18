@@ -29,10 +29,12 @@ import { ChiffresTop5Component } from './chiffres-top-5/chiffres-top-5.component
 import { ApiStatistiquesService } from './api-statistiques.service';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ApiUtilisateursService } from './api-utilisateurs.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, FormGroup, FormControl ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, ChiffresTop5Component, ScrollTopComponent ],
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule ],
+  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, ChiffresTop5Component, ScrollTopComponent, LoginComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService]
 })
