@@ -43,6 +43,11 @@ export class ApiUtilisateursService {
   }
   */
   constructor( private http: HttpClient, private datepipe: DatePipe) { }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   proxyurl = "https://cors-anywhere.herokuapp.com/";
   private apiUrl_Login = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/login.php';
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
@@ -51,9 +56,9 @@ export class ApiUtilisateursService {
     return this.http.get<any>(this.proxyurl + `${this.apiUrl_Login}` + '?mail=' + mail + '&mdp=' + mdp);
   }
 
-  register(formData:PostLogin) {
+  register(formData:) {
     console.log(JSON.stringify(formData));
-    return this.http.post<any>(this.proxyurl + this.apiUrl_Register, JSON.stringify(formData));
+    return this.http.post<any>(this.proxyurl + this.apiUrl_Register, JSON.stringify(formData),this.httpOptions);
   }
 
 }
