@@ -47,13 +47,13 @@ export class ApiUtilisateursService {
   private apiUrl_Login = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/login.php';
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
   
-  login(formData) {
+  login(formData:PostLogin) {
     console.log(formData);
     // On envoie les données via une requête HTTP POST.
     return this.http.post<any>(this.proxyurl + `${this.apiUrl_Login}`, JSON.stringify(formData));
   }
 
-  register(formData) {
+  register(formData:PostLogin) {
     console.log(formData);
     // On envoie les données via une requête HTTP POST.
     return this.http.post<any>(this.proxyurl + `${this.apiUrl_Register}`, JSON.stringify(formData));
