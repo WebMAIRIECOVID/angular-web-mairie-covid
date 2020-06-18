@@ -1,6 +1,6 @@
 
         <div *ngIf="ins" class="form-popup" id="myFormSignUp">
-          <form  [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
+          <form action="http://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php" [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
             <h1>S'enregistrer</h1>
 
             <label for="pseudo"><b>Pseudo</b></label>
