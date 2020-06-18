@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../api-utilisateurs.service';
 
 @Component({
@@ -10,30 +10,13 @@ export class LoginComponent implements OnInit {
 
   constructor(private apiUtilisateursService: ApiUtilisateursService) { }
 
-  co:boolean;
-  ins:boolean;
+  @Input() co;
 
-  ngOnInit() {
-    this.co = false;
-    this.ins = false; 
+  ngOnInit() { 
   }
 
-  openFormSignIn() {
-    this.apiUtilisateursService.setCo(true);
-    this.co = true;
-  }
-
-  openFormSignUp() {
-    this.apiUtilisateursService.setIns(true);
-    this.ins = true;
-  }
 
   closeForm() {
-    this.apiUtilisateursService.setCo(false);
     this.co = false;
-    this.apiUtilisateursService.setIns(false);
-    this.ins = false;
   }
-
-
 }

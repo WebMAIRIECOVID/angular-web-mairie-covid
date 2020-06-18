@@ -38,35 +38,5 @@ export class ApiUtilisateursService {
   }
   */
   constructor( private http: HttpClient, private datepipe: DatePipe) { }
-  co: boolean = false;
-  ins: boolean = false;
-  
-  openFormSignIn() {
-    this.co = true;
-  }
 
-  openFormSignUp() {
-    this.ins = true;
-  }
-
-  closeForm() {
-    this.co = false;
-    this.ins = false;
-  }
-
-  getCo() : boolean{
-    return this.co;
-  }
-  
-  getIns() : boolean{
-    return this.ins;
-  }
-
-  setCo(co) {
-    this.co = co;
-  }
-  
-  setIns(ins) {
-    this.ins = ins;
-  }
 }
