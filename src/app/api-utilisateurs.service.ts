@@ -55,7 +55,7 @@ export class ApiUtilisateursService {
     // On envoie les données via une requête HTTP POST.
     console.log(formData);
     console.log(JSON.stringify(formData));
-    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Register}`, formData);
+    return this.http.post<any>(this.proxyurl + this.apiUrl_Register, formData);
   }
 
 }
