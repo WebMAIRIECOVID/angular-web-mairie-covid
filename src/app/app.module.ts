@@ -25,7 +25,6 @@ import { ResultatRecherchePaysComponent } from './chiffres-par-pays/resultat-rec
 import { ChoixMetierComponent } from './contenu-principal/contenu-principal-centre/annonces/choix-metier/choix-metier.component';
 import { ResultatAnnoncesComponent } from './contenu-principal/contenu-principal-centre/annonces/resultat-annonces/resultat-annonces.component';
 import { ChiffresFranceComponent } from './chiffres-france/chiffres-france.component';
-import { ChiffresTop5Component } from './chiffres-top-5/chiffres-top-5.component';
 import { ApiStatistiquesService } from './api-statistiques.service';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ApiUtilisateursService } from './api-utilisateurs.service';
@@ -35,7 +34,7 @@ import { MessageService } from './message.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, ChiffresTop5Component, ScrollTopComponent, LoginComponent, RegisterComponent ],
+  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, , ScrollTopComponent, LoginComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService]
 })
