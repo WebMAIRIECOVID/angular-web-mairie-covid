@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.formGroup.value);
+    /console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
-    console.log(this.formGroup.get('mdp').value);
+    console.log(this.formGroup.get('mdp').value);*/
     this.apiUtilisateursService.login(this.formGroup.value).subscribe((response) => {
       console.log(response);
     }, (error) => {

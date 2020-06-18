@@ -44,11 +44,13 @@ export class ApiUtilisateursService {
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
   
   login(formData) {
+    console.log(formData);
     // On envoie les données via une requête HTTP POST.
     return this.http.post<any>(this.proxyurl + `${this.apiUrl_Login}`, formData);
   }
 
   register(formData) {
+    console.log(formData);
     // On envoie les données via une requête HTTP POST.
     return this.http.post<any>(this.proxyurl + `${this.apiUrl_Register}`, formData);
   }
