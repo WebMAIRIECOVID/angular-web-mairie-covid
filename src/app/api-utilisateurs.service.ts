@@ -59,6 +59,7 @@ export class ApiUtilisateursService {
 
   register(formData:PostLogin) : Observable<PostLogin> {
     console.log(JSON.stringify(formData));
+    console.log(this.messageService);
     return this.http.post<any>(this.proxyurl + this.apiUrl_Register, JSON.stringify(formData),this.httpOptions).pipe(
       tap((newPostLogin: PostLogin) => this.log(`added utilisateur w/ mail=${newPostLogin.mail}`)),
       catchError(this.handleError<PostLogin>('register'))
