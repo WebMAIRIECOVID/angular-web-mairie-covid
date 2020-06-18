@@ -56,7 +56,7 @@ export class ApiUtilisateursService {
     return this.http.get<any>(this.proxyurl + `${this.apiUrl_Login}` + '?mail=' + mail + '&mdp=' + mdp);
   }
 
-  register(formData:) {
+  register(formData) {
     console.log(JSON.stringify(formData));
     return this.http.post<any>(this.proxyurl + this.apiUrl_Register, JSON.stringify(formData),this.httpOptions);
   }
