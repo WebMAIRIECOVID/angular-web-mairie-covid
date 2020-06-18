@@ -57,7 +57,7 @@ export class ApiUtilisateursService {
     return this.http.get<any>(this.proxyurl + `${this.apiUrl_Login}` + '?mail=' + mail + '&mdp=' + mdp);
   }
 
-  register(formData:PostLogin) {
+  register(formData:PostLogin) : Observable<PostLogin> {
     console.log(JSON.stringify(formData));
     return this.http.post<any>(this.proxyurl + this.apiUrl_Register, JSON.stringify(formData),this.httpOptions).pipe(
       tap((newPostLogin: PostLogin) => this.log(`added utilisateur w/ mail=${newPostLogin.mail}`)),
