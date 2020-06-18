@@ -1,6 +1,6 @@
 
         <div *ngIf="ins" class="form-popup" id="myFormSignUp">
-          <form class="form-container">
+          <form  #myform="ngForm" (ngSubmit)="register(myform)" class="form-container">
             <h1>S'enregistrer</h1>
 
             <label for="pseudo"><b>Pseudo</b></label>

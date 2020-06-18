@@ -18,4 +18,8 @@ export class LoginComponent implements OnInit {
   closeForm() {
     this.co = false;
   }
+  
+  login(form){
+      console.log(form.value);
+  }
 }

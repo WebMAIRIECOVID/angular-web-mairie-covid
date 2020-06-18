@@ -1,6 +1,6 @@
 
         <div *ngIf="co" class="form-popup" id="myFormSignIn">
-          <form class="form-container">
+          <form #myform="ngForm" (ngSubmit)="login(myform)" class="form-container">
             <h1>Connexion</h1>
 
             <label for="email"><b>Email</b></label>

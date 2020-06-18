@@ -18,6 +18,9 @@ export class RegisterComponent implements OnInit {
   closeForm() {
     this.ins = false;
   }
-
+  
+  register(form) {
+      console.log(form.value);
+  }
 
 }
