@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
-    this.apiUtilisateursService.register(JSON.parse(this.formGroup.value)).subscribe((response) => {
+    this.apiUtilisateursService.register(this.formGroup.value).subscribe((response) => {
       console.log(response);
     }, (error) => {
       alert('Erreur API register');
