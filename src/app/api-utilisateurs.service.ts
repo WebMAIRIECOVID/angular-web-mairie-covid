@@ -49,7 +49,7 @@ export class ApiUtilisateursService {
 		xhr.onload=(()=>{
 			if (xhr.status == 201){
 				let ct = xhr.response;
-        console.log(ct)
+        console.log(ct);
 				//resolve(new Utilisateur(ct.pseudo,ct.mail,ct.email));
 			}
 		});
