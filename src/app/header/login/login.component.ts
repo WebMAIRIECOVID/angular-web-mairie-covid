@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +9,15 @@ import { FormControl } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private apiUtilisateursService: ApiUtilisateursService) { }
+  formGroup:FormGroup;
+  constructor(private apiUtilisateursService: ApiUtilisateursService) { 
+    
+  this.formGroup = new FormGroup({
+    mail: new FormControl(''),
+    mdp: new FormControl(''),
+  });
+  }
 
-  mail = new FormControl('');
-  mdp = new FormControl('');
   @Input() co;
 
   ngOnInit() { 
@@ -22,7 +27,14 @@ export class LoginComponent implements OnInit {
     this.co = false;
   }
 
-  login(form){
-      console.log(form.value);
+  onSubmit() {
+    console.warn(this.formGroup.value);
+    console.log(this.formGroup.get('mail').value);
+    console.log(this.formGroup.get('mdp').value);
+    this.apiUtilisateursService.login(this.formGroup.value).subscribe((response) => {
+      console.log(response);
+    }, (error) => {
+      alert('Erreur API selectionner pays');
+    });
   }
 }
