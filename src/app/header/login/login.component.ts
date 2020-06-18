@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() { 
   }
 
-
   closeForm() {
     this.co = false;
   }
