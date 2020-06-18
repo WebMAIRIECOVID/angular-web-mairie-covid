@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private apiUtilisateursService: ApiUtilisateursService) { }
 
+  mail = new FormControl('');
+  mdp = new FormControl('');
   @Input() co;
 
   ngOnInit() { 
@@ -18,7 +21,7 @@ export class LoginComponent implements OnInit {
   closeForm() {
     this.co = false;
   }
-  
+
   login(form){
       console.log(form.value);
   }
