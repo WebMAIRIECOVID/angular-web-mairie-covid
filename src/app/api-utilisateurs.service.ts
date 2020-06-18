@@ -46,15 +46,6 @@ export class ApiUtilisateursService {
   proxyurl = "https://cors-anywhere.herokuapp.com/";
   private apiUrl_Login = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/login.php';
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
-
-  connection (formData: PostLogin): Observable<any> {
-    const headers = new Headers({'Content-Type': 'application/json'});
-    const options = new RequestOptions({ headers: headers });
-
-
-return this.http.post(this.proxyurl + `${this.apiUrl_Login}`, JSON.stringify(formData), options);
-  }
-
   
   login(formData) {
     console.log(formData);
