@@ -31,11 +31,12 @@ import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ApiUtilisateursService } from './api-utilisateurs.service';
 import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './/header/register/register.component';
+import { MessageService } from './message.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent, ChiffresTop5Component, ScrollTopComponent, LoginComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService]
+  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService]
 })
 export class AppModule { }
