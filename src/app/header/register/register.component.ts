@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,8 +9,16 @@ import { ApiUtilisateursService } from '../../api-utilisateurs.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private apiUtilisateursService: ApiUtilisateursService) { }
-
+  formGroup:FormGroup;
+  constructor(private apiUtilisateursService: ApiUtilisateursService) { 
+    
+  this.formGroup = new FormGroup({
+    pseudo: new FormControl(),
+    mail: new FormControl(),
+    mdp: new FormControl(),
+    categorie: new FormControl(),
+  });
+  }
   @Input() ins;
 
   ngOnInit() {
@@ -21,6 +30,16 @@ export class RegisterComponent implements OnInit {
   
   register(form) {
       console.log(form.value);
+  }
+  onSubmit() {
+    /*console.warn(this.formGroup.value);
+    console.log(this.formGroup.get('mail').value);
+    console.log(this.formGroup.get('mdp').value);*/
+    this.apiUtilisateursService.register(this.formGroup.value).subscribe((response) => {
+      console.log(response);
+    }, (error) => {
+      alert('Erreur API register');
+    });
   }
 
 }
