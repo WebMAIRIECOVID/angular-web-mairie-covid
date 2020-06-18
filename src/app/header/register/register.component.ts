@@ -31,10 +31,20 @@ export class RegisterComponent implements OnInit {
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
-    this.apiUtilisateursService.register(this.formGroup.get('pseudo').value, this.formGroup.get('mail').value, this.formGroup.get('mdp').value, this.formGroup.get('categorie').value)
+    this.apiUtilisateursService.register(this.formGroup.get('pseudo').value, this.formGroup.get('mail').value, this.formGroup.get('mdp').value, this.formGroup.get('categorie').value).subscribe((response) => {
+      console.log(response);
+    }, (error) => {
+      alert('Erreur API login');
+    });
+  }
+
+  /*
+
+  onSubmit() {
+    this.apiUtilisateursService.register(this.formGroup.value)
 			.then(function(data){
 				console.log(data);
 			});
-  }
+  }*/ 
 
 }
