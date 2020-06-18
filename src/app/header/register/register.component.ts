@@ -11,13 +11,12 @@ export class RegisterComponent implements OnInit {
 
   formGroup:FormGroup;
   constructor(private apiUtilisateursService: ApiUtilisateursService) { 
-    
-  this.formGroup = new FormGroup({
-    pseudo: new FormControl(),
-    mail: new FormControl(),
-    mdp: new FormControl(),
-    categorie: new FormControl(),
-  });
+    this.formGroup = new FormGroup({
+      pseudo: new FormControl(),
+      mail: new FormControl(),
+      mdp: new FormControl(),
+      categorie: new FormControl(),
+    });
   }
   @Input() ins;
 
@@ -27,10 +26,7 @@ export class RegisterComponent implements OnInit {
   closeForm() {
     this.ins = false;
   }
-  
-  register(form) {
-      console.log(form.value);
-  }
+
   onSubmit() {
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
