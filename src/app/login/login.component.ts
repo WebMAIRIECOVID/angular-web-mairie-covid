@@ -20,15 +20,19 @@ export class LoginComponent implements OnInit {
 
   openFormSignIn() {
     this.apiUtilisateursService.setCo(true);
+    this.co = true;
   }
 
   openFormSignUp() {
     this.apiUtilisateursService.setIns(true);
+    this.ins = true;
   }
 
   closeForm() {
     this.apiUtilisateursService.setCo(false);
+    this.co = false;
     this.apiUtilisateursService.setIns(false);
+    this.ins = false;
   }
 
 
