@@ -41,16 +41,16 @@ export class ApiUtilisateursService {
   register() {
 
 	return	new Promise((resolve,reject)=>{
-		let url=serviceUrl;
 		let method="POST";
 		let contentType="application/json";
 		let xhr= new XMLHttpRequest();
 		xhr.responseType="json";
-		xhr.open(method,url);
+		xhr.open(method,this.apiUrl_Register);
 		xhr.onload=(()=>{
 			if (xhr.status == 201){
 				let ct = xhr.response;
-				resolve(new Contact(ct.id,ct.nom,ct.prenom,ct.email));
+        console.log(ct)
+				//resolve(new Utilisateur(ct.pseudo,ct.mail,ct.email));
 			}
 		});
 		xhr.onerror=(()=>{
