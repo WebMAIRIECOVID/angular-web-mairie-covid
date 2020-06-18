@@ -29,8 +29,8 @@ import { ChiffresTop5Component } from './chiffres-top-5/chiffres-top-5.component
 import { ApiStatistiquesService } from './api-statistiques.service';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { ApiUtilisateursService } from './api-utilisateurs.service';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './header/login/login.component';
+import { RegisterComponent } from './/header/register/register.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule ],
