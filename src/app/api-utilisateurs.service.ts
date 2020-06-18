@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import {RequestOptions, Request, RequestMethod} from '@angular/http';
 import { DatePipe } from '@angular/common';
 import { Utilisateur } from './interfaces/utilisateur';
 import { PostLogin } from './interfaces/post-login';
@@ -47,14 +48,11 @@ export class ApiUtilisateursService {
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
 
   connection (formData: PostLogin): Observable<any> {
-    console.log(formData);
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'mon-jeton'
-    })
-  };
-  return this.http.post<any>(this.proxyurl + `${this.apiUrl_Login}`, formData, httpOptions);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const options = new RequestOptions({ headers: headers });
+
+
+return this.http.post(this.proxyurl + `${this.apiUrl_Login}`, JSON.stringify(formData), options);
   }
 
   
