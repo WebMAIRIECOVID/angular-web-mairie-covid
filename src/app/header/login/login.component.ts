@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   constructor(private apiUtilisateursService: ApiUtilisateursService) { 
     
   this.formGroup = new FormGroup({
-    mail: new FormControl(''),
-    mdp: new FormControl(''),
+    mail: new FormControl(),
+    mdp: new FormControl(),
   });
   }
 
