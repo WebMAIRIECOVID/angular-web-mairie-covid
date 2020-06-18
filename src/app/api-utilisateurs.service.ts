@@ -25,7 +25,11 @@ export class ApiUtilisateursService {
   private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
   
   login(mail,mdp) {
-    return this.http.get<any>(this.proxyurl + `${this.apiUrl_Login}` + '?mail=' + mail + '&mdp=' + mdp);
+    return this.http.get<any>(this.apiUrl_Login + '?mail=' + mail + '&mdp=' + mdp);
+  }
+
+  register(pseudo,mail,mdp,categorie) {
+    return this.http.get<any>(this.apiUrl_Register + '?pseudo=' + pseudo + '&mail=' + mail+ '&mdp=' + mdp+ '&categorie=' + categorie);
   }
 
 /*
@@ -36,9 +40,9 @@ export class ApiUtilisateursService {
       tap((newPostLogin: PostLogin) => this.log(`added utilisateur w/ mail=${newPostLogin.mail}`)),
       catchError(this.handleError<PostLogin>('register'))
     );
-  }*/
+  }
 
-  register() {
+  register(formData) {
 
 	return	new Promise((resolve,reject)=>{
 		let method="POST";
@@ -56,9 +60,9 @@ export class ApiUtilisateursService {
 		xhr.onerror=(()=>{
 			reject(xhr.statusText);
 		});
-		xhr.send(JSON.stringify(this));
+		xhr.send(JSON.stringify(formData));
 	});
-  }
+  }*/
 
   /**
    * Handle Http operation that failed.
