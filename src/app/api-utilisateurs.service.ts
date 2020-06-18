@@ -45,12 +45,12 @@ export class ApiUtilisateursService {
   
   login(formData) {
     // On envoie les données via une requête HTTP POST.
-    return this.http.post(this.proxyurl + `${this.apiUrl_Login}`, formData);
+    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Login}`, formData);
   }
 
   register(formData) {
     // On envoie les données via une requête HTTP POST.
-    return this.http.post(this.proxyurl + `${this.apiUrl_Register}`, formData);
+    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Register}`, formData);
   }
 
 }
