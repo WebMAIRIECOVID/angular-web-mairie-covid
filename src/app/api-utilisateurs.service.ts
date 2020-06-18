@@ -14,35 +14,6 @@ import { MessageService } from './message.service';
 })
 
 export class ApiUtilisateursService {
-/*
-  //constructor( private http: HttpClient, private datepipe: DatePipe) { }
-  
-  loginForm: FormGroup = new FormGroup({
-    pseudo: new FormControl(),
-    mail: new FormControl(),
-    mdp: new FormControl(),
-    categorie:  new FormControl()
-  }, { updateOn: 'submit' });
-  proxyurl = "https://cors-anywhere.herokuapp.com/";
-  private apiUrl_Login = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/login.php';
-  private apiUrl_Register = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/register.php';
-  
-  login() {
-    
-    // On récupère les données du formulaire.
-    const formData = this.loginForm.value;
-    
-    // On envoie les données via une requête HTTP POST.
-    this.http.post(this.proxyurl + `${this.apiUrl_Login}`, formData);
-  }
-  register() {
-    // On récupère les données du formulaire.
-    const formData = this.loginForm.value;
-    
-    // On envoie les données via une requête HTTP POST.
-    this.http.post(this.proxyurl + `${this.apiUrl_Register}`, formData);
-  }
-  */
   constructor( private http: HttpClient, private datepipe: DatePipe,private messageService: MessageService) { }
 
   httpOptions = {
@@ -57,6 +28,7 @@ export class ApiUtilisateursService {
     return this.http.get<any>(this.proxyurl + `${this.apiUrl_Login}` + '?mail=' + mail + '&mdp=' + mdp);
   }
 
+/*
   register(formData:PostLogin) : Observable<PostLogin> {
     console.log(JSON.stringify(formData));
     console.log(this.messageService);
@@ -64,8 +36,29 @@ export class ApiUtilisateursService {
       tap((newPostLogin: PostLogin) => this.log(`added utilisateur w/ mail=${newPostLogin.mail}`)),
       catchError(this.handleError<PostLogin>('register'))
     );
-  }
+  }*/
 
+  register() {
+
+	return	new Promise((resolve,reject)=>{
+		let url=serviceUrl;
+		let method="POST";
+		let contentType="application/json";
+		let xhr= new XMLHttpRequest();
+		xhr.responseType="json";
+		xhr.open(method,url);
+		xhr.onload=(()=>{
+			if (xhr.status == 201){
+				let ct = xhr.response;
+				resolve(new Contact(ct.id,ct.nom,ct.prenom,ct.email));
+			}
+		});
+		xhr.onerror=(()=>{
+			reject(xhr.statusText);
+		});
+		xhr.send(JSON.stringify(this));
+	});
+  }
 
   /**
    * Handle Http operation that failed.
