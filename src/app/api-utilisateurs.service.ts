@@ -50,13 +50,13 @@ export class ApiUtilisateursService {
   login(formData) {
     console.log(formData);
     // On envoie les données via une requête HTTP POST.
-    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Login}`, JSON.parse(formData));
+    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Login}`, JSON.stringify(formData));
   }
 
   register(formData) {
     console.log(formData);
     // On envoie les données via une requête HTTP POST.
-    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Register}`, JSON.parse(formData));
+    return this.http.post<any>(this.proxyurl + `${this.apiUrl_Register}`, JSON.stringify(formData));
   }
 
 }
