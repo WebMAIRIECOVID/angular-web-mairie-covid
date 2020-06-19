@@ -22,7 +22,7 @@ export class ApiUtilisateursService {
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
   private apiUrl_Login = 'https://fiona-pruvost.fr/WebMAIRIECOVID/android_login_api/login.php';
-  private apiUrl_Register = 'https://fiona-pruvost.fr//WebMAIRIECOVID/android_login_api/register.php';
+  private apiUrl_Register = 'https://fiona-pruvost.fr/WebMAIRIECOVID/android_login_api/register.php';
   
   login(mail,mdp) {
     return this.http.get<any>(this.apiUrl_Login + '?mail=' + mail + '&mdp=' + mdp);
