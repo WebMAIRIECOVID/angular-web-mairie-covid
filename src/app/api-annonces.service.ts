@@ -17,8 +17,10 @@ export class ApiAnnoncesService {
   };
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
-  private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesGet.php';
-  private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesPost.php';
+  //private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesGet.php';
+  //private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesPost.php';
+  private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annoncesGet.php';
+  private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~th/android_login_api/annoncesPost.php';
   
   getClassifiedAd() {
     return this.http.get<any>(this.apiUrl_AnnoncesGet);
@@ -27,7 +29,7 @@ export class ApiAnnoncesService {
   addClassifiedAd(formData:Annonce) : Observable<Annonce> {
     console.log(JSON.stringify(formData));
     console.log(this.messageService);
-    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData),
+    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData)
     );
   }
 }
