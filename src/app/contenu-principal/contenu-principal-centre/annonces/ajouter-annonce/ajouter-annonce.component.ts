@@ -24,6 +24,7 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log("Annonce submitted");
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
       console.log(response);
     }, (error) => {
