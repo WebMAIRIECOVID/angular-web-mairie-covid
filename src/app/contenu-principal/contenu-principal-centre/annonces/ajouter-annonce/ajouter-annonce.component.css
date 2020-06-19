@@ -2,3 +2,15 @@
 {
   margin: 1%;
 }
+
+.formulaire
+{
+  padding: 2%;
+  margin-left: 50vw;
+  margin-top: 50vh;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  border: 1px solid #ccc4c4;
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05), 0 0 12px rgba(130,136,140,0.56);
+}
