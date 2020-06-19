@@ -20,7 +20,7 @@ export class ApiAnnoncesService {
   //private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesGet.php';
   //private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesPost.php';
   private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annoncesGet.php';
-  private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~th/android_login_api/annoncesPost.php';
+  private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annoncesPost.php';
   
   getClassifiedAd() {
     return this.http.get<any>(this.apiUrl_AnnoncesGet);
