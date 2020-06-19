@@ -4,7 +4,7 @@ import { Utilisateur } from './interfaces/utilisateur';
 @Injectable()
 export class SessionService {
 
-  mail:tring;
+  mail:String;
   connect:boolean;
 
   constructor() {
