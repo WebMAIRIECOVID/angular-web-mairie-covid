@@ -16,7 +16,7 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
   onSubmit() {
-  {
+
 
   }
 }
