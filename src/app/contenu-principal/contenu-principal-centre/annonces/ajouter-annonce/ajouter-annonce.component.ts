@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ApiAnnoncesService } from '../../../../api-annonces.service';
 
 @Component({
   selector: 'app-ajouter-annonce',
@@ -8,8 +9,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AjouterAnnonceComponent implements OnInit {
 
+  formGroup:FormGroup;
   ajout:boolean;
-  constructor() {
+  constructor(private apiAnnoncesService: ApiAnnoncesService) { 
+    this.formGroup = new FormGroup({
+      pseudo: new FormControl(),
+      mail: new FormControl(),
+      mdp: new FormControl(),
+      categorie: new FormControl(),
+    });
     this.ajout = true;
   }
 
@@ -18,5 +26,13 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
 
+  }
+
+  closeForm() {
+    this.ajout = false;
+  }
+
+  openForm() {
+    this.ajout = true;
   }
 }
