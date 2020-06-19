@@ -1,2 +1,7 @@
 /* Add application styles & imports to this file! *//* Add application styles & imports to this file! */
 @import url('https://unpkg.com/bootstrap/dist/css/bootstrap.min.css');
+
+body {
+  margin: 0; /* pour éviter les marges */
+  padding: ;
+}
