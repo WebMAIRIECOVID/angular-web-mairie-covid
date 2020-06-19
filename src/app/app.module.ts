@@ -32,7 +32,7 @@ import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './/header/register/register.component';
 import { MessageService } from './message.service';
 import { ApiAnnoncesService } from './api-annonces.service';
-import { AjouterAnnonceComponent } from './ajouter-annonce/ajouter-annonce.component';
+import { AjouterAnnonceComponent } from './contenu-principal/contenu-principal-centre/annonces/ajouter-annonce/ajouter-annonce.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
