@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { DatePipe } from '@angular/common';
 import { Annonce } from './interfaces/annonce';
+import { MessageService } from './message.service';
 
 @Injectable()
 export class ApiAnnoncesService {
-  constructor( private http: HttpClient, private datepipe: DatePipe) { }
+  constructor( private http: HttpClient, private datepipe: DatePipe, private messageService: MessageService) { }
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,6 +24,11 @@ export class ApiAnnoncesService {
   }
 
   addClassifiedAd(formData:Annonce) {
-    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData), this.httpOptions);
+    console.log(JSON.stringify(formData));
+    console.log(this.messageService);
+    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData),this.httpOptions).pipe(
+      tap((newPostLogin: PostLogin) => this.log(`added utilisateur w/ mail=${newPostLogin.mail}`)),
+      catchError(this.handleError<PostLogin>('register'))
+    );
   }
 }
