@@ -20,6 +20,7 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   onSubmit() {
