@@ -13,10 +13,8 @@ export class AjouterAnnonceComponent implements OnInit {
   ajout:boolean;
   constructor(private apiAnnoncesService: ApiAnnoncesService) { 
     this.formGroup = new FormGroup({
-      pseudo: new FormControl(),
-      mail: new FormControl(),
-      mdp: new FormControl(),
-      categorie: new FormControl(),
+      texte: new FormControl(),
+      titre: new FormControl(),
     });
     this.ajout = true;
   }
