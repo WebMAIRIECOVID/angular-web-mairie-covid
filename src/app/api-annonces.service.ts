@@ -21,6 +21,6 @@ export class ApiAnnoncesService {
   }
 
   addClassifiedAd(formData:Annonce) {
-    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData),this.httpOptions);
+    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData), this.httpOptions);
   }
 }
