@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { Utilisateur } from './interfaces/utilisateur';
+import { DatePipe } from '@angular/common';
+import { Annonce } from './interfaces/annonces';
 import { PostLogin } from './interfaces/post-login';
 
 @Injectable()
@@ -14,7 +15,7 @@ export class ApiAnnoncesService {
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
   private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesGet.php';
-  private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesPo.php';
+  private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncesPost.php';
   
   login(mail,mdp) {
     return this.http.get<any>(this.apiUrl_Login + '?mail=' + mail + '&mdp=' + mdp);
