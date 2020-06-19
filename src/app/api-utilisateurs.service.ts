@@ -27,12 +27,12 @@ export class ApiUtilisateursService {
   login(mail,mdp) {
     return this.http.get<any>(this.apiUrl_Login + '?mail=' + mail + '&mdp=' + mdp);
   }
-
+/
   register(pseudo,mail,mdp,categorie) {
     return this.http.get<any>(this.apiUrl_Register + '?pseudo=' + pseudo + '&mail=' + mail+ '&mdp=' + mdp+ '&categorie=' + categorie);
-  }
+  }*/
 
-/*
+
   register(formData:PostLogin) : Observable<PostLogin> {
     console.log(JSON.stringify(formData));
     console.log(this.messageService);
@@ -41,7 +41,7 @@ export class ApiUtilisateursService {
       catchError(this.handleError<PostLogin>('register'))
     );
   }
-
+/*
   register(formData) {
 
 	return	new Promise((resolve,reject)=>{
