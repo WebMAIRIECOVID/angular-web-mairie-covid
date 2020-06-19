@@ -6,6 +6,7 @@ export class SessionService {
 
   mail:String;
   connect:boolean;
+  utilisateur:Utilisateur;
 
   constructor() {
     this.mail = "anonyme@gmail.com";
