@@ -33,11 +33,12 @@ import { RegisterComponent } from './/header/register/register.component';
 import { MessageService } from './message.service';
 import { ApiAnnoncesService } from './api-annonces.service';
 import { AjouterAnnonceComponent } from './contenu-principal/contenu-principal-centre/annonces/ajouter-annonce/ajouter-annonce.component';
+import { SessionService } from './session.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, MesuresComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, ApiAnnoncesService]
+  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, ApiAnnoncesService, SessionService]
 })
 export class AppModule { }
