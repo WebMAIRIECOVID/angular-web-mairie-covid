@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
     }, (error) => {
       alert('Erreur API login');
     });
-    this.c = false;
+    this.co = false;
   }
 }
