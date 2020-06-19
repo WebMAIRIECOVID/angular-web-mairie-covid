@@ -4,13 +4,10 @@ import { Utilisateur } from './interfaces/utilisateur';
 @Injectable()
 export class SessionService {
 
-  mail:String;
-  connect:boolean;
+  id:number;
   utilisateur:Utilisateur;
 
   constructor() {
-    this.mail = "anonyme@gmail.com";
-    this.connect = false;
   }
 
 }
