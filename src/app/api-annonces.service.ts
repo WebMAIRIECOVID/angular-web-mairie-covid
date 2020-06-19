@@ -6,6 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import { Annonce } from './interfaces/annonce';
 import { MessageService } from './message.service';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiAnnoncesService {
@@ -23,12 +24,10 @@ export class ApiAnnoncesService {
     return this.http.get<any>(this.apiUrl_AnnoncesGet);
   }
 
-  addClassifiedAd(formData:Annonce) {
+  addClassifiedAd(formData:Annonce) : Observable<Annonce> {
     console.log(JSON.stringify(formData));
     console.log(this.messageService);
-    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData),this.httpOptions).pipe(
-      tap((newPostLogin: PostLogin) => this.log(`added utilisateur w/ mail=${newPostLogin.mail}`)),
-      catchError(this.handleError<PostLogin>('register'))
+    return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData),
     );
   }
 }
