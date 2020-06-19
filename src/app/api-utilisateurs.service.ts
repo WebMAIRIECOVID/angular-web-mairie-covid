@@ -27,11 +27,6 @@ export class ApiUtilisateursService {
   login(mail,mdp) {
     return this.http.get<any>(this.apiUrl_Login + '?mail=' + mail + '&mdp=' + mdp);
   }
-/*
-  register(pseudo,mail,mdp,categorie) {
-    return this.http.get<any>(this.apiUrl_Register + '?pseudo=' + pseudo + '&mail=' + mail+ '&mdp=' + mdp+ '&categorie=' + categorie);
-  }*/
-
 
   register(formData:PostLogin) : Observable<PostLogin> {
     console.log(JSON.stringify(formData));
@@ -41,29 +36,7 @@ export class ApiUtilisateursService {
       catchError(this.handleError<PostLogin>('register'))
     );
   }
-/*
-  register(formData) {
-
-	return	new Promise((resolve,reject)=>{
-		let method="POST";
-		let contentType="application/json";
-		let xhr= new XMLHttpRequest();
-		xhr.responseType="json";
-		xhr.open(method,this.apiUrl_Register);
-		xhr.onload=(()=>{
-			if (xhr.status == 201){
-				let ct = xhr.response;
-        console.log(ct);
-				//resolve(new Utilisateur(ct.pseudo,ct.mail,ct.email));
-			}
-		});
-		xhr.onerror=(()=>{
-			reject(xhr.statusText);
-		});
-		xhr.send(JSON.stringify(formData));
-	});
-  }*/
-
+  
   /**
    * Handle Http operation that failed.
    * Let the app continue.
