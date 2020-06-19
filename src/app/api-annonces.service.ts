@@ -8,7 +8,10 @@ import { DatePipe } from '@angular/common';
 import { Annonce } from './interfaces/annonce';
 import { MessageService } from './message.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class ApiAnnoncesService {
   constructor( private http: HttpClient, private datepipe: DatePipe, private messageService: MessageService) { }
 
