@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
+import { SessionService } from '../../session.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   formGroup:FormGroup;
-  constructor(private apiUtilisateursService: ApiUtilisateursService) { 
+  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService) { 
     
   this.formGroup = new FormGroup({
     mail: new FormControl(),
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
     this.apiUtilisateursService.login(this.formGroup.get('mail').value, this.formGroup.get('mdp').value).subscribe((response) => {
+      this.sessionService.setSession(newId,newUtilisateur);
       console.log(response);
     }, (error) => {
       alert('Erreur API login');
