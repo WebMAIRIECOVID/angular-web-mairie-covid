@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
     }, (error) => {
       alert('Erreur API login');
     });
+    this.ins = false;
   }
 
   /*
