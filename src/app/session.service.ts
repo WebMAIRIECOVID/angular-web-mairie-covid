@@ -10,4 +10,10 @@ export class SessionService {
   constructor() {
   }
 
+  setSession(newId,newUtilisateur)
+  {
+    this.id = newId;
+    this.utilisateur = newUtilisateur;
+  }
+
 }
