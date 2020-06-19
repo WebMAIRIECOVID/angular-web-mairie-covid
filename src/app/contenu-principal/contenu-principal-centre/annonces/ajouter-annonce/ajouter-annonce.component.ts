@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterAnnonceComponent implements OnInit {
 
-  constructor() { }
+  ajout:boolean;
+  constructor() {
+    this.ajout = true;
+  }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+  {
+
+  }
 }
