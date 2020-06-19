@@ -2,48 +2,17 @@
 {
   margin: 1%;
 }
-ul {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-bottom:2px
-}
-
-.auth, li
-{
-  width: 100%;
-}
-
-li
-{
-  margin:1px;
-}
-
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
 
 .form-popup {
   position: fixed; /* postulat de départ */
   left: 50%; /* à 50%/50% du parent référent */
-  transform: translateX(-50%); /* décalage de 50% de sa propre taille */
+  top:50%;
+  transform: translate(-50%,-50%); /* décalage de 50% de sa propre taille */
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
 
 .form-container {
-  max-width: 300px;
   padding: 10px;
   background-color: white;
 }
