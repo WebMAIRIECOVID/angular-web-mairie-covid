@@ -20,7 +20,7 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.ajout = false;
   }
 
   onSubmit() {
