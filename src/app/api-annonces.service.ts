@@ -31,7 +31,7 @@ export class ApiAnnoncesService {
     console.log(this.messageService);
     return this.http.post<any>(this.apiUrl_AnnoncesPost, JSON.stringify(formData),this.httpOptions).pipe(
       tap((newAnnonce: Annonce) => this.log(`added publication w/ titre=${newAnnonce.titre}`)),
-      catchError(this.handleError<Annonce>('register'))
+      catchError(this.handleError<Annonce>('poster'))
     );
   }
 
