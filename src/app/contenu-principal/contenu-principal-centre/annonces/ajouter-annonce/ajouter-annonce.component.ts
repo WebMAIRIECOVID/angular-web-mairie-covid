@@ -24,7 +24,12 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
+      console.log(response);
+    }, (error) => {
+      alert('Erreur API login');
+    });
+    this.ajout = false;
   }
 
   closeForm() {
