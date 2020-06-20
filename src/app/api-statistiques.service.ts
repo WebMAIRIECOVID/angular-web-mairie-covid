@@ -39,6 +39,6 @@ export class ApiStatistiquesService {
 
   public getInformationsDep() {
     let date: Date = new Date();
-    return this.http.get<ResDept[]>(this.proxyurl + `${this.apiUrl4}${this.datepipe.transform(date, 'yyyy-MM-dd')}` + '.json');
+    return this.http.get<ResDept[]>(`${this.apiUrl4}${this.datepipe.transform(date, 'yyyy-MM-dd')}` + '.json');
   }
 }
