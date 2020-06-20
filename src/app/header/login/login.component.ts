@@ -43,5 +43,6 @@ export class LoginComponent implements OnInit {
     });
     this.co = false;
     this.sessionService.setSession(this.id,this.session);
+          console.log(this.id);
   }
 }
