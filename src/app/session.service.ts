@@ -13,7 +13,7 @@ export class SessionService {
   setSession(newId,newUtilisateur)
   {
     SessionService.id = newId;
-    console.log(SessionService.id);
+    console.log(this.id);
     SessionService.utilisateur = newUtilisateur;
   }
 
