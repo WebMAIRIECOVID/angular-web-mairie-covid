@@ -19,7 +19,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
-      auteur: new FormControl(this.sessionService.getId()),
+      auteur: this.sessionService.getId(),
     });
     this.ajout = true;
   }
