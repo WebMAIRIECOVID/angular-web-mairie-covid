@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiAnnoncesService } from '../../../../api-annonces.service';
-import { SessionService } from '../../../../session.service';
 import { LoginComponent } from '../../../../header/login/login.component';
+import { SessionService } from '../../../../session.service';
+
 
 @Component({
   selector: 'app-ajouter-annonce',
@@ -13,10 +14,9 @@ export class AjouterAnnonceComponent implements OnInit {
 
   formGroup:FormGroup;
   ajout:boolean;
-  service = LoginComponent.sessionService;
-  id:number = this.service.getId();
+  id:number;
 
-  constructor(private apiAnnoncesService: ApiAnnoncesService) { 
+  constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService) { 
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
@@ -31,9 +31,9 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    console.log(this.id);
+    console.log(this.sessionService.getId());
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
-          console.log(this.id);
+          console.log(this.sessionService.getId());
 
       console.log(response);
     }, (error) => {
