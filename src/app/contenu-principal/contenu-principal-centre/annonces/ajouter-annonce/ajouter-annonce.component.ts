@@ -12,7 +12,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   formGroup:FormGroup;
   ajout:boolean;
-  service:SessionService;
+  service = new SessionService;
   id:number = this.service.getId();
 
   constructor(private apiAnnoncesService: ApiAnnoncesService) { 
