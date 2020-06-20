@@ -41,4 +41,6 @@ export class ApiStatistiquesService {
     let date: Date = new Date();
     return this.http.get<ResDept[]>(this.proxyurl + `${this.apiUrl4}${this.datepipe.transform(date.setDate(date.getDate() - 1), 'yyyy-MM-dd')}` + '.json');
   }
+
+  private apiUrl5 = 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/aides/aides-maille-regional-minify.json';
 }
