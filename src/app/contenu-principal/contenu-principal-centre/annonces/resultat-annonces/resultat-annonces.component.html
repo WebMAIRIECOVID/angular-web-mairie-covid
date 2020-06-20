@@ -1,6 +1,4 @@
-
-               
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
   <div *ngFor="let item of items | paginate: { itemsPerPage: 10, currentPage: p }" class="card mb-3">
   <div class="row no-gutters">
