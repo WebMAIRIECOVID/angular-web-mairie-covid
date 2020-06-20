@@ -4,6 +4,7 @@ import { ApiAnnoncesService } from '../../../../api-annonces.service';
 import { LoginComponent } from '../../../../header/login/login.component';
 import { SessionService } from '../../../../session.service';
 import { Annonce } from '../../../../interfaces/annonce';
+import { Globals } from '../../../../variablesGlobales/globals';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class AjouterAnnonceComponent implements OnInit {
   ajout:boolean;
   annonce:Annonce;
 
-  constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService) { 
+  constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService, public globals: Globals) { 
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
