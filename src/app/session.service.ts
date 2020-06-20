@@ -12,9 +12,9 @@ export class SessionService {
 
   setSession(newId,newUtilisateur)
   {
-    SessionService.id = newId;
+    this.id = newId;
     console.log(this.id);
-    SessionService.utilisateur = newUtilisateur;
+    this.utilisateur = newUtilisateur;
   }
 
 }
