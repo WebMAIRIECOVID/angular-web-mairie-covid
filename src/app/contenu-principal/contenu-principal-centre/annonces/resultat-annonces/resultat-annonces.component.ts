@@ -9,7 +9,7 @@ import { ApiAnnoncesService } from '../../../../api-annonces.service';
 })
 export class ResultatAnnoncesComponent implements OnInit {
 
-  items = ITEMSEXANNONCES;
+  items:any;
   config: any;
   collection = { count: 60, data: [] };
 
@@ -40,8 +40,9 @@ export class ResultatAnnoncesComponent implements OnInit {
     
     this.apiAnnoncesService.getClassifiedAd().subscribe((response) => {
       console.log(response);
+      this.items = response["annonces"];
     }, (error) => {
-      alert('Erreur API login');
+      alert('Erreur API get annonces');
     });
   }
   
