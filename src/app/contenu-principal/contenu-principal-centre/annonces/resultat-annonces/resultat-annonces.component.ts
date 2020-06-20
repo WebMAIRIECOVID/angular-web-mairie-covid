@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ITEMSEXANNONCES } from '../../../../constantes/items-exemples-annonces';
 import { ApiAnnoncesService } from '../../../../api-annonces.service';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
   selector: 'app-resultat-annonces',
@@ -10,31 +11,16 @@ import { ApiAnnoncesService } from '../../../../api-annonces.service';
 export class ResultatAnnoncesComponent implements OnInit {
 
   items:any;
-  config: any;
-  collection = { count: 60, data: [] };
+    p: number = 1;
+    collection: any[];  
+  @Input() id: string;
+  @Input() maxSize: number;
+  @Output() pageChange: EventEmitter<number>;
+  @Output() pageBoundsCorrection: EventEmitter<number>;
 
   constructor(private apiAnnoncesService: ApiAnnoncesService) {
-
-    //Create dummy data
-    for (var i = 0; i < this.collection.count; i++) {
-      this.collection.data.push(
-        {
-          id: i + 1,
-          value: "items number " + (i + 1)
-        }
-      );
-    }
-
-    this.config = {
-      itemsPerPage: 5,
-      currentPage: 1,
-      totalItems: this.collection.count
-    };
   }
 
-  pageChanged(event){
-    this.config.currentPage = event;
-  }
 
   ngOnInit() {
     
@@ -44,6 +30,11 @@ export class ResultatAnnoncesComponent implements OnInit {
     }, (error) => {
       alert('Erreur API get annonces');
     });
+    
+    for (let i = 1; i < this.items.length; i++) {
+      console.log(this.items[i]);
+      this.collection.push(this.items[i]);
+    }
   }
   
 
