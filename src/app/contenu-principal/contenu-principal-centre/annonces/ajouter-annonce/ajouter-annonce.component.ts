@@ -13,12 +13,13 @@ export class AjouterAnnonceComponent implements OnInit {
   formGroup:FormGroup;
   ajout:boolean;
   service = new SessionService();
+  id:number = this.service.getId();
 
   constructor(private apiAnnoncesService: ApiAnnoncesService) { 
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
-      //auteur: new FormControl(id),
+      auteur: new FormControl(this.id),
     });
     this.ajout = true;
   }
@@ -29,7 +30,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    //console.log(id);
+    console.log(this.id);
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
       console.log(response);
     }, (error) => {
