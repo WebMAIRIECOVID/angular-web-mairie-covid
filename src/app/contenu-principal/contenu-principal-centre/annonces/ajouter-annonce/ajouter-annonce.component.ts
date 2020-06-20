@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiAnnoncesService } from '../../../../api-annonces.service';
 import { SessionService } from '../../../../session.service';
+import { LoginComponent } from '../../../../header/login/login.component';
 
 @Component({
   selector: 'app-ajouter-annonce',
@@ -12,7 +13,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   formGroup:FormGroup;
   ajout:boolean;
-  service = new SessionService;
+  service = LoginComponent.sessionService;
   id:number = this.service.getId();
 
   constructor(private apiAnnoncesService: ApiAnnoncesService) { 
@@ -32,6 +33,8 @@ export class AjouterAnnonceComponent implements OnInit {
     console.log("Annonce submitted");
     console.log(this.id);
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
+          console.log(this.id);
+
       console.log(response);
     }, (error) => {
       alert('Erreur API login');
