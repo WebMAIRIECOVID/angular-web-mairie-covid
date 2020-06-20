@@ -30,10 +30,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    console.log(this.sessionService.getId());
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
-          console.log(this.sessionService.getId());
-
       console.log(response);
     }, (error) => {
       alert('Erreur API login');
