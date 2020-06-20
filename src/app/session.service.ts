@@ -15,6 +15,7 @@ export class SessionService {
     this.id = newId;
     console.log(this.id);
     this.utilisateur = newUtilisateur;
+    console.log(this.utilisateur);
   }
 
   getId()

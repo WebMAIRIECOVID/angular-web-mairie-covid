@@ -37,12 +37,11 @@ export class LoginComponent implements OnInit {
     console.log(this.formGroup.get('mdp').value);*/
     this.apiUtilisateursService.login(this.formGroup.get('mail').value, this.formGroup.get('mdp').value).subscribe((response) => {
       this.id = response['id'];
-      console.log(this.id);
       this.session = response['user'];
+      this.sessionService.setSession(this.id,this.session);
     }, (error) => {
       alert('Erreur API login');
     });
     this.co = false;
-    this.sessionService.setSession(this.id,this.session);
   }
 }
