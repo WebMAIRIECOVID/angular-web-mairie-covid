@@ -2,8 +2,7 @@
 
 <p>{{resultat[0]['date']}}</p>
 <div>
-  [{"deces":102,"reanimation":0,"hospitalises":63,"gueris":411,"date":"2020-06-19","code":"DEP-01","nom":"Ain","indicateurSynthese":"vert","nouvellesHospitalisations":0,"nouvellesReanimations":0},
-  <p*ngFor="let departement of resultat | paginate: { itemsPerPage: 10, currentPage: p }">{{departement.nom}} : 
+  <p *ngFor="let departement of resultat | paginate: { itemsPerPage: 10, currentPage: p }">{{departement.nom}} : 
     
     <br>
     décès : {{departement.nom}}, 
