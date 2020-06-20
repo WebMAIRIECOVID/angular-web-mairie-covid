@@ -4,8 +4,8 @@ import { Utilisateur } from './interfaces/utilisateur';
 @Injectable()
 export class SessionService {
 
-  public static id:number;
-  public static utilisateur:Utilisateur;
+  id:number;
+  utilisateur:Utilisateur;
 
   constructor() {
   }
