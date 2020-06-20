@@ -17,4 +17,9 @@ export class SessionService {
     this.utilisateur = newUtilisateur;
   }
 
+  getId()
+  {
+    return this.id;
+  }
+
 }

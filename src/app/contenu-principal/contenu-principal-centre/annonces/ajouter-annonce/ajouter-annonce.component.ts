@@ -12,6 +12,8 @@ export class AjouterAnnonceComponent implements OnInit {
 
   formGroup:FormGroup;
   ajout:boolean;
+  SessionService service = new SessionService();
+
   constructor(private apiAnnoncesService: ApiAnnoncesService) { 
     this.formGroup = new FormGroup({
       texte: new FormControl(),
