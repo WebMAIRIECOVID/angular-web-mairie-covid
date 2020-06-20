@@ -4,16 +4,16 @@ import { Utilisateur } from './interfaces/utilisateur';
 @Injectable()
 export class SessionService {
 
-  id:number;
-  utilisateur:Utilisateur;
+  public static id:number;
+  public static utilisateur:Utilisateur;
 
   constructor() {
   }
 
   setSession(newId,newUtilisateur)
   {
-    this.id = newId;
-    this.utilisateur = newUtilisateur;
+    SessionService.id = newId;
+    SessionService.utilisateur = newUtilisateur;
   }
 
 }

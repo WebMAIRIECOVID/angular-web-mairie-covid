@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiAnnoncesService } from '../../../../api-annonces.service';
 import { SessionService } from '../../../../session.service';
-import { id } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-ajouter-annonce',
@@ -17,7 +16,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
-      auteur: new FormControl(id),
+      auteur: new FormControl(SessionService.i),
     });
     this.ajout = true;
   }
@@ -28,7 +27,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    console.log(id);
+    console.log();
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
       console.log(response);
     }, (error) => {
