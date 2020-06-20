@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiAnnoncesService } from '../../../../api-annonces.service';
+import { SessionService } from '../../../../session.service';
+import { id } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-ajouter-annonce',
@@ -15,6 +17,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
+      auteur: new FormControl(id),
     });
     this.ajout = true;
   }
