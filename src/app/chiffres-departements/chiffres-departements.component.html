@@ -5,7 +5,7 @@
   <p *ngFor="let departement of resultat | paginate: { itemsPerPage: 10, currentPage: p }">{{departement.nom}} : 
     
     <br>
-    décès : {{departement.nom}}, 
+    décès : {{departement.deces}}, 
     reanimation : {{departement.reanimation}},
     hospitalises : {{departement.hospitalises}},
     gueris : {{departement.gueris}},
