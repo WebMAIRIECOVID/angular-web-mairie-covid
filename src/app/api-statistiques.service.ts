@@ -11,10 +11,8 @@ import { DatePipe } from '@angular/common';
 
 export class ApiStatistiquesService {
 
-  date: Date;
 
   constructor( private http: HttpClient, private datepipe: DatePipe) {
-    this.date = new Date();
   }
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -30,15 +28,17 @@ export class ApiStatistiquesService {
     return this.http.get<Pays[]>(this.proxyurl + `${this.apiUrl2}`);
   }
 
-  private apiUrl3 = 'https://covid19-api.org/api/status?date='+this.datepipe.transform(this.date, 'yyyy-MM-dd'); 
+  private apiUrl3 = 'https://covid19-api.org/api/status?date='; 
 
   public getTotalPays() {
-    return this.http.get<Resultat[]>(this.proxyurl + `${this.apiUrl3}`);
+    let date: Date = new Date();
+    return this.http.get<Resultat[]>(this.proxyurl + `${this.apiUrl3}${this.datepipe.transform(date, 'yyyy-MM-dd')}`);
   }
 
-  private apiUrl4 = 'https://dashboard.covid19.data.gouv.fr/data/date-'+this.datepipe.transform(this.date, 'yyyy-MM-dd')+'.json'
+  private apiUrl4 = 'https://dashboard.covid19.data.gouv.fr/data/date-';
 
   public getInformationsDep() {
-    return this.http.get<ResDept[]>(this.proxyurl + `${this.apiUrl3}`);
+    let date: Date = new Date();
+    return this.http.get<ResDept[]>(this.proxyurl + `${this.apiUrl4}${this.datepipe.transform(date, 'yyyy-MM-dd')}` + '.json');
   }
 }
