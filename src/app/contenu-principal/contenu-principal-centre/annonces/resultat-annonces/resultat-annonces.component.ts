@@ -11,12 +11,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 export class ResultatAnnoncesComponent implements OnInit {
 
   items:any;
-    p: number = 1;
-    collection: any[];  
-  @Input() id: string;
-  @Input() maxSize: number;
-  @Output() pageChange: EventEmitter<number>;
-  @Output() pageBoundsCorrection: EventEmitter<number>;
+  p: number = 1;
 
   constructor(private apiAnnoncesService: ApiAnnoncesService) {
   }
@@ -31,10 +26,6 @@ export class ResultatAnnoncesComponent implements OnInit {
       alert('Erreur API get annonces');
     });
     
-    for (let i = 1; i < this.items.length; i++) {
-      console.log(this.items[i]);
-      this.collection.push(this.items[i]);
-    }
   }
   
 

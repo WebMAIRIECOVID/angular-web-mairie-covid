@@ -1,1 +1,5 @@
-test
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<div *ngFor="let item of resultat | paginate: { itemsPerPage: 10, currentPage: p }">
+  
+</div>
