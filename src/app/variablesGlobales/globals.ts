@@ -6,5 +6,5 @@ import { Utilisateur } from './../interfaces/utilisateur'
 export class Globals {
   role: string = 'test';
   id: number;
-  utilisateur:Utilisateur;
+  session:Utilisateur;
 }

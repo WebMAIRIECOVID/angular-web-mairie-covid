@@ -3,6 +3,7 @@ import { ApiUtilisateursService } from '../../api-utilisateurs.service';
 import { SessionService } from '../../session.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Utilisateur } from '../../interfaces/utilisateur';
+import { Globals } from '../../variablesGlobales/globals';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   formGroup:FormGroup;
   id:number;
   session:Utilisateur;
-  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService) { 
+  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
     
     this.formGroup = new FormGroup({
       mail: new FormControl(),
@@ -38,10 +39,15 @@ export class LoginComponent implements OnInit {
     this.apiUtilisateursService.login(this.formGroup.get('mail').value, this.formGroup.get('mdp').value).subscribe((response) => {
       this.id = response['id'];
       this.session = response['user'];
-      this.sessionService.setSession(this.id,this.session);
+      this.changedSession(this.id,this.session);
     }, (error) => {
       alert('Erreur API login');
     });
     this.co = false;
+  }
+  
+  private changedSession(id, session) {
+    this.globals.id = id;
+    this.globals.session = session;
   }
 }
