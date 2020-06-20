@@ -14,6 +14,7 @@ export class SessionService {
   {
     this.id = newId;
     this.utilisateur = newUtilisateur;
+    console.log("Connected as", this.id, this.utilisateur);
   }
 
   getId()
