@@ -1,5 +1,18 @@
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
-<div *ngFor="let item of resultat | paginate: { itemsPerPage: 10, currentPage: p }">
-  
+<p>{{resultat[0]['date']}}</p>
+<div>
+  [{"deces":102,"reanimation":0,"hospitalises":63,"gueris":411,"date":"2020-06-19","code":"DEP-01","nom":"Ain","indicateurSynthese":"vert","nouvellesHospitalisations":0,"nouvellesReanimations":0},
+  <p*ngFor="let departement of resultat | paginate: { itemsPerPage: 10, currentPage: p }">{{departement.nom}} : 
+    
+    <br>
+    décès : {{departement.nom}}, 
+    reanimation : {{departement.reanimation}},
+    hospitalises : {{departement.hospitalises}},
+    gueris : {{departement.gueris}},
+    couleur : {{departement.indicateurSynthese}},
+    nouvellesHospitalisations : {{departement.nouvellesHospitalisations}},
+    nouvellesReanimations : {{departement.nouvellesReanimations}}
+
+  </p>
 </div>
