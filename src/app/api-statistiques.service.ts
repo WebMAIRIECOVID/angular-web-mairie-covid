@@ -39,6 +39,10 @@ export class ApiStatistiquesService {
 
   public getInformationsDep() {
     let date: Date = new Date();
+    
+var dateTime = date.getTime()-1;
+ 
+var endDate = new Date(dateTime);
     return this.http.get<ResDept[]>(`${this.apiUrl4}${this.datepipe.transform(date, 'yyyy-MM-dd')}` + '.json');
   }
 }
