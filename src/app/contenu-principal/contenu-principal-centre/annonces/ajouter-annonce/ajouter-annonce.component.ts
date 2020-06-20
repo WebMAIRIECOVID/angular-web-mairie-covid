@@ -16,7 +16,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
-      auteur: new FormControl(SessionService.id),
+      auteur: new FormControl(this.id),
     });
     this.ajout = true;
   }
@@ -27,7 +27,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    console.log(SessionService.id);
+    console.log(this.id);
     this.apiAnnoncesService.addClassifiedAd(this.formGroup.value).subscribe((response) => {
       console.log(response);
     }, (error) => {
