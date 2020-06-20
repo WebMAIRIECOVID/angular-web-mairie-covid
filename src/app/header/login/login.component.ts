@@ -16,10 +16,10 @@ export class LoginComponent implements OnInit {
   session:Utilisateur;
   constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService) { 
     
-  this.formGroup = new FormGroup({
-    mail: new FormControl(),
-    mdp: new FormControl(),
-  });
+    this.formGroup = new FormGroup({
+      mail: new FormControl(),
+      mdp: new FormControl(),
+    });
   }
 
   @Input() co;
