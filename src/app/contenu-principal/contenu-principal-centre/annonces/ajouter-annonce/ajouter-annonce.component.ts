@@ -14,13 +14,12 @@ export class AjouterAnnonceComponent implements OnInit {
 
   formGroup:FormGroup;
   ajout:boolean;
-  id:number;
 
   constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService) { 
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
-      auteur: new FormControl(this.id),
+      auteur: new FormControl(this.sessionService.getId()),
     });
     this.ajout = true;
   }
