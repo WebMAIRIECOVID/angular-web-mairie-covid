@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITEMSEXANNONCES } from '../../../../constantes/items-exemples-annonces';
+import { ApiAnnoncesService } from '../../../../api-annonces.service';
 
 @Component({
   selector: 'app-resultat-annonces',
@@ -12,7 +13,7 @@ export class ResultatAnnoncesComponent implements OnInit {
   config: any;
   collection = { count: 60, data: [] };
 
-  constructor() {
+  constructor(private apiAnnoncesService: ApiAnnoncesService) {
 
     //Create dummy data
     for (var i = 0; i < this.collection.count; i++) {
@@ -34,7 +35,14 @@ export class ResultatAnnoncesComponent implements OnInit {
   pageChanged(event){
     this.config.currentPage = event;
   }
+
   ngOnInit() {
+    
+    this.apiAnnoncesService.getClassifiedAd().subscribe((response) => {
+      console.log(response);
+    }, (error) => {
+      alert('Erreur API login');
+    });
   }
   
 
