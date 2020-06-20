@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiStatistiquesService } from '../api-statistiques.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ResDept } from '../interfaces/resultDepartement';
 import { ElementRef} from '@angular/core';
 
 @Component({
@@ -10,11 +11,13 @@ import { ElementRef} from '@angular/core';
 })
 export class ChiffresDepartementsComponent implements OnInit {
 
+  resultat:ResDept;
   constructor(private apiStatistiquesService: ApiStatistiquesService, private el:ElementRef) { }
 
   ngOnInit() {
       this.apiStatistiquesService.getInformationsDep().subscribe((response) => {
-        
+        this.resultat = response;
+        console.log(response);
       });
   }
 

@@ -1,7 +1,12 @@
-export interface Resultat {
-  country: string;
-  last_update: string;
-  cases: number;
-  deaths: number;
-  recovered: number;
+export interface ResDept {
+  deces: number;
+  reanimation: number;
+  hospitalises: number;
+  gueris: number;
+  date: string;
+  code: string;
+  nom: string;
+  indicateurSynthese: string;
+  nouvellesHospitalisations: number;
+  nouvellesReanimations: number;
 }

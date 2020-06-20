@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Resultat } from './interfaces/chiffres-resultat';
 import { Pays } from './interfaces/pays';
+import { ResDept } from './interfaces/resultDepartement';
 import { DatePipe } from '@angular/common';
 
 @Injectable({
@@ -38,6 +39,6 @@ export class ApiStatistiquesService {
   private apiUrl4 = 'https://dashboard.covid19.data.gouv.fr/data/date-'+this.datepipe.transform(this.date, 'yyyy-MM-dd')+'.json'
 
   public getInformationsDep() {
-    return this.http.get<Resultat[]>(this.proxyurl + `${this.apiUrl3}`);
+    return this.http.get<ResDept[]>(this.proxyurl + `${this.apiUrl3}`);
   }
 }
