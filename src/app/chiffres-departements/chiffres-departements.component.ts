@@ -11,7 +11,7 @@ import { ElementRef} from '@angular/core';
 })
 export class ChiffresDepartementsComponent implements OnInit {
 
-  resultat:ResDept;
+  resultat:ResDept[];
   constructor(private apiStatistiquesService: ApiStatistiquesService, private el:ElementRef) { }
 
   ngOnInit() {
