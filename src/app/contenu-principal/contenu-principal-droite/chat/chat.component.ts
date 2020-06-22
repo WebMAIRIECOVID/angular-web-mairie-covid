@@ -26,19 +26,14 @@ export class ChatComponent implements OnInit {
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
-    this.apiUtilisateursService.login(this.formGroup.get('mail').value, this.formGroup.get('mdp').value).subscribe((response) => {
+    /*this.apiUtilisateursService.login(this.formGroup.get('mail').value, this.formGroup.get('mdp').value).subscribe((response) => {
       this.id = response['id'];
       this.session = response['user'];
       this.changedSession(this.id,this.session);
     }, (error) => {
       alert('Erreur API login');
     });
-    this.co = false;
-  }
-  
-  private changedSession(id, session) {
-    this.globals.id = id;
-    this.globals.session = session;
+    this.co = false;*/
   }
 
 }
