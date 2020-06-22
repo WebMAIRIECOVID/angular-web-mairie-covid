@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Globals } from '../../../variablesGlobales/globals';
+import { ApiChatService } from '../../../api-chat.service';
+
 
 @Component({
   selector: 'app-chat',
@@ -11,7 +13,7 @@ export class ChatComponent implements OnInit {
 
   formGroup:FormGroup;
 
-  constructor(public globals: Globals) {
+  constructor(private apiChatService: ApiChatService, public globals: Globals) {
     this.formGroup = new FormGroup({
       message: new FormControl(),
     });
@@ -30,13 +32,11 @@ export class ChatComponent implements OnInit {
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
-    /*this.apiUtilisateursService.login(this.formGroup.get('mail').value, this.formGroup.get('mdp').value).subscribe((response) => {
-      this.id = response['id'];
-      this.session = response['user'];
-      this.changedSession(this.id,this.session);
+    this.apiChatService.addChat(this.formGroup.value).subscribe((response) => {
+      console.log(response);
     }, (error) => {
       alert('Erreur API login');
-    });*/
+    });
     this.chat = false;
   }
 
