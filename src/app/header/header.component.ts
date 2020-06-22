@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUtilisateursService } from '../api-utilisateurs.service';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
