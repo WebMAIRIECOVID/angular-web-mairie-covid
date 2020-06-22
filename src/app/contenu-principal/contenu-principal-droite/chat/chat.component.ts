@@ -11,7 +11,11 @@ export class ChatComponent implements OnInit {
 
   formGroup:FormGroup;
 
-  constructor(public globals: Globals) { }
+  constructor(public globals: Globals) {
+    this.formGroup = new FormGroup({
+      message: new FormControl(),
+    });
+  }
 
   @Input() chat;
 
