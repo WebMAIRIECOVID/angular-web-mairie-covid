@@ -5,7 +5,7 @@
   font-weight: bold;
 }
 
-.popup {
+#popup {
   color: #fff;
   background-color: #17a2b8;
   position: relative;
@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 
-.popup .popuptext {
+#popup .popuptext {
   visibility: hidden;
   width: 160px;
   background-color: #555;
@@ -28,7 +28,7 @@
   margin-left: -80px;
 }
 
-.popup .popuptext::after {
+#popup .popuptext::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -39,7 +39,7 @@
   border-color: #555 transparent transparent transparent;
 }
 
-.popup .show {
+#popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
