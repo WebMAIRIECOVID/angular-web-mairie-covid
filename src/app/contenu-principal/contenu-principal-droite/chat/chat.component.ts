@@ -31,7 +31,12 @@ export class ChatComponent implements OnInit {
   }
 
   openChat() {
-    this.chat = true;
+    if(this.globals.id){
+      this.chat = true;
+    }
+    else {
+      this.question();
+    }
   }
 
   closeChat() {
@@ -54,5 +59,5 @@ export class ChatComponent implements OnInit {
     });
     this.chat = false;
   }
-  
+
 }
