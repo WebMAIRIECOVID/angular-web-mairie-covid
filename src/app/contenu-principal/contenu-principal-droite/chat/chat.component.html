@@ -1,4 +1,4 @@
-<div *ngIf="co" class="form-popup" id="myFormSignIn">
+<div *ngIf="chat" class="form-popup" id="myFormSignIn">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
     <h1>Discussion instantanée</h1>
 
@@ -7,6 +7,6 @@
 
 
     <button type="submit" class="btn">Envoyer</button>
-    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+    <button type="button" class="btn cancel" (click)="closeChat()">Fermer</button>
   </form>
 </div> 
