@@ -16,8 +16,6 @@ export class HeaderComponent implements OnInit {
   ins: boolean;
 
   ngOnInit() {
-    this.co = false;
-    this.ins = false;
   }
 
   openFormSignIn() {
