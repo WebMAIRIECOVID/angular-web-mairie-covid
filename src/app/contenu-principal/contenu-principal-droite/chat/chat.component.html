@@ -1,14 +1,11 @@
 <div *ngIf="chat" class="form-popup" id="myFormSignIn">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
-    <h1>Connexion</h1>
+    <h1>Discussion instantanée</h1>
 
-    <label for="email"><b>Email</b></label>
-    <input formControlName="mail" type="text" placeholder="Entrer email" name="email" required>
+    <label for="msg"><b>Chat</b></label>
+    <input formControlName="message" type="text" placeholder="Poser une question" name="msg" required>
 
-    <label for="psw"><b>Mot de passe</b></label>
-    <input formControlName="mdp" type="password" placeholder="Entrer mot de passe" name="psw" required>
-
-    <button type="submit" class="btn">Connexion</button>
+    <button type="submit" class="btn">Envoyer</button>
     <button type="button" class="btn cancel" (click)="closeChat()">Fermer</button>
   </form>
 </div> 
