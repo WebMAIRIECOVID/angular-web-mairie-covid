@@ -34,7 +34,7 @@ export class ApiChatService {
     console.log(this.messageService);
     return this.http.post<any>(this.apiUrl_ChatPost, JSON.stringify(formData),this.httpOptions).pipe(
       tap((newMsg: Message) => this.log(`added message w/ texte=${newMsg.texte}`)),
-      catchError(this.handleError<Message>('poster'))
+      catchError(this.handleError<Message>('posterMs'))
     );
   }
 
