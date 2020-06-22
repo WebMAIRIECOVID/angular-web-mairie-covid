@@ -36,8 +36,8 @@ export class ChatComponent implements OnInit {
       this.changedSession(this.id,this.session);
     }, (error) => {
       alert('Erreur API login');
-    });
-    this.co = false;*/
+    });*/
+    this.chat = false;
   }
 
 }
