@@ -11,7 +11,19 @@ export class ContenuPrincipalDroiteComponent implements OnInit {
   infos = INFOSPRATIQUES;
   constructor() { }
 
+  chat: boolean;
+
   ngOnInit() {
+    this.chat = false;
+  }
+
+
+  openChat() {
+    this.chat = true;
+  }
+
+  closeChat() {
+    this.chat = false;
   }
   
   question() {
