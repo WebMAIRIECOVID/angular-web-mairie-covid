@@ -18,18 +18,4 @@ export class ContenuPrincipalDroiteComponent implements OnInit {
     this.chat = false;
   }
 
-
-  openChat() {
-    this.chat = true;
-  }
-
-  closeChat() {
-    this.chat = false;
-  }
-  
-  question() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-
 }

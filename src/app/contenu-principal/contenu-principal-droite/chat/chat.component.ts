@@ -12,20 +12,33 @@ import { ApiChatService } from '../../../api-chat.service';
 export class ChatComponent implements OnInit {
 
   formGroup:FormGroup;
+  public globals: Globals;
 
-  constructor(private apiChatService: ApiChatService, public globals: Globals) {
+  constructor(private apiChatService: ApiChatService, globals: Globals) {
     this.formGroup = new FormGroup({
-      message: new FormControl(),
+      texte: new FormControl(),
     });
+    this.chat = true;
+    this.globals = globals;
   }
 
   @Input() chat;
 
   ngOnInit() { 
+    this.chat = false;
+  }
+
+  openChat() {
+    this.chat = true;
   }
 
   closeChat() {
     this.chat = false;
+  }
+  
+  question() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
   }
 
   onSubmit() {
