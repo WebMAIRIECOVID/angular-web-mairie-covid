@@ -39,7 +39,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.apiAnnoncesService.addClassifiedAd(this.annonce).subscribe((response) => {
       console.log(response);
     }, (error) => {
-      alert('Erreur API login');
+      alert('Erreur API anno');
     });
     this.ajout = false;
   }

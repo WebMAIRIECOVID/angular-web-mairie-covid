@@ -50,21 +50,9 @@ export class ChatComponent implements OnInit {
     this.apiChatService.addChat(this.message).subscribe((response) => {
       console.log(response);
     }, (error) => {
-      alert('Erreur API login');
-    });
-    this.ajout = false;
-  }
-
-  onSubmit() {
-    /*console.warn(this.formGroup.value);
-    console.log(this.formGroup.get('mail').value);
-    console.log(this.formGroup.get('mdp').value);*/
-    this.apiChatService.addChat(this.formGroup.value).subscribe((response) => {
-      console.log(response);
-    }, (error) => {
-      alert('Erreur API login');
+      alert('Erreur API chat');
     });
     this.chat = false;
   }
-
+  
 }
