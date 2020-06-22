@@ -20,10 +20,10 @@ export class ApiChatService {
   };
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
-  private apiUrl_ChatGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/chatGet.php';
-  private apiUrl_ChatPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/chatPost.php';
-  //private apiUrl_ChatGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/chatGet.php';
-  //private apiUrl_ChatPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/chatPost.php';
+  //private apiUrl_ChatGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/messageGet.php';
+  //private apiUrl_ChatPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/messagePost.php';
+  private apiUrl_ChatGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/messageGet.php';
+  private apiUrl_ChatPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/messagePost.php';
   
   getChat() {
     return this.http.get<any>(this.apiUrl_ChatGet);
@@ -34,7 +34,7 @@ export class ApiChatService {
     console.log(this.messageService);
     return this.http.post<any>(this.apiUrl_ChatPost, JSON.stringify(formData),this.httpOptions).pipe(
       tap((newMsg: Message) => this.log(`added message w/ texte=${newMsg.texte}`)),
-      catchError(this.handleError<Message>('posterMs'))
+      catchError(this.handleError<Message>('posterMsg'))
     );
   }
 
