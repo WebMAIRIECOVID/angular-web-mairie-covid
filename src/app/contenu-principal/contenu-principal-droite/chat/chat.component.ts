@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Globals } from '../../../variablesGlobales/globals';
 
 @Component({
   selector: 'app-chat',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  formGroup:FormGroup;
+
+  constructor(public globals: Globals) { }
 
   ngOnInit() {
   }
