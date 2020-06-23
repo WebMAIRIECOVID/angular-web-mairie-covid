@@ -23,6 +23,6 @@ export class ResultatReponsesComponent implements OnInit {
     }, (error) => {
       alert('Erreur API get rep');
     });
-    
+  
   }
 }
