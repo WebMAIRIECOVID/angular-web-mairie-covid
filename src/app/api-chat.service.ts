@@ -6,6 +6,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { RequestOptions, Request, RequestMethod } from '@angular/http';
 import { DatePipe } from '@angular/common';
 import { Question } from './interfaces/question';
+import { Reponse } from './interfaces/reponse';
+
 import { MessageService } from './message.service';
 
 @Injectable({
@@ -24,6 +26,8 @@ export class ApiChatService {
   //private apiUrl_QuestionPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/questionPost.php';
   private apiUrl_QuestionGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/questionGet.php';
   private apiUrl_QuestionPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/questionPost.php';
+  private apiUrl_ReponseGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/responseGet.php';
+  private apiUrl_ReponsePost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/reponsePost.php';
   
   getQuestion() {
     return this.http.get<any>(this.apiUrl_QuestionGet);
@@ -34,7 +38,20 @@ export class ApiChatService {
     console.log(this.messageService);
     return this.http.post<any>(this.apiUrl_QuestionPost, JSON.stringify(formData),this.httpOptions).pipe(
       tap((newQuest: Question) => this.log(`added question w/ texte=${newQuest.texte}`)),
-      catchError(this.handleError<Question>('posterMsg'))
+      catchError(this.handleError<Question>('posterQuest'))
+    );
+  }
+
+  getReponse() {
+    return this.http.get<any>(this.apiUrl_RepoGet);
+  }
+
+  addReponse(formData:Reponse) : Observable<Reponse> {
+    console.log(JSON.stringify(formData));
+    console.log(this.messageService);
+    return this.http.post<any>(this.apiUrl_ReponsePost, JSON.stringify(formData),this.httpOptions).pipe(
+      tap((newRep: Reponse) => this.log(`added reponse w/ texte=${newRep.texte}`)),
+      catchError(this.handleError<Reponse>('posterRep'))
     );
   }
 
