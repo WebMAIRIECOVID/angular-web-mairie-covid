@@ -26,7 +26,7 @@ export class ApiChatService {
   //private apiUrl_QuestionPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/questionPost.php';
   private apiUrl_QuestionGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/questionGet.php';
   private apiUrl_QuestionPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/questionPost.php';
-  private apiUrl_ReponseGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/responseGet.php';
+  private apiUrl_ReponseGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/reponseGet.php';
   private apiUrl_ReponsePost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/reponsePost.php';
   
   getQuestion() {
