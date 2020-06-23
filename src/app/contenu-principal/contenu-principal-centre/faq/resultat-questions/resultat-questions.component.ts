@@ -21,10 +21,11 @@ export class ResultatQuestionsComponent implements OnInit {
 
 
   ngOnInit() {
-    
+
     this.apiChatService.getQuestion().subscribe((response) => {
       console.log(response);
       this.items = response["questions"];
+      this.question = response["questions"];
     }, (error) => {
       alert('Erreur API get questions');
     });
