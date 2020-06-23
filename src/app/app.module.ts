@@ -15,7 +15,7 @@ import { ContenuPrincipalComponent } from './contenu-principal/contenu-principal
 import { ContenuPrincipalGaucheComponent } from './contenu-principal/contenu-principal-gauche/contenu-principal-gauche.component';
 import { ContenuPrincipalCentreComponent } from './contenu-principal/contenu-principal-centre/contenu-principal-centre.component';
 import { ContenuPrincipalDroiteComponent } from './contenu-principal/contenu-principal-droite/contenu-principal-droite.component';
-import { MesuresComponent } from './contenu-principal/contenu-principal-centre/mesures/mesures.component';
+import { FaqComponent } from './contenu-principal/contenu-principal-centre/faq/faq.component';
 import { StatsmondialesComponent } from './contenu-principal/contenu-principal-centre/statsmondiales/statsmondiales.component';
 import { AnnoncesComponent } from './contenu-principal/contenu-principal-centre/annonces/annonces.component';
 import { RouterModule } from '@angular/router';
@@ -46,4 +46,5 @@ import { ApiChatService } from './api-chat.service'
   bootstrap:    [ AppComponent ],
   providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, ApiAnnoncesService, SessionService, Globals, ApiChatService]
 })
+
 export class AppModule { }
