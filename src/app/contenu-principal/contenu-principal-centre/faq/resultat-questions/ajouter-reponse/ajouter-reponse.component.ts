@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ApiChatService } from '../../../../../api-chat.service';
 import { SessionService } from '../../../../../session.service';
 import { Reponse } from '../../../../../interfaces/reponse';
+import { Question } from '../../../../../interfaces/question';
 import { Globals } from '../../../../../variablesGlobales/globals';
 
 @Component({
@@ -13,8 +14,9 @@ import { Globals } from '../../../../../variablesGlobales/globals';
 export class AjouterReponseComponent implements OnInit {
 
   formGroup:FormGroup;
-  @Input() ajout:boolean;
-  reponse:Reponse;
+  @Input() question: Question;
+  @Input() ajout: boolean;
+  reponse: Reponse;
   public globals: Globals;
 
   constructor(private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
