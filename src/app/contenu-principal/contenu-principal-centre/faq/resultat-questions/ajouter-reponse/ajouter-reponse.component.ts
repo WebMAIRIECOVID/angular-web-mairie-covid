@@ -14,7 +14,7 @@ import { Globals } from '../../../../../variablesGlobales/globals';
 export class AjouterReponseComponent implements OnInit {
 
   formGroup:FormGroup;
-  @Input() item: Question;
+  @Input() item: number;
   @Input() ajout: boolean;
   reponse: Reponse;
   public globals: Globals;
@@ -33,7 +33,8 @@ export class AjouterReponseComponent implements OnInit {
 
   onSubmit() {
     console.log("Reponse submitted");
-    this.reponse = { texte: this.formGroup.get('texte').value, auteur: this.globals.id, question: this.item};
+    console.log(this.item[3]);
+    this.reponse = { texte: this.formGroup.get('texte').value, auteur: this.globals.id, question: this.item[3]};
     console.log(this.reponse);
     this.apiChatService.addReponse(this.reponse).subscribe((response) => {
       console.log(response);
