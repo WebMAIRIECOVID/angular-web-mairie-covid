@@ -10,10 +10,6 @@ export class FaqComponent implements OnInit {
   constructor() {
   }
 
-  items:any;
-  p: number = 1;
-
-
   ngOnInit() {
 
   }
