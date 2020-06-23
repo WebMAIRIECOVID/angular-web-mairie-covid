@@ -37,7 +37,6 @@ import { SessionService } from './session.service';
 
 import { Globals } from './variablesGlobales/globals';
 import { ChiffresDepartementsComponent } from './chiffres-departements/chiffres-departements.component';
-import { ChatComponent } from './contenu-principal/contenu-principal-droite/chat/chat.component';
 import { ApiChatService } from './api-chat.service';
 import { AjouterQuestionComponent } from './contenu-principal/contenu-principal-centre/faq/ajouter-question/ajouter-question.component';
 import { ResultatQuestionsComponent } from './contenu-principal/contenu-principal-centre/faq/resultat-questions/resultat-questions.component';
