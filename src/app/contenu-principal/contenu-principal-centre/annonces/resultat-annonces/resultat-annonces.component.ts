@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ITEMSEXANNONCES } from '../../../../constantes/items-exemples-annonces';
 import { ApiAnnoncesService } from '../../../../api-annonces.service';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-resultat-annonces',
@@ -15,7 +15,6 @@ export class ResultatAnnoncesComponent implements OnInit {
 
   constructor(private apiAnnoncesService: ApiAnnoncesService) {
   }
-
 
   ngOnInit() {
     
