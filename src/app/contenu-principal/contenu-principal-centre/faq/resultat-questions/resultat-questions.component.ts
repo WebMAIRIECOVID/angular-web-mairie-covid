@@ -16,6 +16,8 @@ export class ResultatQuestionsComponent implements OnInit {
   constructor(private apiChatService: ApiChatService) {
   }
 
+  @Input() question:any;
+
 
   ngOnInit() {
 
