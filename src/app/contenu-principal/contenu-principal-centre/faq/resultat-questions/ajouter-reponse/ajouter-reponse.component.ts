@@ -33,8 +33,8 @@ export class AjouterReponseComponent implements OnInit {
 
   onSubmit() {
     console.log("Reponse submitted");
-    console.log(this.item[3]);
-    this.reponse = { texte: this.formGroup.get('texte').value, auteur: this.globals.id, question: this.item[3]};
+    console.log(this.item[0]);
+    this.reponse = { texte: this.formGroup.get('texte').value, auteur: this.globals.id, question: this.item[0]};
     console.log(this.reponse);
     this.apiChatService.addReponse(this.reponse).subscribe((response) => {
       console.log(response);
