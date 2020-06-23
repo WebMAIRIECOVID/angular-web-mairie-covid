@@ -17,15 +17,11 @@ export class ResultatQuestionsComponent implements OnInit {
   constructor(private apiChatService: ApiChatService) {
   }
 
-  @Input() ajout:Question;
-
-
   ngOnInit() {
 
     this.apiChatService.getQuestion().subscribe((response) => {
       console.log(response);
       this.items = response["questions"];
-      this.ajout = response["questions"];
     }, (error) => {
       alert('Erreur API get questions');
     });
