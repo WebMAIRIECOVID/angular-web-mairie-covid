@@ -7,7 +7,7 @@
         <h5 class="card-title">{{item[1]}}  - par {{item[4]}}</h5>
         <p class="card-text"><small class="text-muted">{{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</small></p>
       </div>
-      <app-resultat-reponses></app-resultat-reponses>
+      <app-resultat-reponses [quest]="item"></app-resultat-reponses>
     </div>
   </div>
   <app-ajouter-reponse [item]="item"></app-ajouter-reponse>

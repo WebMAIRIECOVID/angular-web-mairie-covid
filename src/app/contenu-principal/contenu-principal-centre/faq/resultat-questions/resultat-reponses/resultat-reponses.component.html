@@ -1,9 +1,11 @@
-<div *ngFor="let item of items" class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{item[3]}}  - par {{item[5]}}</h5>
-        <p class="card-text"><small class="text-muted">{{item[4]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</small></p>
+<div *ngFor="let item of items">
+  <div *ngIf="quest[0] == item[1]" >
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{item[2]}}  - par {{item[6]}}</h5>
+          <p class="card-text"><small class="text-muted">{{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</small></p>
+        </div>
       </div>
     </div>
   </div>

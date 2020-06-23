@@ -1,0 +1,10 @@
+.card
+{
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+.card:hover
+{
+  cursor: pointer;
+}

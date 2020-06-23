@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiChatService } from '../../../../../api-chat.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class ResultatReponsesComponent implements OnInit {
 
   items:any;
   p: number = 1;
+  @Input() quest: number;
 
   constructor(private apiChatService: ApiChatService) {
   }
