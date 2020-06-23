@@ -18,7 +18,7 @@ export class AjouterQuestionComponent implements OnInit {
   question:Question;
   public globals: Globals;
 
-  constructor(private apiChatService: ApiChgaService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.formGroup = new FormGroup({
       texte: new FormControl(),
       titre: new FormControl(),
