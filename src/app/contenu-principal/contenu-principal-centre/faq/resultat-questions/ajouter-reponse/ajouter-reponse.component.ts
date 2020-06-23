@@ -30,15 +30,15 @@ export class AjouterReponseComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("Reponse submitted");
-    this.reponse = { texte: this.formGroup.get('texte').value, auteur: this.globals.id, question};
-    console.log(this.reponse);
-    this.apiChatService.addReponse(this.reponse).subscribe((response) => {
-      console.log(response);
-    }, (error) => {
-      alert('Erreur API chat');
-    });
-    this.ajout = false;
+    //console.log("Reponse submitted");
+    //this.reponse = { texte: this.formGroup.get('texte').value, auteur: this.globals.id, question};
+    //console.log(this.reponse);
+    //this.apiChatService.addReponse(this.reponse).subscribe((response) => {
+    //  console.log(response);
+    //}, (error) => {
+    //  alert('Erreur API chat');
+    //});
+    //this.ajout = false;
   }
 
   closeForm() {

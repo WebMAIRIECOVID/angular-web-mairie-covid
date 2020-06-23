@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApiChatService } from '../../../../api-chat.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Question } from '../../../../interfaces/question';
 
 @Component({
   selector: 'app-resultat-questions',
@@ -16,11 +17,11 @@ export class ResultatQuestionsComponent implements OnInit {
   constructor(private apiChatService: ApiChatService) {
   }
 
-  @Input() question:any;
+  @Input() question:Question;
 
 
   ngOnInit() {
-
+    
     this.apiChatService.getQuestion().subscribe((response) => {
       console.log(response);
       this.items = response["questions"];
