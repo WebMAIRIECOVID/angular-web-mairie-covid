@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiChatService } from '../../../../../api-chat.service';
 import { SessionService } from '../../../../../session.service';
@@ -13,7 +13,7 @@ import { Globals } from '../../../../../variablesGlobales/globals';
 export class AjouterReponseComponent implements OnInit {
 
   formGroup:FormGroup;
-  ajout:boolean;
+  @Input() ajout:boolean;
   reponse:Reponse;
   public globals: Globals;
 
