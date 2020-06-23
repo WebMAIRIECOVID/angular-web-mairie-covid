@@ -16,13 +16,11 @@ export class ResultatReponsesComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.apiChatService.getReponse().subscribe((response) => {
       console.log(response);
       this.items = response["reponses"];
     }, (error) => {
       alert('Erreur API get rep');
     });
-  
   }
 }

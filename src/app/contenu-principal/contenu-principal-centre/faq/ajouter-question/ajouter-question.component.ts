@@ -43,11 +43,17 @@ export class AjouterQuestionComponent implements OnInit {
   }
 
   closeForm() {
-    this.ajout = false;
+    if(this.globals.id){
+      this.ajout = true;
+    }
+    else {
+      this.pasCo();
+    }
   }
-
-  openForm() {
-    this.ajout = true;
+  
+  pasCo() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
   }
 
 }
