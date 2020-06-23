@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiChatService } from '../../../../../api-chat.service';
 
 @Component({
   selector: 'app-resultat-reponses',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultatReponsesComponent implements OnInit {
 
-  constructor() { }
+  items:any;
+  p: number = 1;
 
-  ngOnInit() {
+  constructor(private apiChatService: ApiChatService) {
   }
 
+  ngOnInit() {
+    
+    this.apiChatService.getReponse().subscribe((response) => {
+      console.log(response);
+      this.items = response["rep"];
+    }, (error) => {
+      alert('Erreur API get rep');
+    });
+    
+  }
 }
