@@ -18,7 +18,7 @@ export class FaqComponent implements OnInit {
 
   ngOnInit() {
     
-    this.apiChatService.getChat().subscribe((response) => {
+    this.apiChatService.getQuestion().subscribe((response) => {
       console.log(response);
       this.items = response["annonces"];
     }, (error) => {
