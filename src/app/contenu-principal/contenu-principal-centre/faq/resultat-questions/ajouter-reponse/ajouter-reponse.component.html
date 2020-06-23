@@ -1,0 +1,13 @@
+<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Poser une question</button>
+
+<div *ngIf="ajout" class="form-popup formulaire" id="myFormSignUp">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
+    <h1>Poser une question</h1>
+
+    <label for="texte"><b>Texte</b></label>
+    <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
+
+    <button type="submit" class="btn">Poster</button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+  </form>
+</div> 

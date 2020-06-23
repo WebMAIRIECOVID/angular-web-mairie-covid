@@ -43,7 +43,7 @@ export class ApiChatService {
   }
 
   getReponse() {
-    return this.http.get<any>(this.apiUrl_RepoGet);
+    return this.http.get<any>(this.apiUrl_ReponseGet);
   }
 
   addReponse(formData:Reponse) : Observable<Reponse> {
