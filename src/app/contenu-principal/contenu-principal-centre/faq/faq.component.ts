@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiChatService } from '../../../api-chat.service';
-
 
 @Component({
   selector: 'app-faq',
@@ -9,7 +7,7 @@ import { ApiChatService } from '../../../api-chat.service';
 })
 export class FaqComponent implements OnInit {
 
-  constructor(private apiChatService: ApiChatService) {
+  constructor() {
   }
 
   items:any;
@@ -17,14 +15,7 @@ export class FaqComponent implements OnInit {
 
 
   ngOnInit() {
-    
-    this.apiChatService.getQuestion().subscribe((response) => {
-      console.log(response);
-      this.items = response["annonces"];
-    }, (error) => {
-      alert('Erreur API get annonces');
-    });
-    
+
   }
 
 }

@@ -38,11 +38,13 @@ import { SessionService } from './session.service';
 import { Globals } from './variablesGlobales/globals';
 import { ChiffresDepartementsComponent } from './chiffres-departements/chiffres-departements.component';
 import { ChatComponent } from './contenu-principal/contenu-principal-droite/chat/chat.component';
-import { ApiChatService } from './api-chat.service'
+import { ApiChatService } from './api-chat.service';
+import { AjouterQuestionComponent } from './contenu-principal/contenu-principal-centre/faq/ajouter-question/ajouter-question.component';
+import { ResultatQuestionsComponent } from './contenu-principal/contenu-principal-centre/faq/resultat-questions/resultat-questions.component'
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, ChatComponent ],
+  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, ChatComponent, AjouterQuestionComponent, ResultatQuestionsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, ApiAnnoncesService, SessionService, Globals, ApiChatService]
 })
