@@ -1,0 +1,31 @@
+<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Ajouter une annonce</button>
+
+<div *ngIf="ajout" class="form-popup formulaire" id="myFormSignUp">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
+    <h1>Ajouter une annonce</h1>
+
+    <label for="texte"><b>Texte</b></label>
+    <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
+
+    <label for="titre"><b>Titre</b></label>
+    <input formControlName="titre" type="text" placeholder="Entrer titre" name="titre" required>
+
+    <button type="submit" class="btn">Poster</button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+  </form>
+</div> 
+
+<button type="button" (click)="openChat()" id="popup" class="auth nav-link active">Poser une question
+    <span *ngIf="!chat" class="popuptext" id="myPopup">Veuillez vous connecter</span>
+</button>
+<div *ngIf="chat" class="form-popup" id="myFormSignIn">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
+    <h1>Discussion instantanée</h1>
+
+    <label for="msg"><b>Chat</b></label>
+    <input formControlName="texte" type="text" placeholder="Poser une question" name="msg" required>
+
+    <button type="submit" class="btn">Envoyer</button>
+    <button type="button" class="btn cancel" (click)="closeChat()">Fermer</button>
+  </form>
+</div> 

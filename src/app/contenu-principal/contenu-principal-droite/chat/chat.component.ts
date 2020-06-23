@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Globals } from '../../../variablesGlobales/globals';
 import { ApiChatService } from '../../../api-chat.service';
-import { Message } from '../../../interfaces/message';
+import { Question } from '../../../interfaces/question';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { Message } from '../../../interfaces/message';
 export class ChatComponent implements OnInit {
 
   formGroup:FormGroup;
-  message:Message;
+  question:Question;
   public globals: Globals;
 
   constructor(private apiChatService: ApiChatService, globals: Globals) {
@@ -35,7 +35,7 @@ export class ChatComponent implements OnInit {
       this.chat = true;
     }
     else {
-      this.question();
+      this.pasCo();
     }
   }
 
@@ -43,19 +43,19 @@ export class ChatComponent implements OnInit {
     this.chat = false;
   }
   
-  question() {
+  pasCo() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
   }
 
   onSubmit() {
-    console.log("Message submitted");
-    this.message = { texte: this.formGroup.get('texte').value, auteur: this.globals.id};
-    console.log(this.message);
-    this.apiChatService.addChat(this.message).subscribe((response) => {
+    console.log("Question submitted");
+    this.question = { texte: this.formGroup.get('texte').value, auteur: this.globals.id};
+    console.log(this.question);
+    this.apiChatService.addQuestion(this.question).subscribe((response) => {
       console.log(response);
     }, (error) => {
-      alert('Erreur API chat');
+      alert('Erreur API c');
     });
     this.chat = false;
   }
