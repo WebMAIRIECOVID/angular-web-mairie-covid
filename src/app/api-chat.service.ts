@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { RequestOptions, Request, RequestMethod } from '@angular/http';
 import { DatePipe } from '@angular/common';
-import { Message } from './interfaces/message';
+import { Question } from './interfaces/question';
 import { MessageService } from './message.service';
 
 @Injectable({
@@ -20,21 +20,21 @@ export class ApiChatService {
   };
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
-  //private apiUrl_ChatGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/messageGet.php';
-  //private apiUrl_ChatPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/messagePost.php';
-  private apiUrl_ChatGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/messageGet.php';
-  private apiUrl_ChatPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/messagePost.php';
+  //private apiUrl_QuestionGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/questionGet.php';
+  //private apiUrl_QuestionPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/questionPost.php';
+  private apiUrl_QuestionGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/questionGet.php';
+  private apiUrl_QuestionPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/questionPost.php';
   
-  getChat() {
-    return this.http.get<any>(this.apiUrl_ChatGet);
+  getQuestion() {
+    return this.http.get<any>(this.apiUrl_QuestionGet);
   }
 
-  addChat(formData:Message) : Observable<Message> {
+  addQuestion(formData:Question) : Observable<Question> {
     console.log(JSON.stringify(formData));
     console.log(this.messageService);
-    return this.http.post<any>(this.apiUrl_ChatPost, JSON.stringify(formData),this.httpOptions).pipe(
-      tap((newMsg: Message) => this.log(`added message w/ texte=${newMsg.texte}`)),
-      catchError(this.handleError<Message>('posterMsg'))
+    return this.http.post<any>(this.apiUrl_QuestionPost, JSON.stringify(formData),this.httpOptions).pipe(
+      tap((newQuest: Question) => this.log(`added question w/ texte=${newQuest.texte}`)),
+      catchError(this.handleError<Question>('posterMsg'))
     );
   }
 
