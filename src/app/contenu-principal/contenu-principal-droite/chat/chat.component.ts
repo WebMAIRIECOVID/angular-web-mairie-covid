@@ -55,7 +55,7 @@ export class ChatComponent implements OnInit {
     this.apiChatService.addQuestion(this.question).subscribe((response) => {
       console.log(response);
     }, (error) => {
-      alert('Erreur API c');
+      alert('Erreur API chat');
     });
     this.chat = false;
   }
