@@ -34,7 +34,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id};
+    this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id, categorie:"annonce"};
     console.log(this.annonce);
     this.apiAnnoncesService.addClassifiedAd(this.annonce).subscribe((response) => {
       console.log(response);

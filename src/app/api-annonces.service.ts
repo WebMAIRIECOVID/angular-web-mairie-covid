@@ -25,8 +25,8 @@ export class ApiAnnoncesService {
   private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annonceGet.php';
   private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annoncePost.php';
   
-  getClassifiedAd() {
-    return this.http.get<any>(this.apiUrl_AnnoncesGet);
+  getClassifiedAd(categorie) {
+    return this.http.get<any>(this.apiUrl_AnnoncesGet+"?categorie="+categorie);
   }
 
   addClassifiedAd(formData:Annonce) : Observable<Annonce> {

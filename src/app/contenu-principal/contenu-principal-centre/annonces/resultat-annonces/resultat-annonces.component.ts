@@ -18,7 +18,7 @@ export class ResultatAnnoncesComponent implements OnInit {
 
   ngOnInit() {
     
-    this.apiAnnoncesService.getClassifiedAd().subscribe((response) => {
+    this.apiAnnoncesService.getClassifiedAd("annonce").subscribe((response) => {
       console.log(response);
       this.items = response["annonces"];
     }, (error) => {
