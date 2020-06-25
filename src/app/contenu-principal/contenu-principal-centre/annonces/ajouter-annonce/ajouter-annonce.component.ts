@@ -18,7 +18,7 @@ export class AjouterAnnonceComponent implements OnInit {
   ajout:boolean;
   annonce:Annonce;
   public globals: Globals;
-  @Input() type;
+  @Input() categorie;
 
   constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService, globals: Globals) { 
     this.formGroup = new FormGroup({
@@ -35,7 +35,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id, categorie:this.type};
+    this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id, categorie:this.categorie};
     console.log(this.annonce);
     this.apiAnnoncesService.addClassifiedAd(this.annonce).subscribe((response) => {
       console.log(response);
