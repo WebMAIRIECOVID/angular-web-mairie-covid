@@ -3,15 +3,19 @@
 <div *ngIf="ajout" class="form-popup formulaire" id="myFormSignUp">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
     <h1>Ajouter une {{categorie}}</h1>
-    
+
 
     <label for="titre"><b>Titre</b></label>
     <input formControlName="titre" type="text" placeholder="Entrer titre" name="titre" required>
 
     <label for="texte"><b>Texte</b></label>
     <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
-
-    <app-file-upload formControlName="photo" [progress]="progress"></app-file-upload>
+    <div>
+      <span>Choose file</span>
+      <span>{{file ? file.name : 'or drag and drop file here' }}</span>
+      <input class="file-input" type="file">
+    </div>
+    <app-file-upload formControlName="image" [progress]="progress"></app-file-upload>
 
     <button type="submit" class="btn">Poster</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
