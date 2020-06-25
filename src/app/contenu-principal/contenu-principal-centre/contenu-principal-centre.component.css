@@ -22,3 +22,8 @@
   align-items: stretch;
   flex-wrap: wrap;
 }
+app-ajouter-annonce
+{
+  position: absolute;
+  right: 18%;
+}
