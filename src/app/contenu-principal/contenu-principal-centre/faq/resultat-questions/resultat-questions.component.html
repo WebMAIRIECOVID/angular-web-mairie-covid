@@ -13,13 +13,13 @@
   <app-ajouter-reponse [item]="item"></app-ajouter-reponse>
 </div>-->
 <div id="conteneur">
-<div *ngFor="let item of items | paginate: { itemsPerPage: 5, currentPage: p }" class="card" style="width: 45%;">
-    <div class="card-body">
-      <h5 class="card-title">{{item[1]}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">par {{item[4]}}</h6>
-      <p class="card-text font-italic text-right">{{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
-    </div>
-    <app-resultat-reponses [quest]="item"></app-resultat-reponses>
-   <app-ajouter-reponse [item]="item"></app-ajouter-reponse>
-</div>
+  <div *ngFor="let item of items | paginate: { itemsPerPage: 5, currentPage: p }" class="card" style="width: 45%;">
+      <div class="card-body">
+        <h5 class="card-title">{{item[1]}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">par {{item[4]}}</h6>
+        <p class="card-text font-italic text-right">{{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
+      </div>
+      <app-resultat-reponses [quest]="item"></app-resultat-reponses>
+    <app-ajouter-reponse [item]="item"></app-ajouter-reponse>
+  </div>
 </div>
