@@ -23,8 +23,7 @@ export class AjouterAnnonceComponent implements OnInit {
   constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
     this.formGroup = new FormGroup({
       titre: new FormControl(null, [Validators.required]),
-      texte: new FormControl(null, [Validators.required]),
-      image: new FormControl(null, [Validators.required])
+      texte: new FormControl(null, [Validators.required])
     });
     this.ajout = true;
     this.globals = globals;
@@ -36,7 +35,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   onSubmit() {
     console.log("Annonce submitted");
-    this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), photo: (this.formGroup.get('photo').value), auteur: this.globals.id, categorie:this.categorie};
+    this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value),  auteur: this.globals.id, categorie:this.categorie};
     console.log(this.annonce);
     this.apiPublicationsService.addClassifiedAd(this.annonce).subscribe((response) => {
       console.log(response);
