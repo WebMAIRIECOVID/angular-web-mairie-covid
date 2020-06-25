@@ -10,11 +10,7 @@
 
     <label for="texte"><b>Texte</b></label>
     <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
-    <div>
-      <span>Choose file</span>
-      <span>{{file ? file.name : 'or drag and drop file here' }}</span>
-      <input class="file-input" type="file">
-    </div>
+    
     <app-file-upload formControlName="image" [progress]="progress"></app-file-upload>
 
     <button type="submit" class="btn">Poster</button>
