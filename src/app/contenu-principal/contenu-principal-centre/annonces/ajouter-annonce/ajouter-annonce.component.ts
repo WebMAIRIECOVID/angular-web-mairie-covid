@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiPublicationsService } from '../../../../api-publications.service';
 import { LoginComponent } from '../../../../header/login/login.component';
 import { SessionService } from '../../../../session.service';
@@ -24,7 +24,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.formGroup = new FormGroup({
       titre: new FormControl(),
       texte: new FormControl(),
-      photo: new FormControl(),
+      image: new FormControl(null, [Validators.required, requiredFileType('png')])
     });
     this.ajout = true;
     this.globals = globals;
