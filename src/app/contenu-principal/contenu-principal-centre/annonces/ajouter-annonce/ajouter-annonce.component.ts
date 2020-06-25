@@ -21,8 +21,8 @@ export class AjouterAnnonceComponent implements OnInit {
 
   constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService, globals: Globals) { 
     this.formGroup = new FormGroup({
-      texte: new FormControl(),
       titre: new FormControl(),
+      texte: new FormControl(),
     });
     this.ajout = true;
     this.globals = globals;

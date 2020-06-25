@@ -4,11 +4,11 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
     <h1>Ajouter une annonce</h1>
 
-    <label for="texte"><b>Texte</b></label>
-    <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
-
     <label for="titre"><b>Titre</b></label>
     <input formControlName="titre" type="text" placeholder="Entrer titre" name="titre" required>
+
+    <label for="texte"><b>Texte</b></label>
+    <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
 
     <button type="submit" class="btn">Poster</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
