@@ -31,7 +31,6 @@ import { ApiUtilisateursService } from './api-utilisateurs.service';
 import { LoginComponent } from './header/login/login.component';
 import { RegisterComponent } from './/header/register/register.component';
 import { MessageService } from './message.service';
-import { ApiAnnoncesService } from './api-annonces.service';
 import { AjouterAnnonceComponent } from './contenu-principal/contenu-principal-centre/annonces/ajouter-annonce/ajouter-annonce.component';
 import { SessionService } from './session.service';
 
@@ -50,7 +49,7 @@ import { ApiPublicationsService } from './api-publications.service'
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, AjouterQuestionComponent, ResultatQuestionsComponent, AjouterReponseComponent, ResultatReponsesComponent, ActusComponent, ListeActusComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, ApiAnnoncesService, SessionService, Globals, ApiChatService, ApiPublicationsService]
+  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, , SessionService, Globals, ApiChatService, ApiPublicationsService]
 })
 
 export class AppModule { }
