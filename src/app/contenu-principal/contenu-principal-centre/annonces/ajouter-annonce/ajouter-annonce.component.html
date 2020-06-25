@@ -10,6 +10,10 @@
     <label for="texte"><b>Texte</b></label>
     <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
 
+    <label for="texte"><b>Photo</b></label>
+    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+    <input id="choisirPhoto" type="file" name="photoUpload" value="Sélectionner une photo" accept="image/*">
+
     <button type="submit" class="btn">Poster</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
   </form>
