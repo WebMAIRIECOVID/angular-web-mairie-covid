@@ -1,12 +1,10 @@
 
-
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-<div *ngFor="let item of items | paginate: { itemsPerPage: 5, currentPage: p }"  *ngIf="quest[0] == item[1]" class="card" style="width: 45%;">
-      <div class="card-body">
-        <h5 class="card-title">{{item[2]}}</h5>
-        <p class="card-text font-italic text-right">{{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
-      </div>
-      <app-resultat-reponses [quest]="item"></app-resultat-reponses>
-    <app-ajouter-reponse [item]="item"></app-ajouter-reponse>
+<div *ngFor="let item of items | paginate: { itemsPerPage: 1, currentPage: p }" >
+  <div *ngIf="quest[0] == item[1]"  class="card" style="width: 45%;">
+    <div class="card-body">
+      <h5 class="card-title">{{item[2]}}</h5>
+      <p class="card-text font-italic text-right">{{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
+    </div>
   </div>
+</div>
 <!--[className]="isActive ? 'active' : 'inactive'"-->
