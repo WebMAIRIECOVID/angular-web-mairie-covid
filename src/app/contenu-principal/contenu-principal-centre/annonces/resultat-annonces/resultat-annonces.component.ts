@@ -12,13 +12,14 @@ export class ResultatAnnoncesComponent implements OnInit {
 
   items:any;
   p: number = 1;
+  @Input() categorie;
 
   constructor(private apiPublicationsService: ApiPublicationsService) {
   }
 
   ngOnInit() {
     
-    this.apiPublicationsService.getClassifiedAd("annonce").subscribe((response) => {
+    this.apiPublicationsService.getClassifiedAd(this.).subscribe((response) => {
       console.log(response);
       this.items = response["annonces"];
     }, (error) => {
