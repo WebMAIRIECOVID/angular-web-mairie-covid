@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiPublicationsService } from '../../../../api-publications.service';
 import { LoginComponent } from '../../../../header/login/login.component';
@@ -21,7 +21,7 @@ export class AjouterAnnonceComponent implements OnInit {
     const file = event && event.item(0);
     this.file = file;
   }
-  
+
   formGroup:FormGroup;
   ajout:boolean;
   annonce:Annonce;
