@@ -1,11 +1,19 @@
 .card
 {
-  margin-right: 1%;
-  margin-left: 1%;
-  width: auto;
+  margin-r: 1%;
 }
 
 .card:hover
 {
   cursor: pointer;
+}
+
+#conteneur
+{
+  
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
