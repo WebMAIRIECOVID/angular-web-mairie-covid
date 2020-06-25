@@ -22,9 +22,9 @@ export class AjouterAnnonceComponent implements OnInit {
 
   constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
     this.formGroup = new FormGroup({
-      titre: new FormControl(),
-      texte: new FormControl(),
-      image: new FormControl(null, [Validators.required, requiredFileType('png')])
+      titre: new FormControl(null, [Validators.required]),
+      texte: new FormControl(null, [Validators.required]),
+      image: new FormControl(null, [Validators.required])
     });
     this.ajout = true;
     this.globals = globals;
