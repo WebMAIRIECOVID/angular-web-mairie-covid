@@ -10,9 +10,7 @@
     <label for="texte"><b>Texte</b></label>
     <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
 
-    <label for="photoUpload"><b>Photo</b></label><br>
-    <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput name="photoUpload" >
-    <button (click)="fileInput.click()">Select File</button>
+    <app-file-upload formControlName="photo" [progress]="progress"></app-file-upload>
 
     <button type="submit" class="btn">Poster</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
