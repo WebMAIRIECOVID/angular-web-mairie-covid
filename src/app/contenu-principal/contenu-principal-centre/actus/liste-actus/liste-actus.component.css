@@ -1,0 +1,18 @@
+
+.card
+{
+  width: 30%;
+  margin: 15px;
+  height: 340px;
+}
+
+.card-text
+{
+  height: 80%;
+  overflow:auto;
+}
+
+#conteneur
+{
+  width:100%;
+}

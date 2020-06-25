@@ -4,4 +4,10 @@
   position: absolute;
   right: 18%;
   left: 18%;
+  display: block;
+}
+
+app-liste-actus
+{
+  width: 100%;
 }
