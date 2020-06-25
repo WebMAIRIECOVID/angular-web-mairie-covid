@@ -20,7 +20,7 @@ export class ApiAnnoncesService {
   };
 
   proxyurl = "https://cors-anywhere.herokuapp.com/";
-  /private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annonceGet.php';
+  private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annonceGet.php';
   private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~pruvost/WebMAIRIECOVID/android_login_api/annoncePost.php';
   //private apiUrl_AnnoncesGet = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annonceGet.php';
   //private apiUrl_AnnoncesPost = 'https://dwarves.iut-fbleau.fr/~thor/android_login_api/annoncePost.php';
