@@ -2,9 +2,6 @@
 
 <div *ngFor="let item of items | paginate: { itemsPerPage: 5, currentPage: p }" class="card mb-3">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="{{item.img}}" class="card-img" alt="...">
-    </div>
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{item[2]}}  - par {{item[6]}}</h5>
