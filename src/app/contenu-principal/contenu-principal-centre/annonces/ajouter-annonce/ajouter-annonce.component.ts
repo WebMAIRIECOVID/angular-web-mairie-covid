@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ApiAnnoncesService } from '../../../../api-annonces.service';
+import { ApiPublicationsService } from '../../../../api-publications.service';
 import { LoginComponent } from '../../../../header/login/login.component';
 import { SessionService } from '../../../../session.service';
 import { Annonce } from '../../../../interfaces/annonce';
@@ -20,7 +20,7 @@ export class AjouterAnnonceComponent implements OnInit {
   public globals: Globals;
   @Input() categorie;
 
-  constructor(private apiAnnoncesService: ApiAnnoncesService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
     this.formGroup = new FormGroup({
       titre: new FormControl(),
       texte: new FormControl(),
@@ -37,7 +37,7 @@ export class AjouterAnnonceComponent implements OnInit {
     console.log("Annonce submitted");
     this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id, categorie:this.categorie};
     console.log(this.annonce);
-    this.apiAnnoncesService.addClassifiedAd(this.annonce).subscribe((response) => {
+    this.apiPublicationsService.addClassifiedAd(this.annonce).subscribe((response) => {
       console.log(response);
     }, (error) => {
       alert('Erreur API annonce');

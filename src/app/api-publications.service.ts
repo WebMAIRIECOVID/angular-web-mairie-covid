@@ -12,7 +12,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 
-export class ApiAnnoncesService {
+export class ApiPublicationsService {
   constructor( private http: HttpClient, private datepipe: DatePipe, private messageService: MessageService) { }
 
   httpOptions = {
