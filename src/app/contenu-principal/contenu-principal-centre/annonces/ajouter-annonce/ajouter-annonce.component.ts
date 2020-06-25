@@ -13,14 +13,22 @@ import { Globals } from '../../../../variablesGlobales/globals';
   styleUrls: ['./ajouter-annonce.component.css']
 })
 export class AjouterAnnonceComponent implements OnInit {
+  @Input() progress;
+  
+  private file: File | null = null;
 
+  @HostListener('change', ['$event.target.files']) emitFiles( event: FileList ) {
+    const file = event && event.item(0);
+    this.file = file;
+  }
+  
   formGroup:FormGroup;
   ajout:boolean;
   annonce:Annonce;
   public globals: Globals;
   @Input() categorie;
 
-  constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals, private host: ElementRef<HTMLInputElement> ) { 
     this.formGroup = new FormGroup({
       titre: new FormControl(null, [Validators.required]),
       texte: new FormControl(null, [Validators.required]),
