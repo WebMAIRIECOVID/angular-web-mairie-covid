@@ -49,7 +49,7 @@ import { ApiPublicationsService } from './api-publications.service'
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, AjouterQuestionComponent, ResultatQuestionsComponent, AjouterReponseComponent, ResultatReponsesComponent, ActusComponent, ListeActusComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, , SessionService, Globals, ApiChatService, ApiPublicationsService]
+  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, SessionService, Globals, ApiChatService, ApiPublicationsService]
 })
 
 export class AppModule { }
