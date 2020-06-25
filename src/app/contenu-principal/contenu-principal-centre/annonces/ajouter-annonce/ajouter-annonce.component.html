@@ -11,7 +11,8 @@
     <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
 
     <label for="photoUpload"><b>Photo</b></label><br>
-    <input formControlName="photo" type="fichier" id="fichier" name="photoUpload" (change)="onFileChanged($event)"/>
+    <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput name="photoUpload" >
+    <button (click)="fileInput.click()">Select File</button>
 
     <button type="submit" class="btn">Poster</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
