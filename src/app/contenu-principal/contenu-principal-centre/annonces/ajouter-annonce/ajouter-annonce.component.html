@@ -11,8 +11,7 @@
     <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
 
     <label for="photoUpload"><b>Photo</b></label><br>
-    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-    <input formControlName="photo" id="choisirPhoto" type="file" name="photoUpload" value="Sélectionner une photo" accept="image/*">
+    <input formControlName="photo" type="fichier" id="fichier" name="photoUpload" (change)="envoiFichier($event.target.files)"/>
 
     <button type="submit" class="btn">Poster</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
