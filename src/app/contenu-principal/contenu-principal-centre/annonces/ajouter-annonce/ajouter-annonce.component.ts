@@ -53,4 +53,8 @@ export class AjouterAnnonceComponent implements OnInit {
   openForm() {
     this.ajout = true;
   }
+
+  onFileChanged(event) {
+    const file = event.target.files[0]
+  }
 }
