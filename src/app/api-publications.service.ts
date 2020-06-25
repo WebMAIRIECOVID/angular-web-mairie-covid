@@ -37,6 +37,7 @@ export class ApiPublicationsService {
       catchError(this.handleError<Annonce>('poster'))
     );
   }
+  
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
