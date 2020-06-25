@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ITEMSEXANNONCES } from '../../../../constantes/items-exemples-annonces';
-import { ApiAnnoncesService } from '../../../../api-annonces.service';
+import { ApiPublicationsService } from '../../../../api-publications.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
@@ -13,12 +13,12 @@ export class ResultatAnnoncesComponent implements OnInit {
   items:any;
   p: number = 1;
 
-  constructor(private apiAnnoncesService: ApiAnnoncesService) {
+  constructor(private apiPublicationsService: ApiPublicationsService) {
   }
 
   ngOnInit() {
     
-    this.apiAnnoncesService.getClassifiedAd("annonce").subscribe((response) => {
+    this.apiPublicationsService.getClassifiedAd("annonce").subscribe((response) => {
       console.log(response);
       this.items = response["annonces"];
     }, (error) => {
