@@ -15,7 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class AjouterAnnonceControlComponent implements OnInit, ControlValueAccessor {
-  @Input() progress;
+  
   onChange: Function;
   private file: File | null = null;
 

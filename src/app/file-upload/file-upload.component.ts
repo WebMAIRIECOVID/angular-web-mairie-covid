@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-file-upload',
@@ -7,7 +7,6 @@ import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 })
 export class FileUploadComponent implements OnInit {
 
-  @Input() progress;
   
   private file: File | null = null;
 
