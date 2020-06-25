@@ -24,6 +24,7 @@ export class AjouterAnnonceComponent implements OnInit {
     this.formGroup = new FormGroup({
       titre: new FormControl(),
       texte: new FormControl(),
+      photo: new FormControl(),
     });
     this.ajout = true;
     this.globals = globals;
