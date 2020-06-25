@@ -8,7 +8,7 @@ import { Component, OnInit, ElementRef, HostListener, Input } from '@angular/cor
 export class FileUploadComponent implements OnInit {
 
   
-  private file: File | null = null;
+  public file: File | null = null;
 
   @HostListener('change', ['$event.target.files']) emitFiles( event: FileList ) {
     const file = event && event.item(0);
