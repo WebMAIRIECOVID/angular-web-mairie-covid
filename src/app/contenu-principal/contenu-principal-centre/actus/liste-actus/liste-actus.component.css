@@ -15,4 +15,9 @@
 #conteneur
 {
   width:100%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
