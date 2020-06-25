@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActusComponent implements OnInit {
 
+  information:String;
   constructor() { }
 
   ngOnInit() {
+  this.information="information";
   }
 
 }
