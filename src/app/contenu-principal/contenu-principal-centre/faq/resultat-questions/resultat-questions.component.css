@@ -4,7 +4,12 @@
   margin-left: 1%;
 }
 
-.card:hover
+
+#conteneur
 {
-  cursor: pointer;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
