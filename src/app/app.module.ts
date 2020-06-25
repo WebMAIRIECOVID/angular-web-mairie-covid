@@ -13,7 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
 import { ContenuPrincipalComponent } from './contenu-principal/contenu-principal.component';
 import { ContenuPrincipalGaucheComponent } from './contenu-principal/contenu-principal-gauche/contenu-principal-gauche.component';
-import { ContenuPrincipalCentreComponent } from './contenu-principal/contenu-principal-centre/contenu-principal-centre/contenu-principal-centre.component';
+import { ContenuPrincipalCentreComponent } from './contenu-principal/contenu-principal-centre/contenu-principal-centre.component';
 import { ContenuPrincipalDroiteComponent } from './contenu-principal/contenu-principal-droite/contenu-principal-droite.component';
 import { FaqComponent } from './contenu-principal/contenu-principal-centre/faq/faq.component';
 import { StatsmondialesComponent } from './contenu-principal/contenu-principal-centre/statsmondiales/statsmondiales.component';
