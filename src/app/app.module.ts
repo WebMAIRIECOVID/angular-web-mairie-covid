@@ -46,12 +46,11 @@ import { ResultatQuestionsComponent } from './contenu-principal/contenu-principa
 import { AjouterReponseComponent } from './contenu-principal/contenu-principal-centre/faq/resultat-questions/ajouter-reponse/ajouter-reponse.component';
 import { ResultatReponsesComponent } from './contenu-principal/contenu-principal-centre/faq/resultat-questions/resultat-reponses/resultat-reponses.component';
 import { ActusComponent } from './contenu-principal/contenu-principal-centre/actus/actus.component';
-import { ListeActusComponent } from './contenu-principal/contenu-principal-centre/actus/liste-actus/liste-actus.component';
 import { ApiPublicationsService } from './api-publications.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule, MatFormFieldModule,MatExpansionModule, NgbModule, MatGridListModule ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, AjouterQuestionComponent, ResultatQuestionsComponent, AjouterReponseComponent, ResultatReponsesComponent, ActusComponent, ListeActusComponent ],
+  declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, AjouterQuestionComponent, ResultatQuestionsComponent, AjouterReponseComponent, ResultatReponsesComponent, ActusComponent,  ],
   bootstrap:    [ AppComponent ],
   providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, SessionService, Globals, ApiChatService, ApiPublicationsService]
 })
