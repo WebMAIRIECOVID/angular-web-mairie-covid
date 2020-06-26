@@ -1,6 +1,21 @@
-mat-grid-tile
+
+mat-panel-description
 {
+  margin-right:0%;
+  text-align: right;
+  color: darkgrey;
   display:block;
+}
+
+mat-expansion-panel
+{
+  border: gray solid 1px;
+  margin: 10px;
+}
+
+mat-accordion
+{
+  margin: 10px;
 }
 
 .flex
@@ -10,4 +25,5 @@ mat-grid-tile
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
+  text-align:center;
 }
