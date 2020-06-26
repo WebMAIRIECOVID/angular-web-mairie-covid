@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
-import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm, ValidatorFn, ValidationErrors } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
   identifiant:FormControl;
   email:FormControl;
   password:FormControl;
+  cpassword:FormControl;
   cat:FormControl;
   constructor(private apiUtilisateursService: ApiUtilisateursService) { 
     this.email = new FormControl('', [
@@ -32,6 +33,9 @@ export class RegisterComponent implements OnInit {
       Validators.email,
     ]);
     this.password = new FormControl('', [
+      Validators.required
+    ]);
+    this.cpassword = new FormControl('', [
       Validators.required
     ]);
     this.cat = new FormControl('', [
@@ -49,8 +53,9 @@ export class RegisterComponent implements OnInit {
       pseudo: this.identifiant,
       mail: this.email,
       mdp: this.password,
-      categorie: this.cat,
-    });
+      cmdp: this.cpassword,
+      categorie: this.cat
+      }, { validators: identityRevealedValidator });
   }
   @Input() ins;
 
@@ -74,13 +79,15 @@ export class RegisterComponent implements OnInit {
   }
 
   matcher = new MyErrorStateMatcher();
-  /*
 
-  onSubmit() {
-    this.apiUtilisateursService.register(this.formGroup.value)
-			.then(function(data){
-				console.log(data);
-			});
-  }*/ 
+  export const identityRevealedValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
+    const pseudo = control.get('pseudo');
+    const mail = control.get('mail');
+    const mdp = control.get('mdp');
+    const cmdp = control.get('cmdp');
+    const categorie = control.get('categorie');
+
+    return pseudo && mail && mdp && cmdp && categorie && mdp.value === cmdp.value ? { 'identityRevealed': true } : null;
+  };
 
 }

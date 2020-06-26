@@ -88,7 +88,7 @@
       <br>
       <mat-form-field class="example-full-width">
         <input matInput  type="password" formControlName="mdp" [errorStateMatcher]="matcher">
-        <mat-error *ngIf="password.hasError('required')">
+        <mat-error *ngIf="cpassword.hasError('required')">
           La vérification est <strong>obligatoire</strong>
         </mat-error>
       </mat-form-field>
@@ -116,7 +116,7 @@
     
     <br>
     <div id="divButton">
-      <button type="button" class="btn btn-outline-dark" (click)="closeForm()">Fermer</button>
+      <button type="button" class="btn btn-outline-dark" >Fermer</button>
       <button type="submit" class="btn btn-primary">Connexion</button>
     </div>
     <br>
