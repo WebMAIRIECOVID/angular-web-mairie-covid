@@ -19,7 +19,7 @@
 <mat-accordion>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
   
-  <p class="text-center">Mise à jour l{{resultat[0]['date']}}</p>
+  <p class="text-center">Mise à jour le {{resultat[0]['date']}}</p>
   <mat-expansion-panel hideToggle  *ngFor="let departement of resultat | paginate: { itemsPerPage: 10, currentPage: p }" >
     <mat-expansion-panel-header>
       <mat-panel-title>
