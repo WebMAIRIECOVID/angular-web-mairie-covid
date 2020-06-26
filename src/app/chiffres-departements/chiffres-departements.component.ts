@@ -10,7 +10,7 @@ import { ElementRef} from '@angular/core';
   styleUrls: ['./chiffres-departements.component.css']
 })
 export class ChiffresDepartementsComponent implements OnInit {
-
+images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   resultat:ResDept[];
   p: number = 1;
   constructor(private apiStatistiquesService: ApiStatistiquesService, private el:ElementRef) { }

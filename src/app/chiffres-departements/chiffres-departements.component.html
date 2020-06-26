@@ -1,4 +1,4 @@
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 <p>{{resultat[0]['date']}}</p>
 <div>
@@ -14,4 +14,53 @@
     nouvellesReanimations : {{departement.nouvellesReanimations}}
 
   </p>
-</div>
+</div>-->
+
+<p class="text-center">{{resultat[0]['date']}}</p>
+
+<mat-accordion>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <mat-expansion-panel hideToggle  *ngFor="let departement of resultat | paginate: { itemsPerPage: 10, currentPage: p }" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{departement.nom}}
+      </mat-panel-title>
+      <mat-panel-description>
+        couleur : {{departement.indicateurSynthese}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Décès</h5>
+      <p class="card-text">{{departement.deces}}</p>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Guérissons</h5>
+      <p class="card-text">{{departement.gueris}}</p>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Réanimations</h5>
+      <h6 class="card-subtitle mb-2 text-muted">( + {{departement.nouvellesReanimations}})</h6>
+      <p class="card-text">{{departement.reanimation}}</p>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Hospitalisations</h5>
+      <h6 class="card-subtitle mb-2 text-muted">( + {{departement.nouvellesHospitalisations}})</h6>
+      <p class="card-text">{{departement.hospitalises}}</p>
+    </div>
+  </div>
+      <p>décès : {{departement.deces}},</p> 
+      <p>reanimation : {{departement.reanimation}},</p> 
+      <p>hospitalises : {{departement.hospitalises}},</p> 
+      <p>gueris : {{departement.gueris}},</p> 
+      <p>nouvellesHospitalisations : {{departement.nouvellesHospitalisations}},</p> 
+      <p>nouvellesReanimations : {{departement.nouvellesReanimations}}</p> 
+  </mat-expansion-panel>
+</mat-accordion>
