@@ -11,6 +11,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
  import {MatGridListModule} from '@angular/material/grid-list';
  import {MatInputModule} from '@angular/material/input';
+ 
+import { Validators, FormGroupDirective, NgForm } from '@angular/forms';
+
+import {ErrorStateMatcher} from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
