@@ -4,6 +4,7 @@ import { SessionService } from '../../session.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Utilisateur } from '../../interfaces/utilisateur';
 import { Globals } from '../../variablesGlobales/globals';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   formGroup:FormGroup;
   id:number;
   session:Utilisateur;
-  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
+  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals private _modalService: NgbModal) { 
     
     this.formGroup = new FormGroup({
       mail: new FormControl(),
@@ -53,5 +54,10 @@ export class LoginComponent implements OnInit {
   private changedSession(id, session) {
     this.globals.id = id;
     this.globals.session = session;
+  }
+
+  
+  open(name: string) {
+    this._modalService.open(MODALS[name]);
   }
 }
