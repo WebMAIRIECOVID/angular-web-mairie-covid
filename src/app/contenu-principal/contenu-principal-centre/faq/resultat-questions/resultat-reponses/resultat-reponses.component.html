@@ -10,7 +10,7 @@
     </div>
   </div>
 </div>-->
-
+<!--
 <div *ngFor="let item of items | paginate: { itemsPerPage: 1, currentPage: p }" >
   <div *ngIf="quest[0] == item[1]"  class="card" style="width: 45%;">
     <div class="card-body">
@@ -18,20 +18,21 @@
       <p class="card-text font-italic text-right">{{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
     </div>
   </div>
+</div>-->
+
+
+<div *ngFor="let item of items">
+  <div *ngIf="quest[0] == item[1]" class="flex1" >
+    <div class="flex2">
+      <div  class="left">
+        {{item[2]}}
+      </div>
+      <div class="right"> 
+        par {{item[6]}} le {{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}
+      </div>
+    </div>
+  </div>
 </div>
 
-<!--
-  
-<mat-accordion>
-  <mat-expansion-panel *ngIf="quest[0] == item[1]" hideToggle >
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{item[2]}}
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>par {{item[5]}} le {{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
-  </mat-expansion-panel>
-</mat-accordion>
--->
 
 <!--[className]="isActive ? 'active' : 'inactive'"-->

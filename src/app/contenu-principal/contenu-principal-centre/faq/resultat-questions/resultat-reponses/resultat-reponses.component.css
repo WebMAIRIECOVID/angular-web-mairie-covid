@@ -1,0 +1,39 @@
+.flex1
+{
+    align-items: center;
+    padding: 0 24px;
+    border: gray solid 1px;
+    margin: 10px;
+}
+
+.right
+{
+    margin-right: 0%;
+    text-align: right;
+    color: darkgrey;
+    display: block;
+}
+
+.left
+{
+  text-align: justify;
+}
+
+mat-panel-description
+{
+  margin-right:0%;
+  text-align: right;
+  color: darkgrey;
+  display:block;
+}
+
+mat-expansion-panel
+{
+  border: gray solid 1px;
+  margin: 10px;
+}
+
+mat-accordion
+{
+  margin: 10px;
+}
