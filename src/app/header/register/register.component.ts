@@ -27,7 +27,20 @@ export class RegisterComponent implements OnInit {
   password:FormControl;
   cpassword:FormControl;
   cat:FormControl;
+
+  
+  identityRevealedValidator: ValidatorFn
+
   constructor(private apiUtilisateursService: ApiUtilisateursService) { 
+    this.identityRevealedValidator = (control: FormGroup): ValidationErrors | null => {
+      const pseudo = control.get('pseudo');
+      const mail = control.get('mail');
+      const mdp = control.get('mdp');
+      const cmdp = control.get('cmdp');
+      const categorie = control.get('categorie');
+
+      return pseudo && mail && mdp && cmdp && categorie && mdp.value === cmdp.value ? { 'identityRevealed': true } : null;
+    };
     this.email = new FormControl('', [
       Validators.required,
       Validators.email,
@@ -55,7 +68,7 @@ export class RegisterComponent implements OnInit {
       mdp: this.password,
       cmdp: this.cpassword,
       categorie: this.cat
-      }, { validators: identityRevealedValidator });
+      }, { validators: this.identityRevealedValidator });
   }
   @Input() ins;
 
@@ -80,14 +93,5 @@ export class RegisterComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  export const identityRevealedValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-    const pseudo = control.get('pseudo');
-    const mail = control.get('mail');
-    const mdp = control.get('mdp');
-    const cmdp = control.get('cmdp');
-    const categorie = control.get('categorie');
-
-    return pseudo && mail && mdp && cmdp && categorie && mdp.value === cmdp.value ? { 'identityRevealed': true } : null;
-  };
 
 }
