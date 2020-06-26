@@ -1,36 +1,9 @@
-import { Component, OnInit, Input, Type } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
 import { SessionService } from '../../session.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Utilisateur } from '../../interfaces/utilisateur';
 import { Globals } from '../../variablesGlobales/globals';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-@Component({
-  selector: 'ngbd-modal-confirm',
-  template: `
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-title">Profile deletion</h4>
-    <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p><strong>Are you sure you want to delete <span class="text-primary">"John Doe"</span> profile?</strong></p>
-    <p>All information associated to this user profile will be permanently deleted.
-    <span class="text-danger">This operation can not be undone.</span>
-    </p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
-    <button type="button" class="btn btn-danger" (click)="modal.close('Ok click')">Ok</button>
-  </div>
-  `
-})
-export class NgbdModalConfirm {
-  constructor(public modal: NgbActiveModal) {}
-}
-
 
 @Component({
   selector: 'app-login',
@@ -42,7 +15,7 @@ export class LoginComponent implements OnInit {
   formGroup:FormGroup;
   id:number;
   session:Utilisateur;
-  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals, public modal: NgbActiveModal) { 
+  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
     
     this.formGroup = new FormGroup({
       mail: new FormControl(),

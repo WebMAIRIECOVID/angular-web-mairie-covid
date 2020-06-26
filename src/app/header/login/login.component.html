@@ -1,25 +1,5 @@
 
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-title">Connexion</h4>
-    <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
-      <p><strong><label for="email"><b>Email</b></label> </strong></p>
-      <p><input formControlName="mail" type="text" placeholder="Entrer email" name="email" required></p>
-      <p<label for="psw"><b>Mot de passe</b></label>></p>
-      <p><input formControlName="mdp" type="password" placeholder="Entrer mot de passe" name="psw" required></p>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="submit" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Fermer</button>
-    <button type="button" ngbAutofocus class="btn btn-danger" (click)="modal.close('Ok click')">Ok</button>
-  </div>
 
-
-<!--
 <div *ngIf="co" class="form-popup" id="myFormSignIn">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
     <h1>Connexion</h1>
@@ -33,64 +13,4 @@
     <button type="submit" class="btn">Connexion</button>
     <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
   </form>
-</div> -->
-<!--
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
-    <h5><label for="email"><b>Email</b></label></h5>
-    <p><input formControlName="mail" type="text" placeholder="Entrer email" name="email" required></p>
-    <hr>
-    <h5><label for="psw"><b>Mot de passe</b></label></h5>
-    <p><input formControlName="mdp" type="password" placeholder="Entrer mot de passe" name="psw" required></p>
-    <hr>
-    <button type="submit" class="btn">Connexion</button>
-    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
-  </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
-<!--
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-<div *ngIf="co" class="modal-body">
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container">
-    <h5><label for="email"><b>Email</b></label></h5>
-    <p><input formControlName="mail" type="text" placeholder="Entrer email" name="email" required></p>
-    <hr>
-    <h5><label for="psw"><b>Mot de passe</b></label></h5>
-    <p><input formControlName="mdp" type="password" placeholder="Entrer mot de passe" name="psw" required></p>
-    <hr>
-    <button type="submit" class="btn">Connexion</button>
-    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
-  </form>
-</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
+</div> 
