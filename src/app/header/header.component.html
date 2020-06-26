@@ -10,6 +10,13 @@
         <app-login [co]="co"></app-login>
       </li>
 
+      <li> 
+        <button class="btn btn-outline-primary" (click)="open('autofocus')">
+          <div>Co</div>
+          <div class="text-dark" aria-hidden="true"><small>Creer un compte rapidement</small></div>
+        </button>
+      </li>
+
       <li class="nav-item">
         <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()">S'enregistrer</button>
         <app-register [ins]="ins"></app-register>
