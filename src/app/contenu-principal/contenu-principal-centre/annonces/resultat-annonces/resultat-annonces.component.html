@@ -4,7 +4,13 @@
     <div class="card-body">
       <h5 class="card-title">{{item[2]}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">par {{item[6]}}</h6>
-      <p class="card-text">{{item[1]}}</p>
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel title="Description">
+          <ng-template ngbPanelContent>
+            {{item[1]}}
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
       <p class="card-text font-italic text-right">{{item[4]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
     </div>
   </div>
