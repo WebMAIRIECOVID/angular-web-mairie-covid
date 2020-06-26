@@ -1,26 +1,16 @@
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-
-<!--<div *ngFor="let item of items | paginate: { itemsPerPage: 5, currentPage: p }" class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{item[1]}}  - par {{item[4]}}</h5>
-        <p class="card-text"><small class="text-muted">{{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</small></p>
-      </div>
-      <app-resultat-reponses [quest]="item"></app-resultat-reponses>
-    </div>
-  </div>
-  <app-ajouter-reponse [item]="item"></app-ajouter-reponse>
-</div>-->
-<div id="conteneur">
-  <div *ngFor="let item of items | paginate: { itemsPerPage: 5, currentPage: p }" class="card" style="width: 45%;">
-      <div class="card-body">
-        <h5 class="card-title">{{item[1]}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">par {{item[4]}}</h6>
-        <p class="card-text font-italic text-right">{{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}</p>
-      </div>
-      <app-resultat-reponses [quest]="item"></app-resultat-reponses>
+<mat-accordion>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <mat-expansion-panel hideToggle  *ngFor="let item of items | paginate: { itemsPerPage: 10, currentPage: p }" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{item[1]}}
+      </mat-panel-title>
+      <mat-panel-description>
+        par {{item[4]}} le {{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p><app-resultat-reponses [quest]="item"></app-resultat-reponses></p>
+    
     <app-ajouter-reponse [item]="item"></app-ajouter-reponse>
-  </div>
-</div>
+  </mat-expansion-panel>
+</mat-accordion>
