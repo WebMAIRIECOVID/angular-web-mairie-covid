@@ -25,7 +25,7 @@ form
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
-  box-shadow: 0px 0px 126px 65px rgba(57,111,204,1);
+  box-shadow: 0px 0px 126px 10px rgba(57,111,204,1);
 }
 
 .example-full-width {
