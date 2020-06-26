@@ -13,5 +13,4 @@ export class AnnoncesComponent implements OnInit {
   ngOnInit() {
     this.annonce = "annonce";
   }
-
 }

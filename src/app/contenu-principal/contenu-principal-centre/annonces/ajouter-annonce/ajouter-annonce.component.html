@@ -1,17 +1,37 @@
 <button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Ajouter une {{categorie}}</button>
 
-<div *ngIf="ajout" class="form-popup formulaire" id="myFormSignUp">
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
-    <h1>Ajouter une {{categorie}}</h1>
-
-    <label for="titre"><b>Titre</b></label>
-    <input formControlName="titre" type="text" placeholder="Entrer titre" name="titre" required>
-
-    <label for="texte"><b>Texte</b></label>
-    <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
-
-    <button type="submit" class="btn">Poster</button>
-    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+<div *ngIf="ajout" class="example-form">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <br>
+    <h3 id="title">Ajouter une {{categorie}}</h3>
+    <div class="champs">
+      <br>
+      <label><b>Titre</b></label>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput  type="text" formControlName="titre" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="title.hasError('required')">
+          Un titre est <strong>obligatoire</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="champs">
+      <br>
+      <label><b>Texte</b></label>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput  type="text" formControlName="texte" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="text.hasError('required')">
+          Un texte est <strong>obligatoire</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div id="divButton">
+    <button type="submit" class="btn btn-outline-dark">Poster</button>
+    <button type="button" class="btn btn-primary" (click)="closeForm()">Fermer</button>
+    </div>
+    <br>
   </form>
 </div> 
 

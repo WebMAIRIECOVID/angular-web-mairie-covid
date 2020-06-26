@@ -1,10 +1,21 @@
 import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ApiPublicationsService } from '../../../../api-publications.service';
 import { LoginComponent } from '../../../../header/login/login.component';
 import { SessionService } from '../../../../session.service';
 import { Annonce } from '../../../../interfaces/annonce';
 import { Globals } from '../../../../variablesGlobales/globals';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 
 @Component({
@@ -19,11 +30,20 @@ export class AjouterAnnonceComponent implements OnInit {
   annonce:Annonce;
   public globals: Globals;
   @Input() categorie;
+  title:FormControl;
+  text:FormControl;
 
   constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
+    this.title = new FormControl('', [
+      Validators.required
+    ]);
+    this.text = new FormControl('', [
+      Validators.required
+    ]);
+
     this.formGroup = new FormGroup({
-      titre: new FormControl(null, [Validators.required]),
-      texte: new FormControl(null, [Validators.required])
+      titre: this.title,
+      texte: this.text
     });
     this.ajout = true;
     this.globals = globals;
@@ -56,4 +76,6 @@ export class AjouterAnnonceComponent implements OnInit {
   onFileChanged(event) {
     const file = event.target.files[0]
   }
+
+  matcher = new MyErrorStateMatcher();
 }
