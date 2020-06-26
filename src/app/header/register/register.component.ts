@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiUtilisateursService } from '../../api-utilisateurs.service';
-import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm, ValidatorFn, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm, ValidatorFn, ValidationErrors, FormBuilder } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MustMatch } from '../../constantes/must-match.validator';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -28,19 +29,10 @@ export class RegisterComponent implements OnInit {
   cpassword:FormControl;
   cat:FormControl;
 
-  
-  identityRevealedValidator: ValidatorFn
+  submitted = false;
 
-  constructor(private apiUtilisateursService: ApiUtilisateursService) { 
-    this.identityRevealedValidator = (control: FormGroup): ValidationErrors | null => {
-      const pseudo = control.get('pseudo');
-      const mail = control.get('mail');
-      const mdp = control.get('mdp');
-      const cmdp = control.get('cmdp');
-      const categorie = control.get('categorie');
+  constructor(private apiUtilisateursService: ApiUtilisateursService, private formBuilder: FormBuilder) { 
 
-      return pseudo && mail && mdp && cmdp && categorie && mdp.value === cmdp.value ? { 'identityRevealed': true } : null;
-    };
     this.email = new FormControl('', [
       Validators.required,
       Validators.email,
@@ -57,10 +49,6 @@ export class RegisterComponent implements OnInit {
     this.identifiant = new FormControl('', [
       Validators.required
     ]);
-    this.formGroup = new FormGroup({
-      mail: this.email,
-      mdp: this.password,
-    });
 
     this.formGroup = new FormGroup({
       pseudo: this.identifiant,
@@ -68,7 +56,7 @@ export class RegisterComponent implements OnInit {
       mdp: this.password,
       cmdp: this.cpassword,
       categorie: this.cat
-      }, { validators: this.identityRevealedValidator });
+    });
   }
   @Input() ins;
 
@@ -79,7 +67,15 @@ export class RegisterComponent implements OnInit {
     this.ins = false;
   }
 
+    // convenience getter for easy access to form fields
+    get f() { return this.formGroup.controls; }
   onSubmit() {
+        this.submitted = true;
+        
+        // stop here if form is invalid
+        if (this.formGroup.invalid) {
+            return;
+        }
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
@@ -90,6 +86,10 @@ export class RegisterComponent implements OnInit {
     });
     this.ins = false;
   }
+    onReset() {
+        this.submitted = false;
+        this.formGroup.reset();
+    }
 
   matcher = new MyErrorStateMatcher();
 

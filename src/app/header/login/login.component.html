@@ -4,30 +4,30 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <br>
     <h3 id="title">Connexion</h3>
-    <div>
-    <br>
-    <label><b>Adresse mail</b></label>
-    <br>
-    <mat-form-field class="example-full-width">
-      <input matInput  formControlName="mail" [errorStateMatcher]="matcher">
-      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
-        Merci de rentrer une adresse valide
-      </mat-error>
-      <mat-error *ngIf="email.hasError('required')">
-        Une adresse mail est <strong>obligatoire</strong>
-      </mat-error>
-    </mat-form-field>
+    <div class="champs">
+      <br>
+      <label><b>Adresse mail</b></label>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput  formControlName="mail" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+          Merci de rentrer une adresse valide
+        </mat-error>
+        <mat-error *ngIf="email.hasError('required')">
+          Une adresse mail est <strong>obligatoire</strong>
+        </mat-error>
+      </mat-form-field>
     </div>
-    <div>
-    <br>
-    <label><b>Mot de passe</b></label>
-    <br>
-    <mat-form-field class="example-full-width">
-      <input matInput  type="password" formControlName="mdp" [errorStateMatcher]="matcher">
-      <mat-error *ngIf="password.hasError('required')">
-        Un mot de passe est <strong>obligatoire</strong>
-      </mat-error>
-    </mat-form-field>
+    <div class="champs">
+      <br>
+      <label><b>Mot de passe</b></label>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput  type="password" formControlName="mdp" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="password.hasError('required')">
+          Un mot de passe est <strong>obligatoire</strong>
+        </mat-error>
+      </mat-form-field>
     </div>
     <br>
     <div id="divButton">

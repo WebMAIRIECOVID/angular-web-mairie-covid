@@ -3,6 +3,11 @@
   text-align: center
 }
 
+form
+{
+  width:90%;
+}
+
 .example-form {
   position: fixed; /* postulat de départ */
   left: 50%; /* à 50%/50% du parent référent */
@@ -13,7 +18,7 @@
   z-index: 9;
   background-color: white;
   min-width: 150px;
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   overflow: auto;
   display: flex;
@@ -24,6 +29,7 @@
 }
 
 .example-full-width {
+  width:100%;
   border-bottom:gray solid 1px; 
 }
 
@@ -33,4 +39,10 @@
   justify-content: space-around;
   align-items: stretch;
   flex-wrap: wrap;
+}
+
+.champs
+{
+  margin-right: 10%;
+  margin-left: 10%;
 }
