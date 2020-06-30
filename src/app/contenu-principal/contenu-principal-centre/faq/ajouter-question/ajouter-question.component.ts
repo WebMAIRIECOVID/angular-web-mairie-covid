@@ -66,7 +66,9 @@ export class AjouterQuestionComponent implements OnInit {
       alert('Erreur API chat');
     });
     this.ajout = false;
-    this.router.navigate(['/login']);
+  
+    this.router.navigateByUrl('/faq', { skipLocationChange: true }).then(() => {
+    this.router.navigate(['faq']);});
   }
   
   onReset() {
