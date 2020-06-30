@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
   erreur:boolean;
 
   submitted = false;
+  
   constructor(private dataSharingService: DataSharingService, private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
     this.email = new FormControl('', [
       Validators.required,
@@ -77,17 +78,18 @@ export class LoginComponent implements OnInit {
       this.id = response['id'];
       this.session = response['user'];
       this.changedSession(this.id,this.session);
+      
+      if(this.globals.id != null)
+      {
+        this.dataSharingService.isUserLoggedIn.next(true);
+        this.co = false;
+        this.erreur = false;
+      } else {
+        this.erreur = true;
+      }
     }, (error) => {
       alert('Erreur API login');
     });
-    if(this.globals.id != null)
-    {
-      this.dataSharingService.isUserLoggedIn.next(true);
-      this.co = false;
-      this.erreur = false;
-    } else {
-      this.erreur = true;
-    }
   }
   onReset() {
       this.submitted = false;
