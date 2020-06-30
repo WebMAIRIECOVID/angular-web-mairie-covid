@@ -68,8 +68,11 @@ export class LoginComponent implements OnInit {
     }, (error) => {
       alert('Erreur API login');
     });
-    this.co = false;
-    this.dataSharingService.isUserLoggedIn.next(true);
+    if(this.globals.id != null)
+    {
+      this.dataSharingService.isUserLoggedIn.next(true);
+      this.co = false;
+    }
   }
   
   private changedSession(id, session) {
