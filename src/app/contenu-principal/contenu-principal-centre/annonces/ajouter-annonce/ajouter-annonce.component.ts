@@ -58,12 +58,12 @@ export class AjouterAnnonceComponent implements OnInit {
     // convenience getter for easy access to form fields
     get f() { return this.formGroup.controls; }
   onSubmit() {
-        this.submitted = true;
-        
-        // stop here if form is invalid
-        if (this.formGroup.invalid) {
-            return;
-        }
+    this.submitted = true;
+    
+    // stop here if form is invalid
+    if (this.formGroup.invalid) {
+        return;
+    }
     console.log("Annonce submitted");
     this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id, categorie:this.categorie};
     console.log(this.annonce);
