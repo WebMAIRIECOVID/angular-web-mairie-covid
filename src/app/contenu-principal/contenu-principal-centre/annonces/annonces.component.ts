@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AnnoncesComponent implements OnInit {
 
   annonce:String;
+  role:String;  
   constructor() { }
 
   ngOnInit() {
     this.annonce = "annonce";
+    this.role = "travailleur";
   }
 }

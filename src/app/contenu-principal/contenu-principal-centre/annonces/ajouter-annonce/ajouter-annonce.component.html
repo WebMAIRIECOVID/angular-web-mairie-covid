@@ -1,4 +1,4 @@
-<button id="buttonAddCA" type="button" class="btn btn-outline-info" (click)="openForm()" active>Ajouter une {{categorie}}</button>
+<button id="buttonAddCA" type="button" class="btn btn-outline-info" (click)="openForm()" *ngIf="isConnected" active>Ajouter une {{categorie}}</button>
 
 <div *ngIf="ajout" class="example-form">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">

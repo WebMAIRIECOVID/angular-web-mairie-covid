@@ -27,9 +27,12 @@ export class AjouterAnnonceComponent implements OnInit {
 
   formGroup:FormGroup;
   ajout:boolean;
+  isConnected:boolean;
+  role:string;  
   annonce:Annonce;
   public globals: Globals;
   @Input() categorie;
+  @Input() roleAttendu;
   title:FormControl;
   text:FormControl;
 
@@ -53,6 +56,17 @@ export class AjouterAnnonceComponent implements OnInit {
 
   ngOnInit() {
     this.ajout = false;
+    this.changeRole();
+    if(this.role == this.roleAttendu) {
+      this.isConnected = true;
+    }
+    else {
+      this.isConnected = false;
+    }
+  }
+
+  changeRole(){
+    this.role = this.globals.session.categorie;
   }
 
     // convenience getter for easy access to form fields

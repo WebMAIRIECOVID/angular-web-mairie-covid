@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ActusComponent implements OnInit {
 
   information:String;
+  role:String;
   constructor() { }
 
   ngOnInit() {
-  this.information="information";
+    this.information="information";
+    this.role="mairie";
   }
 
 }
