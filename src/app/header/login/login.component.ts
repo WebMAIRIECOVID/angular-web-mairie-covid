@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   session:Utilisateur;
   email:FormControl;
   password:FormControl;
+  erreur:boolean;
   constructor(private dataSharingService: DataSharingService, private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
     this.email = new FormControl('', [
       Validators.required,
@@ -42,6 +43,7 @@ export class LoginComponent implements OnInit {
       mail: this.email,
       mdp: this.password,
     });
+    this.erreur = false;
   }
 
   @Input() co;
@@ -72,6 +74,9 @@ export class LoginComponent implements OnInit {
     {
       this.dataSharingService.isUserLoggedIn.next(true);
       this.co = false;
+      this.erreur = false;
+    } else {
+      this.erreur = true;
     }
   }
   

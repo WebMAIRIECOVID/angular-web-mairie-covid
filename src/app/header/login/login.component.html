@@ -30,6 +30,9 @@
       </mat-form-field>
     </div>
     <br>
+    <div *ngIf="erreur" class="alert alert-warning" role="alert">
+      Mot de passe ou addresse invalide
+    </div>
     <div id="divButton">
       <button type="button" class="btn btn-outline-dark" (click)="closeForm()">Fermer</button>
       <button type="submit" class="btn btn-primary">Connexion</button>
