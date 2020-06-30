@@ -1,13 +1,25 @@
-<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Répondre</button>
+<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Poser une question</button>
 
-<div *ngIf="ajout" class="form-popup formulaire" id="myFormSignUp">
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-container" method="post">
-    <h1>Répondre</h1>
-
-    <label for="texte"><b>Texte</b></label>
-    <input formControlName="texte" type="text" placeholder="Entrer texte" name="texte" required>
-
-    <button type="submit" class="btn">Poster</button>
-    <button type="button" class="btn cancel" (click)="closeForm()">Fermer</button>
+<div *ngIf="ajout" class="example-form">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <br>
+    <h3 id="title">Poser une question</h3>
+    <div class="champs">
+      <br>
+      <label><b>Texte</b></label>
+      <br>
+      <mat-form-field class="example-full-width">
+        <textarea matInput  type="text" formControlName="texte" [errorStateMatcher]="matcher"></textarea>
+        <mat-error *ngIf="text.hasError('required')">
+          Un texte est <strong>obligatoire</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div id="divButton">
+    <button type="button" class="btn btn-primary" (click)="closeForm()">Fermer</button>
+    <button type="submit" class="btn btn-outline-dark">Poster</button>
+    </div>
+    <br>
   </form>
 </div> 
