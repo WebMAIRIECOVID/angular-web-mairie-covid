@@ -9,6 +9,8 @@ export class ActusComponent implements OnInit {
 
   information:String;
   role:String;
+  actualisation: boolean;
+  
   constructor() { }
 
   ngOnInit() {

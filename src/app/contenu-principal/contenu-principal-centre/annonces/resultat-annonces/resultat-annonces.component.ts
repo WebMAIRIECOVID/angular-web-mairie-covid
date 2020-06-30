@@ -13,6 +13,7 @@ export class ResultatAnnoncesComponent implements OnInit {
   items:any;
   p: number = 1;
   @Input() categorie;
+  actualisation: boolean;
 
   constructor(private apiPublicationsService: ApiPublicationsService) {
   }

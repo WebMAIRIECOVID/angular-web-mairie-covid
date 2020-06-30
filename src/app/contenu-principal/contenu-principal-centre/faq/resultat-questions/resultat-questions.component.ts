@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApiChatService } from '../../../../api-chat.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Question } from '../../../../interfaces/question';
+import { ActualisationService } from '../../../../actualisation.service';
 
 @Component({
   selector: 'app-resultat-questions',
@@ -13,8 +14,12 @@ export class ResultatQuestionsComponent implements OnInit {
 
   items:any;
   p: number = 1;
+  actualisation: boolean;
 
-  constructor(private apiChatService: ApiChatService) {
+  constructor(private actualisationService: ActualisationService, private apiChatService: ApiChatService) {
+      this.actualisationService.actualiserFAQ.subscribe( value => {
+          this.actualisation = value;
+      });
   }
 
   ngOnInit() {
