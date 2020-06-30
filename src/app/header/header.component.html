@@ -11,13 +11,14 @@
       </li>
 
       <li class="nav-item">  
-        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn(); deco()" *ngIf="isUserLoggedIn">Se déconnecter</button>
+        <app-deconnexion></app-deconnexion>
       </li>
 
       <li class="nav-item">
         <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()" *ngIf="!isUserLoggedIn">S'enregistrer</button>
         <app-register [ins]="ins"></app-register>
       </li>
+      
     </ul>
   </div>
 </nav>
