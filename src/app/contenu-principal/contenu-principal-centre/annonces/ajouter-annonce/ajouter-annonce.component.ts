@@ -33,6 +33,8 @@ export class AjouterAnnonceComponent implements OnInit {
   title:FormControl;
   text:FormControl;
 
+  submitted = false;
+
   constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
     this.title = new FormControl('', [
       Validators.required
@@ -53,7 +55,15 @@ export class AjouterAnnonceComponent implements OnInit {
     this.ajout = false;
   }
 
+    // convenience getter for easy access to form fields
+    get f() { return this.formGroup.controls; }
   onSubmit() {
+        this.submitted = true;
+        
+        // stop here if form is invalid
+        if (this.formGroup.invalid) {
+            return;
+        }
     console.log("Annonce submitted");
     this.annonce = { texte: this.formGroup.get('texte').value, titre: (this.formGroup.get('titre').value), auteur: this.globals.id, categorie:this.categorie};
     console.log(this.annonce);
@@ -64,6 +74,10 @@ export class AjouterAnnonceComponent implements OnInit {
     });
     this.ajout = false;
   }
+    onReset() {
+        this.submitted = false;
+        this.formGroup.reset();
+    }
 
   closeForm() {
     this.ajout = false;
