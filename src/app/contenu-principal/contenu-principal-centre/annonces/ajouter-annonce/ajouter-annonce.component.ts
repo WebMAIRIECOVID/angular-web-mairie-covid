@@ -59,7 +59,6 @@ export class AjouterAnnonceComponent implements OnInit {
     if(this.globals.session.categorie){
       this.changeRole();
     }
-  
     if(this.role == this.roleAttendu) {
       this.isConnected = true;
     }
@@ -73,7 +72,8 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
     // convenience getter for easy access to form fields
-    get f() { return this.formGroup.controls; }
+  get f() { return this.formGroup.controls; }
+  
   onSubmit() {
     this.submitted = true;
     
