@@ -20,19 +20,19 @@
   </div>
 </div>-->
 
-<div >
-<div *ngFor="let item of items">
-  <div *ngIf="quest[0] == item[1]" class="flex1" >
-    <div class="flex2">
-      <div  class="left">
-        {{item[2]}}
-      </div>
-      <div class="right"> 
-        par {{item[6]}} le {{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}
+<div  *ngIf="!actualisation">
+  <div *ngFor="let item of items">
+    <div *ngIf="quest[0] == item[1]" class="flex1" >
+      <div class="flex2">
+        <div  class="left">
+          {{item[2]}}
+        </div>
+        <div class="right"> 
+          par {{item[6]}} le {{item[3]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 
