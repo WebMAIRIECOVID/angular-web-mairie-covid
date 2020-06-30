@@ -73,6 +73,7 @@ export class AjouterAnnonceComponent implements OnInit {
       alert('Erreur API annonce');
     });
     this.ajout = false;
+    window.location.reload();
   }
   
   onReset() {

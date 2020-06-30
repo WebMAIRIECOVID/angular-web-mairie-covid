@@ -40,6 +40,7 @@ export class AjouterQuestionComponent implements OnInit {
       alert('Erreur API chat');
     });
     this.ajout = false;
+    
   }
 
   closeForm() {
