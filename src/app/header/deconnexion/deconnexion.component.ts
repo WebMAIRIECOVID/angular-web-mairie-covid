@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSharingService } from '../../data-sharing.service';
+import { Globals } from '../../variablesGlobales/globals';
 
 @Component({
   selector: 'app-deconnexion',
@@ -8,14 +9,21 @@ import { DataSharingService } from '../../data-sharing.service';
 })
 export class DeconnexionComponent implements OnInit {
 
-  constructor(private dataSharingService: DataSharingService) { }
+  constructor(private dataSharingService: DataSharingService, public globals: Globals) { }
 
   ngOnInit() {
   }
 
   deco()
   {
-    this.dataSharingService.isUserLoggedIn.next(true);
+    this.dataSharingService.isUserLoggedIn.next(false);
+      this.changedSession(null,null);
   }
+  
+  private changedSession(id, session) {
+    this.globals.id = id;
+    this.globals.session = session;
+  }
+  
 
 }
