@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSharingService } from '../../data-sharing.service';
 
 @Component({
   selector: 'app-deconnexion',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeconnexionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataSharingService: DataSharingService) { }
 
   ngOnInit() {
+  }
+
+  deco()
+  {
+    this.dataSharingService.isUserLoggedIn.next(true);
   }
 
 }
