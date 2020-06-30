@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiChatService } from '../../../../../api-chat.service';
-import { ActualisationService } from '../../../../.actualisation.service';
+import { ActualisationService } from '../../../../../actualisation.service';
 
 @Component({
   selector: 'app-resultat-reponses',
@@ -13,6 +13,7 @@ export class ResultatReponsesComponent implements OnInit {
   p: number = 1;
   @Input() quest: number;
   actualisation: boolean;
+  
 
   constructor(private actualisationService: ActualisationService, private apiChatService: ApiChatService) {
       this.actualisationService.actualiserFAQ.subscribe( value => {
