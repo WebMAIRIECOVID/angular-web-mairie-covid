@@ -74,10 +74,11 @@ export class AjouterAnnonceComponent implements OnInit {
     });
     this.ajout = false;
   }
-    onReset() {
-        this.submitted = false;
-        this.formGroup.reset();
-    }
+  
+  onReset() {
+      this.submitted = false;
+      this.formGroup.reset();
+  }
 
   closeForm() {
     this.ajout = false;
