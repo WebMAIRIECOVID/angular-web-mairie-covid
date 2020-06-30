@@ -6,7 +6,6 @@ import { Question } from '../../../../interfaces/question';
 import { Globals } from '../../../../variablesGlobales/globals';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import { Route } from '@angular/Router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 
