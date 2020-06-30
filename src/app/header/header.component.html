@@ -6,8 +6,12 @@
     <ul class="nav nav-pills">
 
       <li class="nav-item">  
-        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()">Se connecter</button>
+        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()" *ngIf="!isUserLoggedIn">Se connecter</button>
         <app-login [co]="co"></app-login>
+      </li>
+
+      <li class="nav-item">  
+        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()" *ngIf="isUserLoggedIn">Se déconnecter</button>
       </li>
 
       <li class="nav-item">

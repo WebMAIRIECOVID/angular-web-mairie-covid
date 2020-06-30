@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUtilisateursService } from '../api-utilisateurs.service';
 import { NgForm } from '@angular/forms';
+import { DataSharingService } from '../data-sharing.service';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,16 @@ import { NgForm } from '@angular/forms';
 })
 export class HeaderComponent implements OnInit {
 
+isUserLoggedIn: boolean;
 
-  constructor(private apiStatistiquesService: ApiUtilisateursService) { }
+  constructor(private dataSharingService: DataSharingService, private apiStatistiquesService: ApiUtilisateursService) {
+
+      // Subscribe here, this will automatically update 
+      // "isUserLoggedIn" whenever a change to the subject is made.
+      this.dataSharingService.isUserLoggedIn.subscribe( value => {
+          this.isUserLoggedIn = value;
+      });
+  }
 
   co: boolean;
   ins: boolean;
