@@ -56,7 +56,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   ngOnInit() {
     this.ajout = false;
-    if(this.globals.session.categorie){
+    if(this.globals.session){
       this.changeRole();
     }
     if(this.role == this.roleAttendu) {
