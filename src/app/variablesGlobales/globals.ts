@@ -1,6 +1,6 @@
 // globals.ts
 import { Injectable } from '@angular/core';
-import { Utilisateur } from './../interfaces/utilisateur'
+import { Utilisateur } from './../interfaces/utilisateur';
 
 @Injectable()
 export class Globals {

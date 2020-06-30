@@ -59,7 +59,7 @@ import { DataSharingService } from './data-sharing.service';
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, NgxPaginationModule, NgxChartsModule, BrowserAnimationsModule, ReactiveFormsModule, MatFormFieldModule,MatExpansionModule, NgbModule, MatGridListModule, MatInputModule ],
   declarations: [ AppComponent, HelloComponent, HeaderComponent, BarreDeNavigationComponent, ContenuPrincipalComponent, ContenuPrincipalGaucheComponent, ContenuPrincipalCentreComponent, ContenuPrincipalDroiteComponent, FaqComponent, StatsmondialesComponent, AnnoncesComponent, ChiffresParPaysComponent, ResultatRecherchePaysComponent, ChoixMetierComponent, ResultatAnnoncesComponent, ChiffresFranceComponent,  ScrollTopComponent, LoginComponent, RegisterComponent, AjouterAnnonceComponent, ChiffresDepartementsComponent, AjouterQuestionComponent, ResultatQuestionsComponent, AjouterReponseComponent, ResultatReponsesComponent, ActusComponent, DeconnexionComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, SessionService, Globals, ApiChatService, ApiPublicationsService, DataSharingService, ]
+  providers: [ ApiStatistiquesService, DatePipe, ApiUtilisateursService, MessageService, SessionService, Globals, ApiChatService, ApiPublicationsService, DataSharingService]
 })
 
 export class AppModule { }

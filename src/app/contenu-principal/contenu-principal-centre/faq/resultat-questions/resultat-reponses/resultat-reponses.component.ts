@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiChatService } from '../../../../../api-chat.service';
+import { Globals } from '../../../../../variablesGlobales/globals';
 
 @Component({
   selector: 'app-resultat-reponses',
@@ -12,7 +13,7 @@ export class ResultatReponsesComponent implements OnInit {
   p: number = 1;
   @Input() quest: number;
 
-  constructor(private apiChatService: ApiChatService) {
+  constructor(private apiChatService: ApiChatService, globals: Globals) {
   }
 
   ngOnInit() {
