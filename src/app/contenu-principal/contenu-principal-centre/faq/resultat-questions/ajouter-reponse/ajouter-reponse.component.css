@@ -2,49 +2,57 @@
 {
   margin: 1%;
 }
+#title
+{
+  text-align: center
+}
 
-.form-popup {
+form
+{
+  width:90%;
+}
+
+.example-form {
   position: fixed; /* postulat de départ */
   left: 50%; /* à 50%/50% du parent référent */
-  top:50%;
-  transform: translate(-50%,-50%); /* décalage de 50% de sa propre taille */
-  border: 3px solid #f1f1f1;
+  top: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  border: 3px solid #235d92;
+  border-radius:10px;
   z-index: 9;
-}
-
-.form-container {
-  padding: 10px;
   background-color: white;
-}
-
-.form-container input[type=text], .form-container input[type=password] {
+  min-width: 150px;
+  max-width: 400px;
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 126px 10px rgba(57,111,204,1);
 }
 
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+.example-full-width {
+  width:100%;
+  border-bottom:gray solid 1px; 
 }
 
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+#divButton
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
-.form-container .cancel {
-  background-color: red;
+.champs
+{
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-} 
+#buttonAddCA
+{
+  margin: 10px;
+  float: right;
+}

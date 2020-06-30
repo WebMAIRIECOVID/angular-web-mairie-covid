@@ -1,9 +1,9 @@
-<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Poser une question</button>
+<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Ajouter une réponse</button>
 
 <div *ngIf="ajout" class="example-form">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <br>
-    <h3 id="title">Poser une question</h3>
+    <h3 id="title">Ajouter une réponse</h3>
     <div class="champs">
       <br>
       <label><b>Texte</b></label>
