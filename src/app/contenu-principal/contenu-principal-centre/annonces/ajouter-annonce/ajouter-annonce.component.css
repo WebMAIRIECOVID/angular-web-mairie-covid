@@ -47,7 +47,8 @@ form
   margin-left: 10%;
 }
 
-buttonAddCA
+#buttonAddCA
 {
   margin: 10px;
+  float: right;
 }
