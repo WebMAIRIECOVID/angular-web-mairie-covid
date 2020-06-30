@@ -13,7 +13,8 @@ export class ResultatReponsesComponent implements OnInit {
   p: number = 1;
   @Input() quest: number;
 
-  constructor(private apiChatService: ApiChatService, globals: Globals) {
+  constructor(private actualisation:ActualisationService, private apiChatService: ApiChatService, globals: Globals) {
+    this.actualisation.resR.next(this);
   }
 
   ngOnInit() {
