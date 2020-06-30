@@ -86,10 +86,10 @@ export class RegisterComponent implements OnInit {
     });
     this.ins = false;
   }
-    onReset() {
-        this.submitted = false;
-        this.formGroup.reset();
-    }
+  onReset() {
+      this.submitted = false;
+      this.formGroup.reset();
+  }
 
   matcher = new MyErrorStateMatcher();
 

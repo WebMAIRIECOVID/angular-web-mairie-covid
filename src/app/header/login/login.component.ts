@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
   email:FormControl;
   password:FormControl;
   erreur:boolean;
+
+  submitted = false;
   constructor(private dataSharingService: DataSharingService, private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
     this.email = new FormControl('', [
       Validators.required,
@@ -59,7 +61,15 @@ export class LoginComponent implements OnInit {
     this.co = false;
   }
 
+    // convenience getter for easy access to form fields
+    get f() { return this.formGroup.controls; }
   onSubmit() {
+    this.submitted = true;
+    
+    // stop here if form is invalid
+    if (this.formGroup.invalid) {
+        return;
+    }
     /*console.warn(this.formGroup.value);
     console.log(this.formGroup.get('mail').value);
     console.log(this.formGroup.get('mdp').value);*/
@@ -78,6 +88,10 @@ export class LoginComponent implements OnInit {
     } else {
       this.erreur = true;
     }
+  }
+  onReset() {
+      this.submitted = false;
+      this.formGroup.reset();
   }
   
   private changedSession(id, session) {
