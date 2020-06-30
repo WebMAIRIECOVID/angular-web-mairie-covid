@@ -7,6 +7,8 @@ import { Globals } from '../../variablesGlobales/globals';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { DataSharingService } from '../../data-sharing.service';
+
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -67,6 +69,7 @@ export class LoginComponent implements OnInit {
       alert('Erreur API login');
     });
     this.co = false;
+    this.dataSharingService.isUserLoggedIn.next(true);
   }
   
   private changedSession(id, session) {
