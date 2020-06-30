@@ -16,7 +16,6 @@ export class ResultatReponsesComponent implements OnInit {
 
   constructor(private actualisation:ActualisationService, private apiChatService: ApiChatService, globals: Globals) {
     this.actualisation.resR.next(this);
-    
   }
 
   ngOnInit() {

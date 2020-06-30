@@ -9,6 +9,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ResultatReponsesComponent } from '../resultat-reponses/resultat-reponses.component';
+import { ActualisationService } from '../../../../../actualisation.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -33,9 +34,9 @@ export class AjouterReponseComponent implements OnInit {
   text:FormControl;
 
   submitted = false;
-  resRep: ResultatReponsesComponent;
+  resR: ResultatReponsesComponent;
 
-  constructor(private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private actualisation:ActualisationService, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.text = new FormControl('', [
       Validators.required
     ]);
@@ -44,6 +45,9 @@ export class AjouterReponseComponent implements OnInit {
     });
     this.ajout = true;
     this.globals = globals;
+      this.actualisation.resR.subscribe( value => {
+          this.resR = value;
+      });
   }
 
   ngOnInit() {
@@ -65,7 +69,7 @@ export class AjouterReponseComponent implements OnInit {
     console.log(this.reponse);
     this.apiChatService.addReponse(this.reponse).subscribe((response) => {
       console.log(response);
-      this.resRep.ngOnInit();
+      this.resR.ngOnInit();
     }, (error) => {
       alert('Erreur API chat');
     });
