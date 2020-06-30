@@ -4,9 +4,11 @@ import { ApiChatService } from '../../../../api-chat.service';
 import { SessionService } from '../../../../session.service';
 import { Question } from '../../../../interfaces/question';
 import { Globals } from '../../../../variablesGlobales/globals';
-import {ErrorStateMatcher} from '@angular/material/core';
-import {MatInputModule} from '@angular/material/input';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { Route } from '@angular/Router';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -32,7 +34,7 @@ export class AjouterQuestionComponent implements OnInit {
   submitted = false;
 
 
-  constructor(private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private router: Router, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.text = new FormControl('', [
       Validators.required
     ]);
@@ -65,6 +67,7 @@ export class AjouterQuestionComponent implements OnInit {
       alert('Erreur API chat');
     });
     this.ajout = false;
+    this.router.navigate(['/faq']);
   }
   
   onReset() {
