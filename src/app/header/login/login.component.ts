@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   session:Utilisateur;
   email:FormControl;
   password:FormControl;
-  constructor(private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
+  constructor(private dataSharingService: DataSharingService, private apiUtilisateursService: ApiUtilisateursService,private sessionService: SessionService, public globals: Globals) { 
     this.email = new FormControl('', [
       Validators.required,
       Validators.email,
