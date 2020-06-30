@@ -8,7 +8,6 @@ import { Globals } from '../../../../variablesGlobales/globals';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ActualisationService } from '../../../../actualisation.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -39,7 +38,7 @@ export class AjouterAnnonceComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private actualisationService: ActualisationService, private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
     this.title = new FormControl('', [
       Validators.required
     ]);
@@ -91,8 +90,6 @@ export class AjouterAnnonceComponent implements OnInit {
       alert('Erreur API annonce');
     });
     this.ajout = false;
-    this.actualisationService.actualiserPublication.next(true);
-    this.actualisationService.actualiserPublication.next(false);
   }
   
   onReset() {

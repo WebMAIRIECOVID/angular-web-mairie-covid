@@ -1,4 +1,4 @@
-<mat-accordion  *ngIf="!actualisation">
+<mat-accordion>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
   <mat-expansion-panel hideToggle  *ngFor="let item of items | paginate: { itemsPerPage: 10, currentPage: p }" >
     <mat-expansion-panel-header>

@@ -8,7 +8,6 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
-import { ActualisationService } from '../../../../actualisation.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -34,7 +33,7 @@ export class AjouterQuestionComponent implements OnInit {
   submitted = false;
 
 
-  constructor(private actualisationService: ActualisationService, private router: Router, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private router: Router, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.text = new FormControl('', [
       Validators.required
     ]);
@@ -68,8 +67,6 @@ export class AjouterQuestionComponent implements OnInit {
     });
     this.ajout = false;
     this.router.navigate(['/faq']);
-    this.actualisationService.actualiserFAQ.next(true);
-    this.actualisationService.actualiserFAQ.next(false);
   }
   
   onReset() {
