@@ -11,18 +11,13 @@
       </li>
 
       <li class="nav-item">  
-        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn()" *ngIf="isUserLoggedIn">Se déconnecter</button>
+        <button class="auth nav-link active" (click)="closeForm(); openFormSignIn(); deco()" *ngIf="isUserLoggedIn">Se déconnecter</button>
       </li>
 
       <li class="nav-item">
-        <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()">S'enregistrer</button>
+        <button id="SignUp" class="auth nav-link active" (click)="closeForm(); openFormSignUp()" *ngIf="!isUserLoggedIn">S'enregistrer</button>
         <app-register [ins]="ins"></app-register>
       </li>
     </ul>
-    
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>

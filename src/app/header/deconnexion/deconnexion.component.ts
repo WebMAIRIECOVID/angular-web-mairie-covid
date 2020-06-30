@@ -9,7 +9,14 @@ import { Globals } from '../../variablesGlobales/globals';
 })
 export class DeconnexionComponent implements OnInit {
 
-  constructor(private dataSharingService: DataSharingService, public globals: Globals) { }
+  isUserLoggedIn: boolean;
+  constructor(private dataSharingService: DataSharingService, public globals: Globals) { 
+      // Subscribe here, this will automatically update 
+      // "isUserLoggedIn" whenever a change to the subject is made.
+      this.dataSharingService.isUserLoggedIn.subscribe( value => {
+          this.isUserLoggedIn = value;
+      });
+  }
 
   ngOnInit() {
   }
