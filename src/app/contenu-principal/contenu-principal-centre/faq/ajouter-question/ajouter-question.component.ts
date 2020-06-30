@@ -6,7 +6,6 @@ import { Question } from '../../../../interfaces/question';
 import { Globals } from '../../../../variablesGlobales/globals';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-import { ActivatedRoute, Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -33,7 +32,7 @@ export class AjouterQuestionComponent implements OnInit {
   submitted = false;
 
 
-  constructor(private router: Router, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
+  constructor(private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.text = new FormControl('', [
       Validators.required
     ]);
@@ -66,9 +65,6 @@ export class AjouterQuestionComponent implements OnInit {
       alert('Erreur API chat');
     });
     this.ajout = false;
-  
-    this.router.navigateByUrl('/faq', { skipLocationChange: true }).then(() => {
-    this.router.navigate(['faq']);});
   }
   
   onReset() {
