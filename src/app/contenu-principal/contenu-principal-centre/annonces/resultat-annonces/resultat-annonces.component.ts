@@ -24,9 +24,12 @@ export class ResultatAnnoncesComponent implements OnInit {
       this.items = response["annonces"];
     }, (error) => {
       alert('Erreur API get annonces');
-    });
-    
+    }); 
   }
   
+  actualiser()
+  {
+    this.ngOnInit();
+  }
 
 }
