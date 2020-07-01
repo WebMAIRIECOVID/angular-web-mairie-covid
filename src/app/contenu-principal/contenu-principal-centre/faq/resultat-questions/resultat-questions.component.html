@@ -11,7 +11,7 @@
     </mat-expansion-panel-header>
     <p><app-resultat-reponses  (resultatReponses)="initialiser($event)" [quest]="item"></app-resultat-reponses></p>
     
-    <app-ajouter-reponse(changement)="actualisation($event)" [item]="item"></app-ajouter-reponse>
+    <app-ajouter-reponse (changement)="actualisation($event)" [item]="item"></app-ajouter-reponse>
   </mat-expansion-panel>
 </mat-accordion>
 

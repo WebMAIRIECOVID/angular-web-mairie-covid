@@ -1,5 +1,5 @@
 <div id="conteneur" >
-  <app-ajouter-question ></app-ajouter-question>
+  <app-ajouter-question (changement)="actualisation($event)" ></app-ajouter-question>
   <app-resultat-questions (resultatQuestions)="initialiser($event)"></app-resultat-questions>
 </div>
 
