@@ -13,6 +13,7 @@ export class ResultatAnnoncesComponent implements OnInit {
   items:any;
   p: number = 1;
   @Input() categorie;
+  @Output() resultatAnnonces: EventEmitter<ResultatAnnoncesComponent> = new EventEmitter<ResultatAnnoncesComponent>();
 
   constructor(private apiPublicationsService: ApiPublicationsService) {
   }
@@ -25,7 +26,13 @@ export class ResultatAnnoncesComponent implements OnInit {
     }, (error) => {
       alert('Erreur API get annonces');
     });
+    this.resultatAnnonces.emit(this);
     
+  }
+
+  actualiser()
+  {
+    this.ngOnInit();
   }
   
 

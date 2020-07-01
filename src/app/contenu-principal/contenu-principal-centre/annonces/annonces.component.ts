@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultatAnnoncesComponent } from './resultat-annonces/resultat-annonces.component';
 
 @Component({
   selector: 'app-annonces',
@@ -10,6 +11,7 @@ export class AnnoncesComponent implements OnInit {
   annonce:String;
   role:String;  
   changement: boolean;
+  resultatAnnonces: ResultatAnnoncesComponent;
 
   constructor() {
     this.changement = true;
@@ -23,6 +25,12 @@ export class AnnoncesComponent implements OnInit {
   actualisation(value)
   {
     this.changement = value;
-    this.changement = true;
+    setTimeout(() => this.resultatAnnonces.ngOnInit(), 2000);
+    
+  }
+
+  initialiser(resA)
+  {
+    this.resultatAnnonces = resA;
   }
 }
