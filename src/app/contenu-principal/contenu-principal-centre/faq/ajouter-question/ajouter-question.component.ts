@@ -34,7 +34,7 @@ export class AjouterQuestionComponent implements OnInit {
   @Output() changement: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 
-  constructor(private router: Router, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
+  constructor( private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.text = new FormControl('', [
       Validators.required
     ]);
@@ -67,7 +67,6 @@ export class AjouterQuestionComponent implements OnInit {
       alert('Erreur API chat');
     });
     this.ajout = false;
-    this.router.navigate(['/faq']);
     this.changement.emit(false);
   }
   
