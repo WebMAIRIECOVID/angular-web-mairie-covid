@@ -9,9 +9,9 @@
         par {{item[4]}} le {{item[2]| date:"dd/MM/yyyy 'à' HH:mm:ss"}}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p><app-resultat-reponses  (resultatReponses)="initialiser($event)" [quest]="item"></app-resultat-reponses></p>
+    <p><app-resultat-reponses  (resultatReponses)="initi($event)" [quest]="item"></app-resultat-reponses></p>
     
-    <app-ajouter-reponse (changement)="actualisation($event)" [item]="item"></app-ajouter-reponse>
+    <app-ajouter-reponse (changement)="actuali($event)" [item]="item"></app-ajouter-reponse>
   </mat-expansion-panel>
 </mat-accordion>
 

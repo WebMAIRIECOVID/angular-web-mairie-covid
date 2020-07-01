@@ -34,13 +34,13 @@ export class ResultatQuestionsComponent implements OnInit {
     }); 
   }
   
-  actualisation(value)
+  actuali(value)
   {
     this.changement = value;
     setTimeout(() => this.resultatReponses.ngOnInit(), 1000);
   }
 
-  initialiser(resR)
+  initi(resR)
   {
     this.resultatReponses = resR;
   }
