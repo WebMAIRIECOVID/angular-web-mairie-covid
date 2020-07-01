@@ -11,6 +11,7 @@ export class FaqComponent implements OnInit {
   changement: boolean;
   resultatQuestions: ResultatQuestionsComponent;
   constructor() {
+    this.changement = true;
   }
 
   ngOnInit() {

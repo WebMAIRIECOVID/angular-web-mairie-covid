@@ -21,6 +21,7 @@ export class ResultatQuestionsComponent implements OnInit {
 
   constructor( private apiChatService: ApiChatService) {
     this.resultatQuestions.emit(this);
+    this.changement = true;
   }
 
   ngOnInit() {
