@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ApiChatService } from '../../../../../api-chat.service';
 import { Globals } from '../../../../../variablesGlobales/globals';
 import { ActualisationService } from '../../../../../actualisation.service';
@@ -13,9 +13,10 @@ export class ResultatReponsesComponent implements OnInit {
   items:any;
   p: number = 1;
   @Input() quest: number;
+  @Output() resultatReponses: EventEmitter<ResultatReponsesComponent> = new EventEmitter<ResultatReponsesComponent>();
 
-  constructor(private actualisation:ActualisationService, private apiChatService: ApiChatService, globals: Globals) {
-    this.actualisation.resR.next(this);
+  constructor(private apiChatService: ApiChatService, globals: Globals) {
+    this.resultatReponses.emit(this);
   }
 
   ngOnInit() {

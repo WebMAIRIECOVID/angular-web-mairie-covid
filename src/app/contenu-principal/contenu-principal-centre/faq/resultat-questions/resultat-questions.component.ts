@@ -17,8 +17,10 @@ export class ResultatQuestionsComponent implements OnInit {
   p: number = 1;
   changement: boolean;
   resultatReponses: ResultatReponsesComponent;
+  @Output() resultatQuestions: EventEmitter<ResultatQuestionsComponent> = new EventEmitter<ResultatQuestionsComponent>();
 
   constructor( private apiChatService: ApiChatService) {
+    this.resultatQuestions.emit(this);
   }
 
   ngOnInit() {

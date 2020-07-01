@@ -34,7 +34,6 @@ export class AjouterReponseComponent implements OnInit {
   text:FormControl;
 
   submitted = false;
-  resR: ResultatReponsesComponent;
   @Output() changement: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor( private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
@@ -67,7 +66,6 @@ export class AjouterReponseComponent implements OnInit {
     console.log(this.reponse);
     this.apiChatService.addReponse(this.reponse).subscribe((response) => {
       console.log(response);
-      this.resR.ngOnInit();
     }, (error) => {
       alert('Erreur API chat');
     });
