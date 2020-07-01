@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ApiPublicationsService } from '../../../../api-publications.service';
 import { LoginComponent } from '../../../../header/login/login.component';
@@ -8,7 +8,6 @@ import { Globals } from '../../../../variablesGlobales/globals';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ResultatAnnoncesComponent } from '../resultat-annonces/resultat-annonces.component';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -38,8 +37,9 @@ export class AjouterAnnonceComponent implements OnInit {
   text:FormControl;
 
   submitted = false;
+  @Output() changement: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals, private resA:ResultatAnnoncesComponent) { 
+  constructor(private apiPublicationsService: ApiPublicationsService, private sessionService: SessionService, globals: Globals) { 
     this.title = new FormControl('', [
       Validators.required
     ]);
@@ -91,7 +91,7 @@ export class AjouterAnnonceComponent implements OnInit {
       alert('Erreur API annonce');
     });
     this.ajout = false;
-    this.resA.actualiser();
+    this.changement.emit(false);
   }
   
   onReset() {

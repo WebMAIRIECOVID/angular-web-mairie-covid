@@ -9,10 +9,20 @@ export class AnnoncesComponent implements OnInit {
 
   annonce:String;
   role:String;  
-  constructor() { }
+  changement: boolean;
+
+  constructor() {
+    this.changement = true;
+  }
 
   ngOnInit() {
     this.annonce = "annonce";
     this.role = "travailleur";
+  }
+
+  actualisation(value)
+  {
+    this.changement = value;
+    this.changement = true;
   }
 }
