@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ApiChatService } from '../../../../api-chat.service';
 import { SessionService } from '../../../../session.service';
@@ -31,6 +31,7 @@ export class AjouterQuestionComponent implements OnInit {
   text:FormControl;
 
   submitted = false;
+  @Output() changement: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 
   constructor(private router: Router, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
@@ -67,6 +68,7 @@ export class AjouterQuestionComponent implements OnInit {
     });
     this.ajout = false;
     this.router.navigate(['/faq']);
+    this.changement.emit(false);
   }
   
   onReset() {

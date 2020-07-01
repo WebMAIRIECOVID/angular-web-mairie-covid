@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ApiChatService } from '../../../../../api-chat.service';
 import { SessionService } from '../../../../../session.service';
@@ -35,8 +35,9 @@ export class AjouterReponseComponent implements OnInit {
 
   submitted = false;
   resR: ResultatReponsesComponent;
+  @Output() changement: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private actualisation:ActualisationService, private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
+  constructor( private apiChatService: ApiChatService, private sessionService: SessionService, globals: Globals) { 
     this.text = new FormControl('', [
       Validators.required
     ]);
@@ -45,9 +46,6 @@ export class AjouterReponseComponent implements OnInit {
     });
     this.ajout = true;
     this.globals = globals;
-      this.actualisation.resR.subscribe( value => {
-          this.resR = value;
-      });
   }
 
   ngOnInit() {
@@ -74,6 +72,7 @@ export class AjouterReponseComponent implements OnInit {
       alert('Erreur API chat');
     });
     this.ajout = false;
+    this.changement.emit(false);
   }
   
   onReset() {
