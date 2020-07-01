@@ -11,11 +11,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class ResultatAnnoncesComponent implements OnInit {
 
   items:any;
-  p: number = 1;
+  p: number;
   @Input() categorie;
   @Output() resultatAnnonces: EventEmitter<ResultatAnnoncesComponent> = new EventEmitter<ResultatAnnoncesComponent>();
 
-  constructor(private apiPublicationsService: ApiPublicationsService) {
+  constructor(private apiPublicationsService: ApiPublicationsService){
+    this.p = 1;
   }
 
   ngOnInit() {
@@ -30,10 +31,5 @@ export class ResultatAnnoncesComponent implements OnInit {
     
   }
 
-  actualiser()
-  {
-    this.ngOnInit();
-  }
-  
 
 }

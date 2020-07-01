@@ -20,7 +20,6 @@ export class ResultatQuestionsComponent implements OnInit {
   @Output() resultatQuestions: EventEmitter<ResultatQuestionsComponent> = new EventEmitter<ResultatQuestionsComponent>();
 
   constructor( private apiChatService: ApiChatService) {
-    this.resultatQuestions.emit(this);
     this.changement = true;
     this.p = 1;
   }
@@ -33,6 +32,7 @@ export class ResultatQuestionsComponent implements OnInit {
     }, (error) => {
       alert('Erreur API get questions');
     }); 
+    this.resultatQuestions.emit(this);
   }
   
   actuali(value)
