@@ -25,8 +25,7 @@ export class AnnoncesComponent implements OnInit {
   actualisation(value)
   {
     this.changement = value;
-    setTimeout(() => this.resultatAnnonces.ngOnInit(), 2000);
-    
+    setTimeout(() => this.resultatAnnonces.ngOnInit(), 1000);
   }
 
   initialiser(resA)
