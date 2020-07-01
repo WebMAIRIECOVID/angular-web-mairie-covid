@@ -11,12 +11,13 @@ import { ActualisationService } from '../../../../../actualisation.service';
 export class ResultatReponsesComponent implements OnInit {
 
   items:any;
-  p: number = 1;
+  p: number;
   @Input() quest: number;
   @Output() resultatReponses: EventEmitter<ResultatReponsesComponent> = new EventEmitter<ResultatReponsesComponent>();
 
-  constructor(private apiChatService: ApiChatService, globals: Globals) {
-    this.resultatReponses.emit(this);
+  constructor(private apiChatService: ApiChatService, globals: Globals) 
+  {
+    this.p = 1;
   }
 
   ngOnInit() {
@@ -26,5 +27,6 @@ export class ResultatReponsesComponent implements OnInit {
     }, (error) => {
       alert('Erreur API get rep');
     });
+    this.resultatReponses.emit(this);
   }
 }
