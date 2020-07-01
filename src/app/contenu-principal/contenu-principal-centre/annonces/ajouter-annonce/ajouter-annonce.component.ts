@@ -35,6 +35,7 @@ export class AjouterAnnonceComponent implements OnInit {
   @Input() roleAttendu;
   title:FormControl;
   text:FormControl;
+  alert:boolean;
 
   submitted = false;
   @Output() changement: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -59,6 +60,9 @@ export class AjouterAnnonceComponent implements OnInit {
     this.ajout = false;
     if(this.globals.session){
       this.changeRole();
+      this.alert = false;
+    } else {
+      this.alert = true;
     }
     if(this.role == this.roleAttendu) {
       this.isConnected = true;
@@ -114,6 +118,6 @@ export class AjouterAnnonceComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   
   close() {
-    this.globals.alert = false;
+    this..alert = false;
   }
 }
