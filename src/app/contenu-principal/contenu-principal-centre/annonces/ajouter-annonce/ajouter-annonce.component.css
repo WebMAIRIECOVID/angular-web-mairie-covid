@@ -7,6 +7,10 @@ form
 {
   width:90%;
 }
+ngb-alert
+{
+  margin: 15px;
+}
 
 .example-form {
   position: fixed; /* postulat de départ */

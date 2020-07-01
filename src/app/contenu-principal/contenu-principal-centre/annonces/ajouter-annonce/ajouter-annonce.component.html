@@ -1,8 +1,8 @@
 <div *ngIf="this.globals.session">
-  <ngb-alert *ngIf="this.globals.session.categorie == 'travailleur'" type="warning" (close)="close()">Veuillez vous connecter en tant que travailleur local afin de pouvoir poster des annonces</ngb-alert>
+  <ngb-alert *ngIf="this.globals.session.categorie == 'travailleur' && this.categorie == 'annonce'" type="warning" (close)="close()">Veuillez vous connecter en tant que travailleur local afin de pouvoir poster des annonces</ngb-alert>
 </div>
 
-<div *ngIf="!this.globals.session">
+<div *ngIf="!this.globals.session && this.categorie == 'annonce'">
   <ngb-alert type="warning" (close)="close()">Veuillez vous connecter en tant que travailleur local afin de pouvoir poster des annonces</ngb-alert>
 </div>
 
