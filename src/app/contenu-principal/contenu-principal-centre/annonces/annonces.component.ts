@@ -8,10 +8,10 @@ import { ResultatAnnoncesComponent } from './resultat-annonces/resultat-annonces
 })
 export class AnnoncesComponent implements OnInit {
 
-  annonce:String;
-  role:String;  
   changement: boolean;
   resultatAnnonces: ResultatAnnoncesComponent;
+  annonce:String;
+  role:String;  
 
   constructor() {
     this.changement = true;

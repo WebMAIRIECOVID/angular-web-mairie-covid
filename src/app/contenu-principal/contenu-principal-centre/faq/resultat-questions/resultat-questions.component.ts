@@ -13,15 +13,16 @@ import { ResultatReponsesComponent } from './resultat-reponses/resultat-reponses
 
 export class ResultatQuestionsComponent implements OnInit {
 
-  items:any;
-  p: number = 1;
   changement: boolean;
   resultatReponses: ResultatReponsesComponent;
+  items:any;
+  p: number;
   @Output() resultatQuestions: EventEmitter<ResultatQuestionsComponent> = new EventEmitter<ResultatQuestionsComponent>();
 
   constructor( private apiChatService: ApiChatService) {
     this.resultatQuestions.emit(this);
     this.changement = true;
+    this.p = 1;
   }
 
   ngOnInit() {
