@@ -7,6 +7,11 @@
   text-align: center
 }
 
+ngb-alert
+{
+  margin: 15px;
+}
+
 form
 {
   width:90%;

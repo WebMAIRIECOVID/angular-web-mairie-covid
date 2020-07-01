@@ -112,4 +112,8 @@ export class AjouterAnnonceComponent implements OnInit {
   }
 
   matcher = new MyErrorStateMatcher();
+  
+  close() {
+    this.globals.alert = false;
+  }
 }

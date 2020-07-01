@@ -1,4 +1,4 @@
-<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Ajouter une réponse</button>
+<button *ngIf="this.globals.id" id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Ajouter une réponse</button>
 
 <div *ngIf="ajout" class="example-form">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">

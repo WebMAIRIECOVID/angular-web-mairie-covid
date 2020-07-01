@@ -1,6 +1,6 @@
+<ngb-alert *ngIf="this.globals.alert" type="warning" (close)="close()">Veuillez vous connecter pour pouvoir poser des questions et y répondre</ngb-alert>
 
-
-<button id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Poser une question</button>
+<button  *ngIf="this.globals.id" id="buttonAddCA" type="button" class="btn float-right btn-outline-info" (click)="openForm()" active>Poser une question</button>
 
 <div *ngIf="ajout" class="example-form">
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">

@@ -7,4 +7,5 @@ export class Globals {
   role: string = 'test';
   id: number;
   session:Utilisateur;
+  alert:boolean = false;
 }

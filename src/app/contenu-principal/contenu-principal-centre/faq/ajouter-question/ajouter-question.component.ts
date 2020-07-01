@@ -47,6 +47,12 @@ export class AjouterQuestionComponent implements OnInit {
 
   ngOnInit() {
     this.ajout = false;
+    if(this.globals.id)
+    {
+      this.globals.alert = false;
+    } else {
+      this.globals.alert = true;
+    }
   }
 
     // convenience getter for easy access to form fields
@@ -83,5 +89,10 @@ export class AjouterQuestionComponent implements OnInit {
     this.ajout = true;
   }
   matcher = new MyErrorStateMatcher();
+  
+  close() {
+    this.globals.alert = false;
+  }
+
 
 }

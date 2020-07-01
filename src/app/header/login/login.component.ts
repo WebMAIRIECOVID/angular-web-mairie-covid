@@ -84,6 +84,7 @@ export class LoginComponent implements OnInit {
         this.dataSharingService.isUserLoggedIn.next(true);
         this.co = false;
         this.erreur = false;
+        this.globals.alert = false;
       } else {
         this.erreur = true;
       }
